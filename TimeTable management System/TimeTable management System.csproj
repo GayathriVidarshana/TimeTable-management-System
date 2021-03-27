@@ -82,12 +82,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="backgroundImages\" />
-    <Folder Include="connection\" />
-    <Folder Include="database\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="backgroundImages\NEXT.png" />
+    <Content Include="connection\NEXT.png" />
+    <Content Include="database\NEXT.png" />
     <Content Include="icons\NEXT.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
