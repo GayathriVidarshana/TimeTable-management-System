@@ -86,7 +86,9 @@
     <Folder Include="backgroundImages\" />
     <Folder Include="connection\" />
     <Folder Include="database\" />
-    <Folder Include="icons\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icons\NEXT.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
