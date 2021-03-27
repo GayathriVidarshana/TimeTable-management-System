@@ -54,6 +54,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="views%28UI%29\AddNewLecturerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views%28UI%29\AddNewLecturerUI.Designer.cs">
+      <DependentUpon>AddNewLecturerUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="views%28UI%29\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
