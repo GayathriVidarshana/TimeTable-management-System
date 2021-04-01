@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TimeTable_management_System.views_UI_
 {
-    public partial class manage : Form
+    public partial class statistics : Form
     {
-        public manage()
+        public statistics()
         {
             InitializeComponent();
         }
