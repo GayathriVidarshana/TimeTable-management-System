@@ -258,8 +258,10 @@ namespace TimeTable_management_System.views_UI_
             this.dataGridViewManageSubjects.Name = "dataGridViewManageSubjects";
             this.dataGridViewManageSubjects.RowHeadersWidth = 51;
             this.dataGridViewManageSubjects.RowTemplate.Height = 24;
+            this.dataGridViewManageSubjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewManageSubjects.Size = new System.Drawing.Size(901, 229);
             this.dataGridViewManageSubjects.TabIndex = 61;
+            this.dataGridViewManageSubjects.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewManageSubjects_MouseDoubleClick);
             // 
             // label1
             // 

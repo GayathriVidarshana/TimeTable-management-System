@@ -40,5 +40,18 @@ namespace TimeTable_management_System.views_UI_
             cn.Close();
 
         }
+
+        private void dataGridViewManageSubjects_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            txbxSubjCode.Text = dataGridViewManageSubjects.SelectedRows[0].Cells[0].Value.ToString();
+            txbxSubjName.Text = dataGridViewManageSubjects.SelectedRows[0].Cells[1].Value.ToString();
+            cbxOfferdYear.Text = dataGridViewManageSubjects.SelectedRows[0].Cells[2].Value.ToString();
+
+            nUpDwnNoOfLecturerHours.Text = dataGridViewManageSubjects.SelectedRows[0].Cells[4].Value.ToString();
+            nUpDwnNoOfTutorialHours.Text = dataGridViewManageSubjects.SelectedRows[0].Cells[5].Value.ToString();
+            nUpDwnNoOfLabHours.Text = dataGridViewManageSubjects.SelectedRows[0].Cells[6].Value.ToString();
+            nUpDwnNoOfEvaluationHours.Text = dataGridViewManageSubjects.SelectedRows[0].Cells[7].Value.ToString();
+
+        }
     }
 }
