@@ -197,6 +197,7 @@ namespace TimeTable_management_System.views_UI_
             this.radioButton2Sem2.TabStop = true;
             this.radioButton2Sem2.Text = "2nd Semester";
             this.radioButton2Sem2.UseVisualStyleBackColor = true;
+            this.radioButton2Sem2.CheckedChanged += new System.EventHandler(this.radioButton2Sem2_CheckedChanged);
             // 
             // radioButton1Sem1
             // 
@@ -208,6 +209,7 @@ namespace TimeTable_management_System.views_UI_
             this.radioButton1Sem1.TabStop = true;
             this.radioButton1Sem1.Text = "1st Semester";
             this.radioButton1Sem1.UseVisualStyleBackColor = true;
+            this.radioButton1Sem1.CheckedChanged += new System.EventHandler(this.radioButton1Sem1_CheckedChanged);
             // 
             // cbxOfferdYear
             // 

@@ -18,6 +18,7 @@ namespace TimeTable_management_System.views_UI_
             InitializeComponent();
             autoIncrementSubjectId();
         }
+        String semester; // Create globle variable-----------
 
         private void AddSubjectUI_Load(object sender, EventArgs e)
         {
@@ -78,23 +79,11 @@ namespace TimeTable_management_System.views_UI_
 
             SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database\TTMSDB.mdf;Integrated Security=True");
 
-            string s = "";
-            foreach (Control cc in this.Controls)
-            {
-                if (cc is CheckBox)
-                {
-                    CheckBox b = (CheckBox)cc;
-                    if (b.Checked)
-                    {
-                        s = b.Text + " , " + s;
-                    }
-                }
-            }
 
             try
             {
                 cn.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Subject(subjectCode,subjectName,offeredYear,offeredSem,noOfLecHours,noOfTutorialHours,noOfLabHours,noOfEvaluationHours) VALUES ('" + txbxSubjCode.Text + "','" + txbxSubjName.Text + "','" + cbxOfferdYear.Text + "','" +s+ "','" + nUpDwnNoOfLecturerHours.Text + "','" + nUpDwnNoOfTutorialHours.Text + "','" + nUpDwnNoOfLabHours.Text + "','" + nUpDwnNoOfEvaluationHours.Text + "')", cn);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Subject(subjectCode,subjectName,offeredYear,offeredSem,noOfLecHours,noOfTutorialHours,noOfLabHours,noOfEvaluationHours) VALUES ('" + txbxSubjCode.Text + "','" + txbxSubjName.Text + "','" + cbxOfferdYear.Text + "','" +semester+ "','" + nUpDwnNoOfLecturerHours.Text + "','" + nUpDwnNoOfTutorialHours.Text + "','" + nUpDwnNoOfLabHours.Text + "','" + nUpDwnNoOfEvaluationHours.Text + "')", cn);
                 cmd.ExecuteNonQuery();
                 cn.Close();
                 MessageBox.Show("Successfully");
@@ -106,6 +95,16 @@ namespace TimeTable_management_System.views_UI_
                 MessageBox.Show("Unsuccesfully");
             }
 
+        }
+
+        private void radioButton1Sem1_CheckedChanged(object sender, EventArgs e)
+        {
+            semester = "1st Semester";
+        }
+
+        private void radioButton2Sem2_CheckedChanged(object sender, EventArgs e)
+        {
+            semester = "2nd Semester";
         }
     }
 }

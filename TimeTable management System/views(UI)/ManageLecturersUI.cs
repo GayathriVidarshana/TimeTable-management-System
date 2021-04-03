@@ -61,6 +61,39 @@ namespace TimeTable_management_System.views_UI_
 
             cmbxStartTime.Text = dataGridView1.SelectedRows[0].Cells[9].Value.ToString();
             cmbxEndTime.Text = dataGridView1.SelectedRows[0].Cells[10].Value.ToString();
+
+            chkbxMonday.Checked = false;
+            chkbxTuesday.Checked = false;
+            chkbxWednesday.Checked = false;
+            chkbxThursday.Checked = false;
+            chkbxFriday.Checked = false;
+            chkbxSaturday.Checked = false;
+            chkbxSunday.Checked = false;
+
+            SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database\TTMSDB.mdf;Integrated Security=True");
+            cn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Lecturer WHERE employeeId='"+tbxEmpID.Text+"'", cn);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                String aa = dr["activeDays"].ToString();
+                String[] a = aa.Split(' ');
+                foreach (Control cc in this.Controls)
+                {
+                    if(cc is CheckBox)
+                    {
+                        CheckBox b = (CheckBox)cc;
+                        for(int j=0;j<a.Length;j++)
+                        {
+                            if(a[j].ToString() == b.Text)
+                            {
+                                b.Checked = true;
+                            }
+                        }
+                    }
+                }
+            }
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
