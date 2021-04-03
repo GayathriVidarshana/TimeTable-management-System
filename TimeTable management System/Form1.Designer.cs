@@ -32,6 +32,8 @@ namespace TimeTable_management_System
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.btnManageLecturer = new System.Windows.Forms.Button();
+            this.btnAddSubjects = new System.Windows.Forms.Button();
+            this.btnManageSubjects = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,11 +63,33 @@ namespace TimeTable_management_System
             this.btnManageLecturer.UseVisualStyleBackColor = true;
             this.btnManageLecturer.Click += new System.EventHandler(this.btnManageLecturer_Click);
             // 
+            // btnAddSubjects
+            // 
+            this.btnAddSubjects.Location = new System.Drawing.Point(461, 25);
+            this.btnAddSubjects.Name = "btnAddSubjects";
+            this.btnAddSubjects.Size = new System.Drawing.Size(141, 42);
+            this.btnAddSubjects.TabIndex = 3;
+            this.btnAddSubjects.Text = "Add Subjects";
+            this.btnAddSubjects.UseVisualStyleBackColor = true;
+            this.btnAddSubjects.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnManageSubjects
+            // 
+            this.btnManageSubjects.Location = new System.Drawing.Point(655, 25);
+            this.btnManageSubjects.Name = "btnManageSubjects";
+            this.btnManageSubjects.Size = new System.Drawing.Size(141, 42);
+            this.btnManageSubjects.TabIndex = 4;
+            this.btnManageSubjects.Text = "Manage Subjects";
+            this.btnManageSubjects.UseVisualStyleBackColor = true;
+            this.btnManageSubjects.Click += new System.EventHandler(this.btnManageSubjects_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1082, 853);
+            this.Controls.Add(this.btnManageSubjects);
+            this.Controls.Add(this.btnAddSubjects);
             this.Controls.Add(this.btnManageLecturer);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
@@ -80,6 +104,8 @@ namespace TimeTable_management_System
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnManageLecturer;
+        private System.Windows.Forms.Button btnAddSubjects;
+        private System.Windows.Forms.Button btnManageSubjects;
     }
 }
 

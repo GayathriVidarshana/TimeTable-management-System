@@ -80,6 +80,12 @@
     <Compile Include="views%28UI%29\AddNewLecturerUI.Designer.cs">
       <DependentUpon>AddNewLecturerUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="views%28UI%29\AddSubjectUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views%28UI%29\AddSubjectUI.Designer.cs">
+      <DependentUpon>AddSubjectUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="views%28UI%29\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,12 @@
     </Compile>
     <Compile Include="views%28UI%29\ManageLecturersUI.Designer.cs">
       <DependentUpon>ManageLecturersUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views%28UI%29\ManageSubjectsUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views%28UI%29\ManageSubjectsUI.Designer.cs">
+      <DependentUpon>ManageSubjectsUI.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -107,8 +119,14 @@
     <EmbeddedResource Include="views%28UI%29\AddNewLecturerUI.resx">
       <DependentUpon>AddNewLecturerUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views%28UI%29\AddSubjectUI.resx">
+      <DependentUpon>AddSubjectUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views%28UI%29\ManageLecturersUI.resx">
       <DependentUpon>ManageLecturersUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views%28UI%29\ManageSubjectsUI.resx">
+      <DependentUpon>ManageSubjectsUI.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ModelDataSet.xsc">
       <DependentUpon>ModelDataSet.xsd</DependentUpon>

@@ -62,5 +62,10 @@ namespace TimeTable_management_System.views_UI_
             cmbxStartTime.Text = dataGridView1.SelectedRows[0].Cells[9].Value.ToString();
             cmbxEndTime.Text = dataGridView1.SelectedRows[0].Cells[10].Value.ToString();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
