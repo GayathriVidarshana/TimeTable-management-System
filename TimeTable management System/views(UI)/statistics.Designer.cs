@@ -102,6 +102,7 @@ namespace TimeTable_management_System.views_UI_
             this.showchartbutton1.TabIndex = 2;
             this.showchartbutton1.Text = "Show Chart";
             this.showchartbutton1.UseVisualStyleBackColor = true;
+            this.showchartbutton1.Click += new System.EventHandler(this.showchartbutton1_Click);
             // 
             // chart1
             // 
@@ -111,9 +112,12 @@ namespace TimeTable_management_System.views_UI_
             this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(27, 58);
             this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "Total Number of Lecturers";
+            series1.XValueMember = "Faculty";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
             this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(625, 222);
             this.chart1.TabIndex = 1;
@@ -149,6 +153,7 @@ namespace TimeTable_management_System.views_UI_
             this.showchartbutton2.TabIndex = 2;
             this.showchartbutton2.Text = "Show Chart";
             this.showchartbutton2.UseVisualStyleBackColor = true;
+            this.showchartbutton2.Click += new System.EventHandler(this.showchartbutton2_Click_1);
             // 
             // chart2
             // 
@@ -158,9 +163,11 @@ namespace TimeTable_management_System.views_UI_
             this.chart2.Legends.Add(legend2);
             this.chart2.Location = new System.Drawing.Point(22, 54);
             this.chart2.Name = "chart2";
+            this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
             series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
             series2.Legend = "Legend1";
-            series2.Name = "Series1";
+            series2.Name = "Total Number of Subjects";
             this.chart2.Series.Add(series2);
             this.chart2.Size = new System.Drawing.Size(597, 243);
             this.chart2.TabIndex = 1;
@@ -205,9 +212,10 @@ namespace TimeTable_management_System.views_UI_
             this.chart3.Legends.Add(legend3);
             this.chart3.Location = new System.Drawing.Point(43, 67);
             this.chart3.Name = "chart3";
+            this.chart3.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
             series3.ChartArea = "ChartArea1";
             series3.Legend = "Legend1";
-            series3.Name = "Series1";
+            series3.Name = "Total Number of Students";
             this.chart3.Series.Add(series3);
             this.chart3.Size = new System.Drawing.Size(564, 216);
             this.chart3.TabIndex = 1;

@@ -73,6 +73,7 @@
     <Compile Include="views%28UI%29\statistics.Designer.cs">
       <DependentUpon>statistics.cs</DependentUpon>
     </Compile>
+    <Compile Include="views%28UI%29\tabControl1.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
