@@ -33,16 +33,12 @@ namespace TimeTable_management_System.views_UI_
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.clearbutton1 = new System.Windows.Forms.Button();
-            this.addbutton = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.addbutton = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,6 +47,7 @@ namespace TimeTable_management_System.views_UI_
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
@@ -64,8 +61,6 @@ namespace TimeTable_management_System.views_UI_
             this.deletebutton = new System.Windows.Forms.Button();
             this.updatebutton = new System.Windows.Forms.Button();
             this.searchbutton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -95,6 +90,7 @@ namespace TimeTable_management_System.views_UI_
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(663, 288);
             this.tabControl1.TabIndex = 1;
+            this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.Full);
             // 
             // tabPage1
             // 
@@ -106,46 +102,21 @@ namespace TimeTable_management_System.views_UI_
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Location List";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(39, 46);
+            this.dataGridView1.Location = new System.Drawing.Point(21, 19);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(541, 100);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(594, 202);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Building Name";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Room Name";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Room Type";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Capacity";
-            this.Column5.Name = "Column5";
             // 
             // tabPage2
             // 
@@ -170,6 +141,14 @@ namespace TimeTable_management_System.views_UI_
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(165, 21);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 11;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
             // clearbutton1
             // 
             this.clearbutton1.Location = new System.Drawing.Point(439, 167);
@@ -179,16 +158,6 @@ namespace TimeTable_management_System.views_UI_
             this.clearbutton1.Text = "Clear";
             this.clearbutton1.UseVisualStyleBackColor = true;
             this.clearbutton1.Click += new System.EventHandler(this.clearbutton1_Click);
-            // 
-            // addbutton
-            // 
-            this.addbutton.Location = new System.Drawing.Point(439, 94);
-            this.addbutton.Name = "addbutton";
-            this.addbutton.Size = new System.Drawing.Size(75, 23);
-            this.addbutton.TabIndex = 9;
-            this.addbutton.Text = "Add";
-            this.addbutton.UseVisualStyleBackColor = true;
-            this.addbutton.Click += new System.EventHandler(this.addbutton_Click);
             // 
             // numericUpDown1
             // 
@@ -210,19 +179,19 @@ namespace TimeTable_management_System.views_UI_
             this.comboBox3.TabIndex = 7;
             this.comboBox3.Text = "Select Room Type";
             // 
+            // addbutton
+            // 
+            this.addbutton.Location = new System.Drawing.Point(439, 94);
+            this.addbutton.Name = "addbutton";
+            this.addbutton.Size = new System.Drawing.Size(75, 23);
+            this.addbutton.TabIndex = 9;
+            this.addbutton.Text = "Add";
+            this.addbutton.UseVisualStyleBackColor = true;
+            this.addbutton.Click += new System.EventHandler(this.addbutton_Click);
+            // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Main Auditorium",
-            "Mini Auditorium",
-            "N3E",
-            "N3D",
-            "N3D",
-            "A403",
-            "501",
-            "502",
-            "506"});
             this.comboBox2.Location = new System.Drawing.Point(165, 104);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(149, 21);
@@ -235,7 +204,7 @@ namespace TimeTable_management_System.views_UI_
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Main Building",
-            "New building",
+            "New Building",
             "Business Faculty",
             "Engineering Faculty"});
             this.comboBox1.Location = new System.Drawing.Point(168, 62);
@@ -319,12 +288,21 @@ namespace TimeTable_management_System.views_UI_
             this.tabPage3.Text = "Update and Delete Locations";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(430, 52);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 13;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // numericUpDown2
             // 
             this.numericUpDown2.Location = new System.Drawing.Point(210, 224);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(141, 20);
             this.numericUpDown2.TabIndex = 12;
+            this.numericUpDown2.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
             // 
             // comboBox6
             // 
@@ -343,16 +321,6 @@ namespace TimeTable_management_System.views_UI_
             // comboBox5
             // 
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "Main Auditorium",
-            "Mini Auditorium",
-            "N3E",
-            "N3D",
-            "N3D",
-            "A403",
-            "501",
-            "502",
-            "506"});
             this.comboBox5.Location = new System.Drawing.Point(210, 115);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(141, 21);
@@ -372,6 +340,7 @@ namespace TimeTable_management_System.views_UI_
             this.comboBox4.Size = new System.Drawing.Size(142, 21);
             this.comboBox4.TabIndex = 9;
             this.comboBox4.Text = "Select Builing Name";
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -436,6 +405,7 @@ namespace TimeTable_management_System.views_UI_
             this.deletebutton.TabIndex = 2;
             this.deletebutton.Text = "Delete";
             this.deletebutton.UseVisualStyleBackColor = true;
+            this.deletebutton.Click += new System.EventHandler(this.deletebutton_Click);
             // 
             // updatebutton
             // 
@@ -455,21 +425,7 @@ namespace TimeTable_management_System.views_UI_
             this.searchbutton.TabIndex = 0;
             this.searchbutton.Text = "Search";
             this.searchbutton.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(430, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 13;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(165, 21);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 11;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.searchbutton.Click += new System.EventHandler(this.searchbutton_Click);
             // 
             // managelocations
             // 
@@ -479,6 +435,7 @@ namespace TimeTable_management_System.views_UI_
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.Name = "managelocations";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "managelocations";
             this.Load += new System.EventHandler(this.managelocations_Load);
             this.tabControl1.ResumeLayout(false);
@@ -501,11 +458,6 @@ namespace TimeTable_management_System.views_UI_
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label label2;
