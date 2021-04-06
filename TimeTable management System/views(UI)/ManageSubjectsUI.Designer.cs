@@ -157,6 +157,7 @@ namespace TimeTable_management_System.views_UI_
             this.radioButton2Sem2.TabStop = true;
             this.radioButton2Sem2.Text = "2nd Semester";
             this.radioButton2Sem2.UseVisualStyleBackColor = true;
+            this.radioButton2Sem2.CheckedChanged += new System.EventHandler(this.radioButton2Sem2_CheckedChanged);
             // 
             // radioButton1Sem1
             // 
@@ -168,10 +169,16 @@ namespace TimeTable_management_System.views_UI_
             this.radioButton1Sem1.TabStop = true;
             this.radioButton1Sem1.Text = "1st Semester";
             this.radioButton1Sem1.UseVisualStyleBackColor = true;
+            this.radioButton1Sem1.CheckedChanged += new System.EventHandler(this.radioButton1Sem1_CheckedChanged);
             // 
             // cbxOfferdYear
             // 
             this.cbxOfferdYear.FormattingEnabled = true;
+            this.cbxOfferdYear.Items.AddRange(new object[] {
+            "1st  Year",
+            "2nd Year",
+            "3rd Year",
+            "4th Year"});
             this.cbxOfferdYear.Location = new System.Drawing.Point(217, 592);
             this.cbxOfferdYear.Name = "cbxOfferdYear";
             this.cbxOfferdYear.Size = new System.Drawing.Size(252, 24);
@@ -230,6 +237,7 @@ namespace TimeTable_management_System.views_UI_
             this.btnClear.TabIndex = 64;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnDelete
             // 
@@ -240,6 +248,7 @@ namespace TimeTable_management_System.views_UI_
             this.btnDelete.TabIndex = 63;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -250,6 +259,7 @@ namespace TimeTable_management_System.views_UI_
             this.btnUpdate.TabIndex = 62;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // dataGridViewManageSubjects
             // 

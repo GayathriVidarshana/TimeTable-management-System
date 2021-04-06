@@ -68,6 +68,8 @@ namespace TimeTable_management_System.views_UI_
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.errorProviderLecName = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLecName)).BeginInit();
             this.SuspendLayout();
             // 
             // cbEndTime
@@ -239,6 +241,7 @@ namespace TimeTable_management_System.views_UI_
             this.cbLevel.TabIndex = 50;
             this.toolTip3.SetToolTip(this.cbLevel, "Professor 1, Assistant Professor 2,Senior Lecturer(HG) 3,Senior Lecturer 4,Lectur" +
         "er 5 ,Assistant Lecturer 6");
+            this.cbLevel.SelectedIndexChanged += new System.EventHandler(this.cbLevel_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -332,6 +335,7 @@ namespace TimeTable_management_System.views_UI_
             this.cbBuilding.Name = "cbBuilding";
             this.cbBuilding.Size = new System.Drawing.Size(286, 28);
             this.cbBuilding.TabIndex = 49;
+            this.cbBuilding.SelectedIndexChanged += new System.EventHandler(this.cbBuilding_SelectedIndexChanged);
             // 
             // cbCenter
             // 
@@ -349,6 +353,7 @@ namespace TimeTable_management_System.views_UI_
             this.cbCenter.Name = "cbCenter";
             this.cbCenter.Size = new System.Drawing.Size(286, 28);
             this.cbCenter.TabIndex = 48;
+            this.cbCenter.SelectedIndexChanged += new System.EventHandler(this.cbCenter_SelectedIndexChanged);
             // 
             // cbDept
             // 
@@ -363,6 +368,7 @@ namespace TimeTable_management_System.views_UI_
             this.cbDept.Name = "cbDept";
             this.cbDept.Size = new System.Drawing.Size(286, 28);
             this.cbDept.TabIndex = 47;
+            this.cbDept.SelectedIndexChanged += new System.EventHandler(this.cbDept_SelectedIndexChanged);
             // 
             // cbFaculty
             // 
@@ -378,15 +384,17 @@ namespace TimeTable_management_System.views_UI_
             this.cbFaculty.Name = "cbFaculty";
             this.cbFaculty.Size = new System.Drawing.Size(286, 28);
             this.cbFaculty.TabIndex = 46;
+            this.cbFaculty.SelectedIndexChanged += new System.EventHandler(this.cbFaculty_SelectedIndexChanged);
             // 
             // tbRank
             // 
-            this.tbRank.Enabled = false;
             this.tbRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbRank.Location = new System.Drawing.Point(663, 317);
             this.tbRank.Name = "tbRank";
+            this.tbRank.ReadOnly = true;
             this.tbRank.Size = new System.Drawing.Size(107, 27);
             this.tbRank.TabIndex = 45;
+            this.tbRank.TextChanged += new System.EventHandler(this.tbRank_TextChanged);
             // 
             // tbEmpID
             // 
@@ -404,6 +412,7 @@ namespace TimeTable_management_System.views_UI_
             this.tbLecName.Name = "tbLecName";
             this.tbLecName.Size = new System.Drawing.Size(286, 27);
             this.tbLecName.TabIndex = 43;
+            this.tbLecName.TextChanged += new System.EventHandler(this.tbLecName_TextChanged);
             this.tbLecName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbLecName_KeyPress);
             // 
             // label8
@@ -490,6 +499,10 @@ namespace TimeTable_management_System.views_UI_
             this.panel1.Size = new System.Drawing.Size(987, 80);
             this.panel1.TabIndex = 54;
             // 
+            // errorProviderLecName
+            // 
+            this.errorProviderLecName.ContainerControl = this;
+            // 
             // AddNewLecturerUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -531,6 +544,7 @@ namespace TimeTable_management_System.views_UI_
             this.Name = "AddNewLecturerUI";
             this.Text = "Add New Lecturer UI";
             this.Load += new System.EventHandler(this.AddNewLecturerUI_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLecName)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -576,5 +590,6 @@ namespace TimeTable_management_System.views_UI_
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ErrorProvider errorProviderLecName;
     }
 }

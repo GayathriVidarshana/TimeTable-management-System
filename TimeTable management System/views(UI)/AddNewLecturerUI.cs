@@ -18,10 +18,15 @@ namespace TimeTable_management_System.views_UI_
             InitializeComponent();
             autoIncrementEmpId();
 
+            //----------------
+            btnGenerateRank.Enabled = false;
+            btnSave.Enabled = false;
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+
             SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database\TTMSDB.mdf;Integrated Security=True");
 
             string s ="";
@@ -61,7 +66,7 @@ namespace TimeTable_management_System.views_UI_
 
         private void AddNewLecturerUI_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         public void autoIncrementEmpId() //Create method to Auto increment employee ID----------------
@@ -132,8 +137,57 @@ namespace TimeTable_management_System.views_UI_
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
             if (tbLecName.Text.Length > 23)
             {
-                MessageBox.Show("Max characters limit is 23 letters", "Textbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // MessageBox.Show("Max characters limit is 23 letters", "Textbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errorProviderLecName.SetError(tbLecName, "Max characters limit is 23 letters");
+                btnSave.Enabled = false;
             }
+            else 
+            {
+                errorProviderLecName.SetError(tbLecName, "");
+                btnSave.Enabled = true;
+            }
+        }
+
+        private void tbLecName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbLevel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbLevel.SelectedItem == null)
+            {
+                btnGenerateRank.Enabled = false;
+            }
+            else
+            {
+                btnGenerateRank.Enabled = true;
+            }
+        }
+
+        private void cbFaculty_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void cbDept_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void cbCenter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void cbBuilding_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void tbRank_TextChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }
