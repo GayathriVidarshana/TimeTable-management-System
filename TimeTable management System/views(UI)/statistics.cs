@@ -46,7 +46,10 @@ namespace TimeTable_management_System.views_UI_
             chart2.Series["Total Number of Subjects"].Points.AddXY("4th Year", 13);
         }
 
-        
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     }
 

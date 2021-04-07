@@ -122,6 +122,7 @@ namespace TimeTable_management_System.views_UI_
             this.chart1.Size = new System.Drawing.Size(625, 222);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "Total Number of Lectures ";
+            this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // label2
             // 

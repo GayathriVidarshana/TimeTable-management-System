@@ -34,7 +34,6 @@ namespace TimeTable_management_System.views_UI_
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.clearbutton1 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -120,7 +119,6 @@ namespace TimeTable_management_System.views_UI_
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.textBox2);
             this.tabPage2.Controls.Add(this.clearbutton1);
             this.tabPage2.Controls.Add(this.numericUpDown1);
             this.tabPage2.Controls.Add(this.comboBox3);
@@ -140,14 +138,6 @@ namespace TimeTable_management_System.views_UI_
             this.tabPage2.Text = "Add Locations";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(165, 21);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 11;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // clearbutton1
             // 
@@ -295,6 +285,8 @@ namespace TimeTable_management_System.views_UI_
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 13;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox1.MouseHover += new System.EventHandler(this.textBox1_MouseHover);
             // 
             // numericUpDown2
             // 
@@ -381,7 +373,7 @@ namespace TimeTable_management_System.views_UI_
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(239, 30);
+            this.label7.Location = new System.Drawing.Point(225, 20);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(146, 13);
             this.label7.TabIndex = 4;
@@ -484,7 +476,6 @@ namespace TimeTable_management_System.views_UI_
         private System.Windows.Forms.Button deletebutton;
         private System.Windows.Forms.Button updatebutton;
         private System.Windows.Forms.Button searchbutton;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
     }
 }

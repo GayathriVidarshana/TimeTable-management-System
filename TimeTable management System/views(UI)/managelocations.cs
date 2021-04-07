@@ -34,19 +34,22 @@ namespace TimeTable_management_System.views_UI_
 
         private void addbutton_Click(object sender, EventArgs e)
         {
-            //insert data
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "insert into loc1(ID, Building_Name, Room_Name, Room_Type, Capacity) VALUES('" + textBox2.Text + "','" + comboBox1.Text + "','" + comboBox2.Text + "','" + comboBox3.Text + "','" + numericUpDown1.Text + "')";
-            cmd.ExecuteNonQuery();
-            con.Close();
-            MessageBox.Show("Add Successfully");
-            BindData();
+          
+                //insert data
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = "insert into loc3(building_name, room_name, room_type, capacity) VALUES('" + comboBox1.Text + "','" + comboBox2.Text + "','" + comboBox3.Text + "','" + numericUpDown1.Text + "')";
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Add Successfully");
+                BindData();
+            
+            
         }
 
         void BindData()
         {
-            SqlCommand command = new SqlCommand("select * from loc1", con);
+            SqlCommand command = new SqlCommand("select * from loc3", con);
             SqlDataAdapter sd = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
             sd.Fill(dt);
@@ -55,7 +58,7 @@ namespace TimeTable_management_System.views_UI_
         private void updatebutton_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand command = new SqlCommand("update loc1 set Building_Name = '" + comboBox4.Text + "', Room_Name = '" + comboBox5.Text + "', Room_Type = '" + comboBox6.Text + "', Capacity = '" + numericUpDown2.Text + "' where Building_Name = '" + textBox1.Text + "'", con);
+            SqlCommand command = new SqlCommand("update loc3 set building_name = '" + comboBox4.Text + "', room_name = '" + comboBox5.Text + "', room_type = '" + comboBox6.Text + "', capacity = '" + numericUpDown2.Text + "' where building_name= '" + comboBox4.Text + "'", con);
             command.ExecuteNonQuery();
             con.Close();
             MessageBox.Show("Updated Successfully");
@@ -65,7 +68,7 @@ namespace TimeTable_management_System.views_UI_
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBox2.Items.Clear();
-            if(comboBox1.Text == "Main Building")
+            if (comboBox1.Text == "Main Building")
             {
                 comboBox2.Items.Add("Main Auditorium");
                 comboBox2.Items.Add("406");
@@ -73,7 +76,7 @@ namespace TimeTable_management_System.views_UI_
                 comboBox2.Items.Add("507A");
                 comboBox2.Items.Add("602");
             }
-            if(comboBox1.Text == "New Building")
+            if (comboBox1.Text == "New Building")
             {
                 comboBox2.Items.Add("13H");
                 comboBox2.Items.Add("N3E");
@@ -81,7 +84,7 @@ namespace TimeTable_management_System.views_UI_
                 comboBox2.Items.Add("N3D");
                 comboBox2.Items.Add("12H");
             }
-            if(comboBox1.Text == "Engineering Faculty")
+            if (comboBox1.Text == "Engineering Faculty")
             {
                 comboBox2.Items.Add("E5");
                 comboBox2.Items.Add("E2");
@@ -89,7 +92,7 @@ namespace TimeTable_management_System.views_UI_
                 comboBox2.Items.Add("E8");
                 comboBox2.Items.Add("E10");
             }
-            if(comboBox1.Text == "Business Faculty")
+            if (comboBox1.Text == "Business Faculty")
             {
                 comboBox2.Items.Add("D5");
                 comboBox2.Items.Add("D3");
@@ -102,8 +105,14 @@ namespace TimeTable_management_System.views_UI_
         private void managelocations_Load(object sender, EventArgs e)
         {
             gridbind();
-
             BindData();
+            //autoincrement id
+            //SqlDataAdapter sad = new SqlDataAdapter("select isnull (max(cast(ID as int)), 0)+1 from loc1",con);
+            //DataTable dt = new DataTable();
+            //sad.Fill(dt);
+            //textBox2.Text = dt.Rows[0][0].ToString();
+            //focus to building name
+            this.ActiveControl = comboBox1;
         }
 
         private void gridbind()
@@ -112,13 +121,12 @@ namespace TimeTable_management_System.views_UI_
             using (SqlConnection con = new SqlConnection(connstring))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("select * from loc1", con);
+                SqlCommand cmd = new SqlCommand("select * from loc3", con);
                 SqlDataReader reader = cmd.ExecuteReader();
                 DataTable dt = new DataTable();
                 dt.Load(reader);
                 dataGridView1.DataSource = dt;
                 con.Close();
-
             }
 
 
@@ -146,20 +154,22 @@ namespace TimeTable_management_System.views_UI_
 
         private void clearbutton1_Click(object sender, EventArgs e)
         {
-            comboBox1.Items.Remove(comboBox1.SelectedItem);
-            comboBox2.Items.Remove(comboBox2.SelectedItem);
-            comboBox3.Items.Remove(comboBox3.SelectedItem);
-            textBox2.Clear();
+
+            comboBox1.Text = comboBox2.Text = comboBox3.Text = numericUpDown1.Text = "";
+            //SqlDataAdapter sad = new SqlDataAdapter("select isnull (max(cast(ID as int)), 0)+1 from loc1", con);
+            //DataTable dt = new DataTable();
+            //sad.Fill(dt);
+            //textBox2.Text = dt.Rows[0][0].ToString();
+            //focus to building name
+            this.ActiveControl = comboBox1;
+
 
         }
 
         private void clearbutton2_Click(object sender, EventArgs e)
         {
-            comboBox4.Items.Remove(comboBox4.SelectedItem);
-            comboBox5.Items.Remove(comboBox5.SelectedItem);
-            comboBox6.Items.Remove(comboBox6.SelectedItem);
-            textBox1.Clear();
-            //numericUpDown2.Value.();
+            textBox1.Text = comboBox4.Text = comboBox5.Text = comboBox6.Text = numericUpDown2.Text = "";
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -180,7 +190,7 @@ namespace TimeTable_management_System.views_UI_
 
         private void searchbutton_Click(object sender, EventArgs e)
         {
-            
+
             /*con.Open();
             SqlCommand cmd = new SqlCommand("select Building_Name, Room_Name, Room_Type, Capacity from loc1 where Building_Name = @Building_Name", con);
             cmd.Parameters.AddWithValue("@Building_Name", (textBox1.Text));
@@ -194,6 +204,8 @@ namespace TimeTable_management_System.views_UI_
                 
             }
             con.Close();*/
+            
+
 
 
 
@@ -201,12 +213,12 @@ namespace TimeTable_management_System.views_UI_
 
         private void deletebutton_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != "")
+            if (comboBox4.SelectedItem  != null)  
             {
                 if (MessageBox.Show("Are you sure to delete?", "Delete Record", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     con.Open();
-                    SqlCommand command = new SqlCommand("Delete loc1 where Building_Name = '" + textBox1.Text + "'", con);
+                    SqlCommand command = new SqlCommand("Delete loc3 where building_name = '" + comboBox4.Text + "'", con);
                     command.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Delete Successfully");
@@ -215,19 +227,20 @@ namespace TimeTable_management_System.views_UI_
             }
            else
             {
-               MessageBox.Show("Enter Building Name");
+              MessageBox.Show("Please fill the all fields");
             }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from loc1 where Building_Name ='" + textBox1.Text + "' ", con);
+            SqlCommand cmd = new SqlCommand("select * from loc3 where building_name ='" + textBox1.Text + "' ", con);
             SqlDataAdapter sd = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sd.Fill(dt);
             dataGridView1.DataSource = dt;
             con.Close(); 
+            
         }
 
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
@@ -275,13 +288,35 @@ namespace TimeTable_management_System.views_UI_
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView1.CurrentRow.Selected = true;
-            comboBox4.Text = dataGridView1.Rows[e.RowIndex].Cells["Building_Name"].Value.ToString();
-            comboBox5.Text = dataGridView1.Rows[e.RowIndex].Cells["Room_Name"].Value.ToString();
-            comboBox6.Text = dataGridView1.Rows[e.RowIndex].Cells["Room_Type"].Value.ToString();
-            //numericUpDown2.Value = dataGridView1.Rows[e.RowIndex].Cells["Capacity"].Text();
+            //textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+            comboBox4.Text = dataGridView1.Rows[e.RowIndex].Cells["building_name"].Value.ToString();
+            comboBox5.Text = dataGridView1.Rows[e.RowIndex].Cells["room_name"].Value.ToString();
+            comboBox6.Text = dataGridView1.Rows[e.RowIndex].Cells["room_type"].Value.ToString();
+            numericUpDown2.Value = Convert.ToDecimal(dataGridView1.SelectedRows[0].Cells["capacity"].Value);
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //allow only characters
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+                DialogResult da = MessageBox.Show("Please use only letters");
+            }
+           
+        }
+
+        private void textBox1_MouseHover(object sender, EventArgs e)
+        {
+            //toolTip1.Show("Enter Building Name", textBox1);
         }
     }
-}
+} 
     
 
 
