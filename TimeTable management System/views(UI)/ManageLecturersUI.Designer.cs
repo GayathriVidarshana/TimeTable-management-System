@@ -29,6 +29,7 @@ namespace TimeTable_management_System.views_UI_
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.chkbxWednesday = new System.Windows.Forms.CheckBox();
             this.chkbxThursday = new System.Windows.Forms.CheckBox();
             this.chkbxSaturday = new System.Windows.Forms.CheckBox();
@@ -40,9 +41,11 @@ namespace TimeTable_management_System.views_UI_
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.comboBox8ByCenter = new System.Windows.Forms.ComboBox();
+            this.comboBox7ByFaculty = new System.Windows.Forms.ComboBox();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.lecturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.modelDataSet = new TimeTable_management_System.ModelDataSet();
             this.cmbLevel = new System.Windows.Forms.ComboBox();
             this.cmbBuilding = new System.Windows.Forms.ComboBox();
             this.cmbCenter = new System.Windows.Forms.ComboBox();
@@ -71,7 +74,12 @@ namespace TimeTable_management_System.views_UI_
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnGenerateRank = new System.Windows.Forms.Button();
+            this.lecturerTableAdapter = new TimeTable_management_System.ModelDataSetTableAdapters.LecturerTableAdapter();
+            this.lecturerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // chkbxWednesday
@@ -194,35 +202,62 @@ namespace TimeTable_management_System.views_UI_
             this.label10.TabIndex = 70;
             this.label10.Text = "By Department";
             // 
-            // comboBox8
+            // comboBox8ByCenter
             // 
-            this.comboBox8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(591, 119);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(222, 24);
-            this.comboBox8.TabIndex = 69;
+            this.comboBox8ByCenter.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox8ByCenter.FormattingEnabled = true;
+            this.comboBox8ByCenter.Items.AddRange(new object[] {
+            "Malabe",
+            "Metro",
+            "Matara",
+            "Kandy",
+            "Kurunagala",
+            "Jaffna"});
+            this.comboBox8ByCenter.Location = new System.Drawing.Point(591, 119);
+            this.comboBox8ByCenter.Name = "comboBox8ByCenter";
+            this.comboBox8ByCenter.Size = new System.Drawing.Size(222, 24);
+            this.comboBox8ByCenter.TabIndex = 69;
+            this.comboBox8ByCenter.SelectedIndexChanged += new System.EventHandler(this.comboBox8_SelectedIndexChanged);
             // 
-            // comboBox7
+            // comboBox7ByFaculty
             // 
-            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(307, 119);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(222, 24);
-            this.comboBox7.TabIndex = 68;
+            this.comboBox7ByFaculty.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox7ByFaculty.FormattingEnabled = true;
+            this.comboBox7ByFaculty.Items.AddRange(new object[] {
+            "Computing",
+            "Engineering",
+            "Business",
+            "Humanities & Sciences"});
+            this.comboBox7ByFaculty.Location = new System.Drawing.Point(307, 119);
+            this.comboBox7ByFaculty.Name = "comboBox7ByFaculty";
+            this.comboBox7ByFaculty.Size = new System.Drawing.Size(222, 24);
+            this.comboBox7ByFaculty.TabIndex = 68;
+            this.comboBox7ByFaculty.SelectedIndexChanged += new System.EventHandler(this.comboBox7ByFaculty_SelectedIndexChanged);
             // 
             // comboBox6
             // 
-            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox6.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.lecturerBindingSource, "employeeId", true));
             this.comboBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Items.AddRange(new object[] {
+            "Department of IT",
+            "Department of CSE",
+            "Department of CSNE"});
             this.comboBox6.Location = new System.Drawing.Point(27, 119);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(222, 24);
             this.comboBox6.TabIndex = 67;
+            this.comboBox6.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
+            // 
+            // lecturerBindingSource
+            // 
+            this.lecturerBindingSource.DataMember = "Lecturer";
+            this.lecturerBindingSource.DataSource = this.modelDataSet;
+            // 
+            // modelDataSet
+            // 
+            this.modelDataSet.DataSetName = "ModelDataSet";
+            this.modelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cmbLevel
             // 
@@ -272,6 +307,10 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.cmbDept.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDept.FormattingEnabled = true;
+            this.cmbDept.Items.AddRange(new object[] {
+            "Department of IT",
+            "Department of CSE",
+            "Department of CSNE"});
             this.cmbDept.Location = new System.Drawing.Point(187, 471);
             this.cmbDept.Name = "cmbDept";
             this.cmbDept.Size = new System.Drawing.Size(227, 24);
@@ -569,6 +608,15 @@ namespace TimeTable_management_System.views_UI_
             this.btnGenerateRank.UseVisualStyleBackColor = true;
             this.btnGenerateRank.Click += new System.EventHandler(this.btnGenerateRank_Click);
             // 
+            // lecturerTableAdapter
+            // 
+            this.lecturerTableAdapter.ClearBeforeFill = true;
+            // 
+            // lecturerBindingSource1
+            // 
+            this.lecturerBindingSource1.DataMember = "Lecturer";
+            this.lecturerBindingSource1.DataSource = this.modelDataSet;
+            // 
             // ManageLecturersUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -594,8 +642,8 @@ namespace TimeTable_management_System.views_UI_
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.comboBox8);
-            this.Controls.Add(this.comboBox7);
+            this.Controls.Add(this.comboBox8ByCenter);
+            this.Controls.Add(this.comboBox7ByFaculty);
             this.Controls.Add(this.comboBox6);
             this.Controls.Add(this.cmbLevel);
             this.Controls.Add(this.cmbBuilding);
@@ -619,7 +667,10 @@ namespace TimeTable_management_System.views_UI_
             this.Name = "ManageLecturersUI";
             this.Text = "ManageLecturers";
             this.Load += new System.EventHandler(this.ManageLecturersUI_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -638,8 +689,8 @@ namespace TimeTable_management_System.views_UI_
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox8;
-        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ComboBox comboBox8ByCenter;
+        private System.Windows.Forms.ComboBox comboBox7ByFaculty;
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.ComboBox cmbLevel;
         private System.Windows.Forms.ComboBox cmbBuilding;
@@ -669,5 +720,9 @@ namespace TimeTable_management_System.views_UI_
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnGenerateRank;
+        private ModelDataSet modelDataSet;
+        private System.Windows.Forms.BindingSource lecturerBindingSource;
+        private ModelDataSetTableAdapters.LecturerTableAdapter lecturerTableAdapter;
+        private System.Windows.Forms.BindingSource lecturerBindingSource1;
     }
 }

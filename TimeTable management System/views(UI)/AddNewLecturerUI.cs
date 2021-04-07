@@ -27,6 +27,7 @@ namespace TimeTable_management_System.views_UI_
         private void btnSave_Click(object sender, EventArgs e)
         {
 
+            
             SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database\TTMSDB.mdf;Integrated Security=True");
 
             string s ="";
@@ -165,6 +166,8 @@ namespace TimeTable_management_System.views_UI_
             }
         }
 
+     
+
         private void cbFaculty_SelectedIndexChanged(object sender, EventArgs e)
         {
            
@@ -188,6 +191,11 @@ namespace TimeTable_management_System.views_UI_
         private void tbRank_TextChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void tbEmpID_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

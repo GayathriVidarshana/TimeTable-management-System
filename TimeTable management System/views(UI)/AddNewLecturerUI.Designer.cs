@@ -361,9 +361,9 @@ namespace TimeTable_management_System.views_UI_
             this.cbDept.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDept.FormattingEnabled = true;
             this.cbDept.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C"});
+            "Department of IT",
+            "Department of CSE",
+            "Department of CSNE"});
             this.cbDept.Location = new System.Drawing.Point(189, 299);
             this.cbDept.Name = "cbDept";
             this.cbDept.Size = new System.Drawing.Size(286, 28);
@@ -404,6 +404,7 @@ namespace TimeTable_management_System.views_UI_
             this.tbEmpID.ReadOnly = true;
             this.tbEmpID.Size = new System.Drawing.Size(286, 27);
             this.tbEmpID.TabIndex = 44;
+            this.tbEmpID.TextChanged += new System.EventHandler(this.tbEmpID_TextChanged);
             // 
             // tbLecName
             // 

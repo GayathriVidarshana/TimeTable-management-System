@@ -42,6 +42,8 @@ namespace TimeTable_management_System.views_UI_
 
         private void ManageLecturersUI_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'modelDataSet.Lecturer' table. You can move, or remove it, as needed.
+            //this.lecturerTableAdapter.Fill(this.modelDataSet.Lecturer);
             SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database\TTMSDB.mdf;Integrated Security=True");
             cn.Open();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Lecturer", cn);
@@ -213,6 +215,44 @@ namespace TimeTable_management_System.views_UI_
             {
                 MessageBox.Show("Unsuccessfully");
             }
+        }
+
+        private void comboBox8_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database\TTMSDB.mdf;Integrated Security=True");
+            cn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Lecturer WHERE center='" + comboBox8ByCenter.Text + "'", cn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+            cn.Close();
+        }
+
+        private void comboBox7ByFaculty_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database\TTMSDB.mdf;Integrated Security=True");
+            cn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Lecturer WHERE faculty='" + comboBox7ByFaculty.Text + "'", cn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+            cn.Close();
+
+        }
+
+        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database\TTMSDB.mdf;Integrated Security=True");
+            cn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Lecturer WHERE dept='" + comboBox6.Text + "'", cn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+            cn.Close();
         }
     }
 }
