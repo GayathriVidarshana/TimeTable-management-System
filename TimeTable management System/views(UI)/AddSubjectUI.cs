@@ -17,6 +17,7 @@ namespace TimeTable_management_System.views_UI_
         {
             InitializeComponent();
             autoIncrementSubjectId();
+            emptyInsertedValues();
         }
         String semester; // Create globle variable-----------
 
@@ -76,35 +77,74 @@ namespace TimeTable_management_System.views_UI_
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
-            SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database\TTMSDB.mdf;Integrated Security=True");
-
-
-            try
+            if (IsValidForm())
             {
-                cn.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Subject(subjectCode,subjectName,offeredYear,offeredSem,noOfLecHours,noOfTutorialHours,noOfLabHours,noOfEvaluationHours) VALUES ('" + txbxSubjCode.Text + "','" + txbxSubjName.Text + "','" + cbxOfferdYear.Text + "','" +semester+ "','" + nUpDwnNoOfLecturerHours.Text + "','" + nUpDwnNoOfTutorialHours.Text + "','" + nUpDwnNoOfLabHours.Text + "','" + nUpDwnNoOfEvaluationHours.Text + "')", cn);
-                cmd.ExecuteNonQuery();
-                cn.Close();
-                MessageBox.Show("Successfully");
-                emptyInsertedValues();
-                autoIncrementSubjectId();
-            }
-            catch
-            {
-                MessageBox.Show("Unsuccesfully");
-            }
+                SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database\TTMSDB.mdf;Integrated Security=True");
 
+
+                try
+                {
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Subject(subjectCode,subjectName,offeredYear,offeredSem,noOfLecHours,noOfTutorialHours,noOfLabHours,noOfEvaluationHours) VALUES ('" + txbxSubjCode.Text + "','" + txbxSubjName.Text + "','" + cbxOfferdYear.Text + "','" + semester + "','" + nUpDwnNoOfLecturerHours.Text + "','" + nUpDwnNoOfTutorialHours.Text + "','" + nUpDwnNoOfLabHours.Text + "','" + nUpDwnNoOfEvaluationHours.Text + "')", cn);
+                    cmd.ExecuteNonQuery();
+                    cn.Close();
+                    MessageBox.Show("Successfully");
+                    emptyInsertedValues();
+                    autoIncrementSubjectId();
+                }
+                catch
+                {
+                    MessageBox.Show("Unsuccesfully");
+                }
+            }
         }
 
         private void radioButton1Sem1_CheckedChanged(object sender, EventArgs e)
         {
-            semester = "1st Semester";
+            semester = "1";
         }
 
         private void radioButton2Sem2_CheckedChanged(object sender, EventArgs e)
         {
-            semester = "2nd Semester";
+            semester = "2";
+        }
+
+        private bool IsValidForm()
+        {
+            if (cbxOfferdYear.Text == String.Empty)
+            {
+                MessageBox.Show("Select offered year", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if ((radioButton1Sem1.Checked = false) && (radioButton2Sem2.Checked=false))
+            {
+                MessageBox.Show("Add semester", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (nUpDwnNoOfLecturerHours.Text == "")
+            {
+                MessageBox.Show("Add number of lecturer hours", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (nUpDwnNoOfTutorialHours.Text == "")
+            {
+                MessageBox.Show("Add number of tutorial hours", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (nUpDwnNoOfLabHours.Text == "")
+            {
+                MessageBox.Show("Add number of lab hours", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (nUpDwnNoOfEvaluationHours.Text == "")
+            {
+                MessageBox.Show("Add number of evaluation hours", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

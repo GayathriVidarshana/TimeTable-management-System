@@ -19,6 +19,7 @@ namespace TimeTable_management_System.views_UI_
             loadAllSubjectData();
         }
         String semester; // Create globle variable-----------
+        String sem;
 
         private void ManageSubjectsUI_Load(object sender, EventArgs e)
         {
@@ -53,12 +54,17 @@ namespace TimeTable_management_System.views_UI_
             nUpDwnNoOfLabHours.Text = dataGridViewManageSubjects.SelectedRows[0].Cells[6].Value.ToString();
             nUpDwnNoOfEvaluationHours.Text = dataGridViewManageSubjects.SelectedRows[0].Cells[7].Value.ToString();
 
-
-
-
+            // To retrive sem data to radio btns------------------
+            string sem = dataGridViewManageSubjects.SelectedRows[0].Cells[3].Value.ToString();
+            if (sem == "1")
+                radioButton1Sem1.Checked = true;
+            else if (sem == "2")
+            {
+                radioButton2Sem2.Checked = true;
+            }
+            
 
         }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
@@ -97,12 +103,12 @@ namespace TimeTable_management_System.views_UI_
 
         private void radioButton1Sem1_CheckedChanged(object sender, EventArgs e)
         {
-            semester = "1st Semester";
+            semester = "1";
         }
 
         private void radioButton2Sem2_CheckedChanged(object sender, EventArgs e)
         {
-            semester = "2nd Semester";
+            semester = "2";
         }
 
         private void btnClear_Click(object sender, EventArgs e)

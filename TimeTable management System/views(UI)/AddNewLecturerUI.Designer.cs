@@ -69,7 +69,9 @@ namespace TimeTable_management_System.views_UI_
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.errorProviderLecName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderFacultyEmpty = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLecName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderFacultyEmpty)).BeginInit();
             this.SuspendLayout();
             // 
             // cbEndTime
@@ -385,6 +387,7 @@ namespace TimeTable_management_System.views_UI_
             this.cbFaculty.Size = new System.Drawing.Size(286, 28);
             this.cbFaculty.TabIndex = 46;
             this.cbFaculty.SelectedIndexChanged += new System.EventHandler(this.cbFaculty_SelectedIndexChanged);
+            this.cbFaculty.Validating += new System.ComponentModel.CancelEventHandler(this.cbFaculty_Validating);
             // 
             // tbRank
             // 
@@ -415,6 +418,7 @@ namespace TimeTable_management_System.views_UI_
             this.tbLecName.TabIndex = 43;
             this.tbLecName.TextChanged += new System.EventHandler(this.tbLecName_TextChanged);
             this.tbLecName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbLecName_KeyPress);
+            this.tbLecName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbLecName_KeyUp);
             // 
             // label8
             // 
@@ -504,6 +508,10 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.errorProviderLecName.ContainerControl = this;
             // 
+            // errorProviderFacultyEmpty
+            // 
+            this.errorProviderFacultyEmpty.ContainerControl = this;
+            // 
             // AddNewLecturerUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -546,6 +554,7 @@ namespace TimeTable_management_System.views_UI_
             this.Text = "Add New Lecturer UI";
             this.Load += new System.EventHandler(this.AddNewLecturerUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLecName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderFacultyEmpty)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -592,5 +601,6 @@ namespace TimeTable_management_System.views_UI_
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ErrorProvider errorProviderLecName;
+        private System.Windows.Forms.ErrorProvider errorProviderFacultyEmpty;
     }
 }

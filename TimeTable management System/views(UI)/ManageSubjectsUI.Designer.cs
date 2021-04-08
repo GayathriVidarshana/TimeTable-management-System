@@ -266,6 +266,7 @@ namespace TimeTable_management_System.views_UI_
             this.dataGridViewManageSubjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewManageSubjects.Location = new System.Drawing.Point(32, 124);
             this.dataGridViewManageSubjects.Name = "dataGridViewManageSubjects";
+            this.dataGridViewManageSubjects.ReadOnly = true;
             this.dataGridViewManageSubjects.RowHeadersWidth = 51;
             this.dataGridViewManageSubjects.RowTemplate.Height = 24;
             this.dataGridViewManageSubjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

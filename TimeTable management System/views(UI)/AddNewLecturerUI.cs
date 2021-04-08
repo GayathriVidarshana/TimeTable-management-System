@@ -27,35 +27,39 @@ namespace TimeTable_management_System.views_UI_
         private void btnSave_Click(object sender, EventArgs e)
         {
 
-            
-            SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database\TTMSDB.mdf;Integrated Security=True");
+            if (IsValidForm())
 
-            string s ="";
-            foreach (Control cc in this.Controls)
             {
-                if (cc is CheckBox)
+
+                SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database\TTMSDB.mdf;Integrated Security=True");
+
+                string s = "";
+                foreach (Control cc in this.Controls)
                 {
-                    CheckBox b = (CheckBox)cc;
-                    if (b.Checked)
+                    if (cc is CheckBox)
                     {
-                        s = b.Text + " , " + s;
+                        CheckBox b = (CheckBox)cc;
+                        if (b.Checked)
+                        {
+                            s = b.Text + " , " + s;
+                        }
                     }
                 }
-            }
 
-            try
-            {
-                cn.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Lecturer(employeeId,lecName,faculty,dept,center,building,level,rank,activeDays,startTime,endTime) VALUES ('" + tbEmpID.Text + "','" + tbLecName.Text + "','" + cbFaculty.Text + "','" + cbDept.Text + "','" + cbCenter.Text + "','" + cbBuilding.Text + "','" + cbLevel.Text + "','" + tbRank.Text + "','" + s + "','" + cbStartTime.Text + "','" + cbEndTime.Text + "')", cn);
-                cmd.ExecuteNonQuery();
-                cn.Close();
-                MessageBox.Show("Successfully");
-                emptyInsertedValues();
-                autoIncrementEmpId();
-            }
-            catch
-            {
-                MessageBox.Show("Unsuccesfully");
+                try
+                {
+                    cn.Open();
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Lecturer(employeeId,lecName,faculty,dept,center,building,level,rank,activeDays,startTime,endTime) VALUES ('" + tbEmpID.Text + "','" + tbLecName.Text + "','" + cbFaculty.Text + "','" + cbDept.Text + "','" + cbCenter.Text + "','" + cbBuilding.Text + "','" + cbLevel.Text + "','" + tbRank.Text + "','" + s + "','" + cbStartTime.Text + "','" + cbEndTime.Text + "')", cn);
+                    cmd.ExecuteNonQuery();
+                    cn.Close();
+                    MessageBox.Show("Successfully");
+                    emptyInsertedValues();
+                    autoIncrementEmpId();
+                }
+                catch
+                {
+                    MessageBox.Show("Unsuccesfully");
+                }
             }
 
         }
@@ -135,18 +139,19 @@ namespace TimeTable_management_System.views_UI_
 
         private void tbLecName_KeyPress(object sender, KeyPressEventArgs e)
         {
+            
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
-            if (tbLecName.Text.Length > 23)
+            if (tbLecName.Text.Length > 30)
             {
                 // MessageBox.Show("Max characters limit is 23 letters", "Textbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                errorProviderLecName.SetError(tbLecName, "Max characters limit is 23 letters");
+                errorProviderLecName.SetError(tbLecName, "Max characters limit is 30 letters");
                 btnSave.Enabled = false;
             }
             else 
             {
                 errorProviderLecName.SetError(tbLecName, "");
                 btnSave.Enabled = true;
-            }
+            } 
         }
 
         private void tbLecName_TextChanged(object sender, EventArgs e)
@@ -194,6 +199,64 @@ namespace TimeTable_management_System.views_UI_
         }
 
         private void tbEmpID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbFaculty_Validating(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private bool IsValidForm()
+        {
+            if (cbFaculty.Text == String.Empty)
+            {
+                MessageBox.Show("Select Faculty", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (tbLecName.Text == String.Empty)
+            {
+                MessageBox.Show("Add Lecturer name", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (cbDept.Text == String.Empty)
+            {
+                MessageBox.Show("Select department", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (cbCenter.Text == String.Empty)
+            {
+                MessageBox.Show("Select center", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (cbBuilding.Text == String.Empty)
+            {
+                MessageBox.Show("Select building", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (tbRank.Text == String.Empty)
+            {
+                MessageBox.Show("Click Generate rank Button", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (cbStartTime.Text == String.Empty)
+            {
+                MessageBox.Show("Start time cannot be empty ", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (cbEndTime.Text == String.Empty)
+            {
+                MessageBox.Show("End time cannot be empty", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private void tbLecName_KeyUp(object sender, KeyEventArgs e)
         {
 
         }

@@ -75,7 +75,7 @@ namespace TimeTable_management_System.views_UI_
 
             SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database\TTMSDB.mdf;Integrated Security=True");
             cn.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM Lecturer WHERE employeeId='"+tbxEmpID.Text+"'", cn);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Lecturer WHERE employeeId='" + tbxEmpID.Text + "'", cn);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
@@ -83,12 +83,12 @@ namespace TimeTable_management_System.views_UI_
                 String[] a = aa.Split(' ');
                 foreach (Control cc in this.Controls)
                 {
-                    if(cc is CheckBox)
+                    if (cc is CheckBox)
                     {
                         CheckBox b = (CheckBox)cc;
-                        for(int j=0;j<a.Length;j++)
+                        for (int j = 0; j < a.Length; j++)
                         {
-                            if(a[j].ToString() == b.Text)
+                            if (a[j].ToString() == b.Text)
                             {
                                 b.Checked = true;
                             }
@@ -173,7 +173,7 @@ namespace TimeTable_management_System.views_UI_
             chkbxSunday.Checked = false;
         }
 
-        public void reloadTable() 
+        public void reloadTable()
         {
             SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database\TTMSDB.mdf;Integrated Security=True");
             cn.Open();
@@ -253,6 +253,72 @@ namespace TimeTable_management_System.views_UI_
             da.Fill(dt);
             dataGridView1.DataSource = dt;
             cn.Close();
+        }
+
+        private void tbxLecName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+            if (tbxLecName.Text.Length > 30)
+            {
+                // MessageBox.Show("Max characters limit is 23 letters", "Textbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errorProviderLecName.SetError(tbxLecName, "Max characters limit is 30 letters");
+                btnUpdate.Enabled = false;
+            }
+            else
+            {
+                errorProviderLecName.SetError(tbxLecName, "");
+                btnUpdate.Enabled = true;
+            }
+        }
+
+        // create method called ISValidForm to validate the form
+
+        private bool IsValidForm()
+        {
+            if (cmbFaculty.Text == String.Empty)
+            {
+                MessageBox.Show("Select Faculty", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (tbxLecName.Text == String.Empty)
+            {
+                MessageBox.Show("Add Lecturer name", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (cmbDept.Text == String.Empty)
+            {
+                MessageBox.Show("Select department", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (cmbCenter.Text == String.Empty)
+            {
+                MessageBox.Show("Select center", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (cmbBuilding.Text == String.Empty)
+            {
+                MessageBox.Show("Select building", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (txbRank.Text == String.Empty)
+            {
+                MessageBox.Show("Click Generate rank Button", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (cmbxStartTime.Text == String.Empty)
+            {
+                MessageBox.Show("Start time cannot be empty ", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (cmbxEndTime.Text == String.Empty)
+            {
+                MessageBox.Show("End time cannot be empty", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

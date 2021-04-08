@@ -30,6 +30,9 @@ namespace TimeTable_management_System.views_UI_
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chkbxWednesday = new System.Windows.Forms.CheckBox();
             this.chkbxThursday = new System.Windows.Forms.CheckBox();
             this.chkbxSaturday = new System.Windows.Forms.CheckBox();
@@ -76,10 +79,14 @@ namespace TimeTable_management_System.views_UI_
             this.btnGenerateRank = new System.Windows.Forms.Button();
             this.lecturerTableAdapter = new TimeTable_management_System.ModelDataSetTableAdapters.LecturerTableAdapter();
             this.lecturerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.errorProviderLecName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.modelDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLecName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // chkbxWednesday
@@ -346,6 +353,7 @@ namespace TimeTable_management_System.views_UI_
             this.tbxLecName.Name = "tbxLecName";
             this.tbxLecName.Size = new System.Drawing.Size(227, 22);
             this.tbxLecName.TabIndex = 59;
+            this.tbxLecName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxLecName_KeyPress);
             // 
             // tbxEmpID
             // 
@@ -445,6 +453,7 @@ namespace TimeTable_management_System.views_UI_
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(27, 158);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -617,6 +626,26 @@ namespace TimeTable_management_System.views_UI_
             this.lecturerBindingSource1.DataMember = "Lecturer";
             this.lecturerBindingSource1.DataSource = this.modelDataSet;
             // 
+            // errorProviderLecName
+            // 
+            this.errorProviderLecName.ContainerControl = this;
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(0, 0);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(300, 300);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            // 
             // ManageLecturersUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -671,6 +700,8 @@ namespace TimeTable_management_System.views_UI_
             ((System.ComponentModel.ISupportInitialize)(this.modelDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLecName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -724,5 +755,7 @@ namespace TimeTable_management_System.views_UI_
         private System.Windows.Forms.BindingSource lecturerBindingSource;
         private ModelDataSetTableAdapters.LecturerTableAdapter lecturerTableAdapter;
         private System.Windows.Forms.BindingSource lecturerBindingSource1;
+        private System.Windows.Forms.ErrorProvider errorProviderLecName;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
