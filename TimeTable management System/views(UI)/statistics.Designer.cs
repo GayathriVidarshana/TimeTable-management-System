@@ -29,15 +29,16 @@ namespace TimeTable_management_System.views_UI_
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -52,6 +53,13 @@ namespace TimeTable_management_System.views_UI_
             this.showchartbutton3 = new System.Windows.Forms.Button();
             this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label4 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tTMSDBDataSet = new TimeTable_management_System.TTMSDBDataSet();
+            this.falectblBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fa_lectblTableAdapter = new TimeTable_management_System.TTMSDBDataSetTableAdapters.fa_lectblTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.facultyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalLecturersDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -59,6 +67,9 @@ namespace TimeTable_management_System.views_UI_
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tTMSDBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.falectblBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -83,6 +94,7 @@ namespace TimeTable_management_System.views_UI_
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.showchartbutton1);
             this.tabPage1.Controls.Add(this.chart1);
             this.tabPage1.Controls.Add(this.label2);
@@ -96,7 +108,7 @@ namespace TimeTable_management_System.views_UI_
             // 
             // showchartbutton1
             // 
-            this.showchartbutton1.Location = new System.Drawing.Point(577, 205);
+            this.showchartbutton1.Location = new System.Drawing.Point(350, 265);
             this.showchartbutton1.Name = "showchartbutton1";
             this.showchartbutton1.Size = new System.Drawing.Size(75, 23);
             this.showchartbutton1.TabIndex = 2;
@@ -106,20 +118,20 @@ namespace TimeTable_management_System.views_UI_
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(27, 58);
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
+            this.chart1.Location = new System.Drawing.Point(6, 57);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Total Number of Lecturers";
-            series1.XValueMember = "Faculty";
-            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(625, 222);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Total Number of Lecturers";
+            series4.XValueMember = "Faculty";
+            series4.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            this.chart1.Series.Add(series4);
+            this.chart1.Size = new System.Drawing.Size(567, 215);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "Total Number of Lectures ";
             this.chart1.Click += new System.EventHandler(this.chart1_Click);
@@ -158,18 +170,18 @@ namespace TimeTable_management_System.views_UI_
             // 
             // chart2
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart2.Legends.Add(legend2);
+            chartArea5.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chart2.Legends.Add(legend5);
             this.chart2.Location = new System.Drawing.Point(22, 54);
             this.chart2.Name = "chart2";
             this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series2.Legend = "Legend1";
-            series2.Name = "Total Number of Subjects";
-            this.chart2.Series.Add(series2);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series5.Legend = "Legend1";
+            series5.Name = "Total Number of Subjects";
+            this.chart2.Series.Add(series5);
             this.chart2.Size = new System.Drawing.Size(597, 243);
             this.chart2.TabIndex = 1;
             this.chart2.Text = "Total Number of Subjects";
@@ -207,17 +219,17 @@ namespace TimeTable_management_System.views_UI_
             // 
             // chart3
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart3.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart3.Legends.Add(legend3);
+            chartArea6.Name = "ChartArea1";
+            this.chart3.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chart3.Legends.Add(legend6);
             this.chart3.Location = new System.Drawing.Point(43, 67);
             this.chart3.Name = "chart3";
             this.chart3.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Total Number of Students";
-            this.chart3.Series.Add(series3);
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Total Number of Students";
+            this.chart3.Series.Add(series6);
             this.chart3.Size = new System.Drawing.Size(564, 216);
             this.chart3.TabIndex = 1;
             this.chart3.Text = "Total Number of Students";
@@ -231,6 +243,52 @@ namespace TimeTable_management_System.views_UI_
             this.label4.TabIndex = 0;
             this.label4.Text = "Faculty VS Students";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.facultyDataGridViewTextBoxColumn,
+            this.totalLecturersDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.falectblBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(377, 100);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(303, 150);
+            this.dataGridView1.TabIndex = 3;
+            // 
+            // tTMSDBDataSet
+            // 
+            this.tTMSDBDataSet.DataSetName = "TTMSDBDataSet";
+            this.tTMSDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // falectblBindingSource
+            // 
+            this.falectblBindingSource.DataMember = "fa_lectbl";
+            this.falectblBindingSource.DataSource = this.tTMSDBDataSet;
+            // 
+            // fa_lectblTableAdapter
+            // 
+            this.fa_lectblTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // facultyDataGridViewTextBoxColumn
+            // 
+            this.facultyDataGridViewTextBoxColumn.DataPropertyName = "Faculty";
+            this.facultyDataGridViewTextBoxColumn.HeaderText = "Faculty";
+            this.facultyDataGridViewTextBoxColumn.Name = "facultyDataGridViewTextBoxColumn";
+            // 
+            // totalLecturersDataGridViewTextBoxColumn
+            // 
+            this.totalLecturersDataGridViewTextBoxColumn.DataPropertyName = "Total_Lecturers";
+            this.totalLecturersDataGridViewTextBoxColumn.HeaderText = "Total_Lecturers";
+            this.totalLecturersDataGridViewTextBoxColumn.Name = "totalLecturersDataGridViewTextBoxColumn";
+            // 
             // statistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,6 +298,7 @@ namespace TimeTable_management_System.views_UI_
             this.Controls.Add(this.label1);
             this.Name = "statistics";
             this.Text = "statistics";
+            this.Load += new System.EventHandler(this.statistics_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -250,6 +309,9 @@ namespace TimeTable_management_System.views_UI_
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tTMSDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.falectblBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,5 +333,12 @@ namespace TimeTable_management_System.views_UI_
         private System.Windows.Forms.Button showchartbutton1;
         private System.Windows.Forms.Button showchartbutton2;
         private System.Windows.Forms.Button showchartbutton3;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private TTMSDBDataSet tTMSDBDataSet;
+        private System.Windows.Forms.BindingSource falectblBindingSource;
+        private TTMSDBDataSetTableAdapters.fa_lectblTableAdapter fa_lectblTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn facultyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalLecturersDataGridViewTextBoxColumn;
     }
 }

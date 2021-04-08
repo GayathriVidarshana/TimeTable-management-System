@@ -34,17 +34,26 @@ namespace TimeTable_management_System.views_UI_
 
         private void addbutton_Click(object sender, EventArgs e)
         {
-          
-                //insert data
-                con.Open();
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = "insert into loc3(building_name, room_name, room_type, capacity) VALUES('" + comboBox1.Text + "','" + comboBox2.Text + "','" + comboBox3.Text + "','" + numericUpDown1.Text + "')";
-                cmd.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show("Add Successfully");
-                BindData();
-            
-            
+            if (IsValidMLocation())
+            {
+                try
+                {
+                    //insert data
+                    con.Open();
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = "insert into loc3(building_name, room_name, room_type, capacity) VALUES('" + comboBox1.Text + "','" + comboBox2.Text + "','" + comboBox3.Text + "','" + numericUpDown1.Text + "')";
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Add Successfully");
+                    BindData();
+                }
+                catch
+                {
+                    MessageBox.Show("Unsuccesfull");
+                }
+                
+            }
+
         }
 
         void BindData()
@@ -57,12 +66,21 @@ namespace TimeTable_management_System.views_UI_
         }
         private void updatebutton_Click(object sender, EventArgs e)
         {
-            con.Open();
-            SqlCommand command = new SqlCommand("update loc3 set building_name = '" + comboBox4.Text + "', room_name = '" + comboBox5.Text + "', room_type = '" + comboBox6.Text + "', capacity = '" + numericUpDown2.Text + "' where building_name= '" + comboBox4.Text + "'", con);
-            command.ExecuteNonQuery();
-            con.Close();
-            MessageBox.Show("Updated Successfully");
-            BindData();
+            if (MessageBox.Show("Are you sure to update?", "Update Record", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                con.Open();
+                SqlCommand command = new SqlCommand("update loc3 set building_name = '" + comboBox4.Text + "', room_name = '" + comboBox5.Text + "', room_type = '" + comboBox6.Text + "', capacity = '" + numericUpDown2.Text + "' where building_name= '" + comboBox4.Text + "'", con);
+                command.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Updated Successfully");
+                BindData();
+            }
+            else
+            {
+                MessageBox.Show("Unsuccessfull");
+            }
+
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -168,7 +186,7 @@ namespace TimeTable_management_System.views_UI_
 
         private void clearbutton2_Click(object sender, EventArgs e)
         {
-            textBox1.Text = comboBox4.Text = comboBox5.Text = comboBox6.Text = numericUpDown2.Text = "";
+            comboBox7.Text = comboBox4.Text = comboBox5.Text = comboBox6.Text = numericUpDown2.Text = "";
 
         }
 
@@ -190,6 +208,22 @@ namespace TimeTable_management_System.views_UI_
 
         private void searchbutton_Click(object sender, EventArgs e)
         {
+            if (IsValidMLocation())
+            {
+                /*try {
+                    con.Open();
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = "insert into loc3(building_name, room_name, room_type, capacity) VALUES('" + comboBox1.Text + "','" + comboBox2.Text + "','" + comboBox3.Text + "','" + numericUpDown1.Text + "')";
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Add Successfully");
+                    BindData();
+                }
+                catch
+                {
+                    MessageBox.Show("Unsuccesfull");
+                }*/
+            }
 
             /*con.Open();
             SqlCommand cmd = new SqlCommand("select Building_Name, Room_Name, Room_Type, Capacity from loc1 where Building_Name = @Building_Name", con);
@@ -204,7 +238,7 @@ namespace TimeTable_management_System.views_UI_
                 
             }
             con.Close();*/
-            
+
 
 
 
@@ -213,7 +247,7 @@ namespace TimeTable_management_System.views_UI_
 
         private void deletebutton_Click(object sender, EventArgs e)
         {
-            if (comboBox4.SelectedItem  != null)  
+            if (comboBox4.SelectedItem != null)
             {
                 if (MessageBox.Show("Are you sure to delete?", "Delete Record", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
@@ -225,27 +259,27 @@ namespace TimeTable_management_System.views_UI_
                     BindData();
                 }
             }
-           else
+            else
             {
-              MessageBox.Show("Please fill the all fields");
+                MessageBox.Show("Please fill the all fields");
             }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("select * from loc3 where building_name ='" + textBox1.Text + "' ", con);
+            SqlCommand cmd = new SqlCommand("select * from loc3 where building_name ='" + comboBox7.Text + "' ", con);
             SqlDataAdapter sd = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sd.Fill(dt);
             dataGridView1.DataSource = dt;
-            con.Close(); 
-            
+            con.Close();
+
         }
 
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
@@ -300,7 +334,7 @@ namespace TimeTable_management_System.views_UI_
 
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        /*private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             //allow only characters
             if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
@@ -309,11 +343,270 @@ namespace TimeTable_management_System.views_UI_
                 DialogResult da = MessageBox.Show("Please use only letters");
             }
            
+        }*/
+
+
+
+
+        private void numericUpDown1_MouseClick(object sender, MouseEventArgs e)
+        {
+            toolTip1.Show("Select Room Capacity", numericUpDown1);
+            toolTip1.OwnerDraw = true;
+            toolTip1.ForeColor = Color.Red;
+            toolTip1.BackColor = Color.Yellow;
         }
 
-        private void textBox1_MouseHover(object sender, EventArgs e)
+        private void numericUpDown2_MouseClick(object sender, MouseEventArgs e)
         {
-            //toolTip1.Show("Enter Building Name", textBox1);
+            toolTip1.Show("Update Room Capacity", numericUpDown2);
+            toolTip1.OwnerDraw = true;
+            toolTip1.ForeColor = Color.Red;
+            toolTip1.BackColor = Color.Yellow;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private bool IsValidMLocation()
+        {
+            if (comboBox1.Text == String.Empty)
+            {
+                MessageBox.Show("Please Enter Building Name", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (comboBox2.Text == String.Empty)
+            {
+                MessageBox.Show("Please Enter Room Name", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (comboBox3.Text == String.Empty)
+            {
+                MessageBox.Show("Please Enter Room Type", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (numericUpDown1.Text == String.Empty)
+            {
+                MessageBox.Show("Please Enter Room Capacity", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (comboBox7.Text == String.Empty)
+            {
+                MessageBox.Show("Please Enter Building Name", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            else
+            {
+                return true;
+            }
+        }
+
+        private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox7_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox7_TextChanged(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from loc3 where building_name ='" + comboBox7.Text + "' ", con);
+            SqlDataAdapter sd = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sd.Fill(dt);
+            dataGridView1.DataSource = dt;
+            con.Close();
+
+        }
+
+        private void comboBox5_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox6_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+           
+
+        }
+
+        private void comboBox2_MouseClick(object sender, MouseEventArgs e)
+        {
+           
+        }
+
+        private void comboBox3_MouseClick(object sender, MouseEventArgs e)
+        {
+           
+        }
+
+        private void toolTip1_Draw(object sender, DrawToolTipEventArgs e)
+        {
+            e.DrawBackground();
+            e.DrawBorder();
+            e.DrawText();
+        }
+
+        private void comboBox7_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.Show("Select Building Name", comboBox7);
+            toolTip1.OwnerDraw = true;
+            toolTip1.ForeColor = Color.Red;
+            toolTip1.BackColor = Color.Yellow;
+        }
+
+        private void comboBox4_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.Show("Update Building Name", comboBox4);
+            toolTip1.OwnerDraw = true;
+            toolTip1.ForeColor = Color.Red;
+            toolTip1.BackColor = Color.Yellow;
+        }
+
+        private void comboBox5_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.Show("Update Room Name", comboBox5);
+            toolTip1.OwnerDraw = true;
+            toolTip1.ForeColor = Color.Red;
+            toolTip1.BackColor = Color.Yellow;
+        }
+
+        private void comboBox6_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.Show("Update Room Type", comboBox6);
+            toolTip1.OwnerDraw = true;
+            toolTip1.ForeColor = Color.Red;
+            toolTip1.BackColor = Color.Yellow;
+        }
+
+        private void comboBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.Show("Select Building Name", comboBox1);
+            toolTip1.OwnerDraw = true;
+            toolTip1.ForeColor = Color.Red;
+            toolTip1.BackColor = Color.Yellow;
+        }
+
+        private void comboBox3_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.Show("Select Room Type", comboBox3);
+            toolTip1.OwnerDraw = true;
+            toolTip1.ForeColor = Color.Red;
+            toolTip1.BackColor = Color.Yellow;
+        }
+
+        private void comboBox2_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.Show("Select Room Name", comboBox2);
+            toolTip1.OwnerDraw = true;
+            toolTip1.ForeColor = Color.Red;
+            toolTip1.BackColor = Color.Yellow;
+        }
+
+        private void addbutton_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.Show("Add details", addbutton);
+            toolTip1.OwnerDraw = true;
+            toolTip1.ForeColor = Color.Red;
+            toolTip1.BackColor = Color.Yellow;
+        }
+
+        private void clearbutton1_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.Show("Clear selected details", clearbutton1);
+            toolTip1.OwnerDraw = true;
+            toolTip1.ForeColor = Color.Red;
+            toolTip1.BackColor = Color.Yellow;
+        }
+
+        private void searchbutton_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.Show("Search details from Building Name", searchbutton);
+            toolTip1.OwnerDraw = true;
+            toolTip1.ForeColor = Color.Red;
+            toolTip1.BackColor = Color.Yellow;
+        }
+
+        private void managelocations_MouseMove(object sender, MouseEventArgs e)
+        {
+           
+        }
+
+        private void updatebutton_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.Show("Update selected details", updatebutton);
+            toolTip1.OwnerDraw = true;
+            toolTip1.ForeColor = Color.Red;
+            toolTip1.BackColor = Color.Yellow;
+        }
+
+        private void deletebutton_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.Show("Delete selected details", deletebutton);
+            toolTip1.OwnerDraw = true;
+            toolTip1.ForeColor = Color.Red;
+            toolTip1.BackColor = Color.Yellow;
+        }
+
+        private void clearbutton2_MouseMove(object sender, MouseEventArgs e)
+        {
+            toolTip1.Show("clear selected details", clearbutton2);
+            toolTip1.OwnerDraw = true;
+            toolTip1.ForeColor = Color.Red;
+            toolTip1.BackColor = Color.Yellow;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            statistics s = new statistics();
+            s.Show();
+            this.Hide();
         }
     }
 } 
