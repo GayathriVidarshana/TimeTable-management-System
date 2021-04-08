@@ -18,39 +18,18 @@ namespace TimeTable_management_System.views_UI_
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\database\\TTMSDB.mdf;Integrated Security=True");
-        //this.fa_lectblTableAdapter.Fill(this.TTMSDBDataSet.fa_lectbl);
+        
         public int AcademicYear { get; private set; }
         public int Subject { get; private set; }
         public object TTMSDB { get; private set; }
 
         private void showchartbutton1_Click(object sender, EventArgs e)
         {
-            /*SqlConnection con = new SqlConnection();
-            con.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\database\\TTMSDB.mdf;Integrated Security=True";
-            con.Open();
-            SqlCommand sqlCommand = new SqlCommand("select Faculty AND Total_Lecturers from fa_lectbl", con);
-            SqlCommand cmd = sqlCommand;
-            //SqlDataReader reader = cmd.ExecuteReader();
-            Series sr = new Series();*/
-            try
-            {
-                falectblBindingSource.EndEdit();
-                fa_lectblTableAdapter.Update(TTMSDBDataSet.fa_lectbl);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            
-            
-                //chart1.Series["Total Number of Lecturers"].Points.AddY(reader.GetInt32(0));
                 chart1.Series["Total Number of Lecturers"].XValueMember = "Faculty";
-                chart1.Series["Total Number of Lecturers"].YValueMembers = "Total_Lecturers";
-                //chart1.DataSource = ;
+                chart1.Series["Total Number of Lecturers"].YValueMembers = "TotalLec";
+                chart1.DataSource = tTMSDBDataSet1.lec;
                 chart1.DataBind();
-            
-        }
+         }
 
         private void showchartbutton2_Click_1(object sender, EventArgs e)
         {
@@ -58,6 +37,10 @@ namespace TimeTable_management_System.views_UI_
             chart2.Series["Total Number of Subjects"].Points.AddXY("2nd Year", 10);
             chart2.Series["Total Number of Subjects"].Points.AddXY("3rd Year", 12);
             chart2.Series["Total Number of Subjects"].Points.AddXY("4th Year", 13);*/
+            chart2.Series["Total Number of Subjects"].XValueMember = "AcademicYear";
+            chart2.Series["Total Number of Subjects"].YValueMembers = "Totalsub";
+            chart2.DataSource = tTMSDBDataSet2.sub;
+            chart2.DataBind();
         }
 
         private void chart1_Click(object sender, EventArgs e)
@@ -67,9 +50,51 @@ namespace TimeTable_management_System.views_UI_
 
         private void statistics_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'tTMSDBDataSet5.stu' table. You can move, or remove it, as needed.
+            this.stuTableAdapter1.Fill(this.tTMSDBDataSet5.stu);
+            // TODO: This line of code loads data into the 'tTMSDBDataSet4.stu' table. You can move, or remove it, as needed.
+            this.stuTableAdapter.Fill(this.tTMSDBDataSet4.stu);
+            // TODO: This line of code loads data into the 'tTMSDBDataSet3.sub' table. You can move, or remove it, as needed.
+            this.subTableAdapter1.Fill(this.tTMSDBDataSet3.sub);
+            // TODO: This line of code loads data into the 'tTMSDBDataSet2.sub' table. You can move, or remove it, as needed.
+            this.subTableAdapter.Fill(this.tTMSDBDataSet2.sub);
+            // TODO: This line of code loads data into the 'tTMSDBDataSet1.lec' table. You can move, or remove it, as needed.
+            this.lecTableAdapter.Fill(this.tTMSDBDataSet1.lec);
             // TODO: This line of code loads data into the 'tTMSDBDataSet.fa_lectbl' table. You can move, or remove it, as needed.
             this.fa_lectblTableAdapter.Fill(this.tTMSDBDataSet.fa_lectbl);
             //this.fa_lectblTableAdapter.Fill(this.dbo.fa_lectbl);
+
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[1].Visible = false;
+            dataGridView1.Columns[2].Visible = false;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void showchartbutton3_Click(object sender, EventArgs e)
+        {
+            chart3.Series["Total Number of Students"].XValueMember = "Faculty";
+            chart3.Series["Total Number of Students"].YValueMembers = "TotalStu";
+            chart3.DataSource = tTMSDBDataSet5.stu;
+            chart3.DataBind();
         }
     }
     }

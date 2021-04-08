@@ -71,10 +71,45 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TTMSDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TTMSDB.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TTMSDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TTMSDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TTMSDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TTMSDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TTMSDBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TTMSDBDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TTMSDBDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TTMSDBDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TTMSDBDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TTMSDBDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TTMSDBDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TTMSDBDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TTMSDBDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TTMSDBDataSet6.xsd</DependentUpon>
     </Compile>
     <Compile Include="views%28UI%29\Dashboard.cs">
       <SubType>Form</SubType>
@@ -119,6 +154,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TTMSDB.xsc">
+      <DependentUpon>TTMSDB.xsd</DependentUpon>
+    </None>
+    <None Include="TTMSDB.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TTMSDB.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TTMSDB.xss">
+      <DependentUpon>TTMSDB.xsd</DependentUpon>
+    </None>
     <None Include="TTMSDBDataSet.xsc">
       <DependentUpon>TTMSDBDataSet.xsd</DependentUpon>
     </None>
@@ -129,6 +175,72 @@
     </None>
     <None Include="TTMSDBDataSet.xss">
       <DependentUpon>TTMSDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TTMSDBDataSet1.xsc">
+      <DependentUpon>TTMSDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TTMSDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TTMSDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TTMSDBDataSet1.xss">
+      <DependentUpon>TTMSDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TTMSDBDataSet2.xsc">
+      <DependentUpon>TTMSDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="TTMSDBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TTMSDBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TTMSDBDataSet2.xss">
+      <DependentUpon>TTMSDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="TTMSDBDataSet3.xsc">
+      <DependentUpon>TTMSDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="TTMSDBDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TTMSDBDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TTMSDBDataSet3.xss">
+      <DependentUpon>TTMSDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="TTMSDBDataSet4.xsc">
+      <DependentUpon>TTMSDBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="TTMSDBDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TTMSDBDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TTMSDBDataSet4.xss">
+      <DependentUpon>TTMSDBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="TTMSDBDataSet5.xsc">
+      <DependentUpon>TTMSDBDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="TTMSDBDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TTMSDBDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TTMSDBDataSet5.xss">
+      <DependentUpon>TTMSDBDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="TTMSDBDataSet6.xsc">
+      <DependentUpon>TTMSDBDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="TTMSDBDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TTMSDBDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TTMSDBDataSet6.xss">
+      <DependentUpon>TTMSDBDataSet6.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
