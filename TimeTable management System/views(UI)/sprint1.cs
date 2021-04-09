@@ -993,5 +993,10 @@ namespace TimeTable_management_System.views_UI_
         {
 
         }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

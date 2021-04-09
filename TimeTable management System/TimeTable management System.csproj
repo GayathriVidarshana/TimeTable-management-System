@@ -122,6 +122,11 @@
     <Content Include="backgroundImages\NEXT.png" />
     <Content Include="connection\NEXT.png" />
     <Content Include="database\NEXT.png" />
+    <Content Include="icons\mem3_clear icon2.png" />
+    <Content Include="icons\mem3_delete.png" />
+    <Content Include="icons\mem3_next.png" />
+    <Content Include="icons\mem3_save icon.png" />
+    <Content Include="icons\mem3_update.png" />
     <Content Include="icons\NEXT.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
