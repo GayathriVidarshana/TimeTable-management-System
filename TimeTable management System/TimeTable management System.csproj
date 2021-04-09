@@ -269,6 +269,13 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>TTMSDB.mdf</DependentUpon>
     </Content>
+    <Content Include="icons\icons8-statistics-40.png" />
+    <Content Include="icons\mem4_add icon.png" />
+    <Content Include="icons\mem4_chart icon.png" />
+    <Content Include="icons\mem4_clear icon.png" />
+    <Content Include="icons\mem4_delete icon.png" />
+    <Content Include="icons\mem4_search icon.png" />
+    <Content Include="icons\mem4_update icon.png" />
     <Content Include="icons\NEXT.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

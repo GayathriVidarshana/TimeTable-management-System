@@ -30,6 +30,7 @@ namespace TimeTable_management_System.views_UI_
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(statistics));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -42,69 +43,69 @@ namespace TimeTable_management_System.views_UI_
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.falectblBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tTMSDBDataSet = new TimeTable_management_System.TTMSDBDataSet();
-            this.showchartbutton1 = new System.Windows.Forms.Button();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label2 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.showchartbutton2 = new System.Windows.Forms.Button();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.showchartbutton3 = new System.Windows.Forms.Button();
-            this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label4 = new System.Windows.Forms.Label();
-            this.fa_lectblTableAdapter = new TimeTable_management_System.TTMSDBDataSetTableAdapters.fa_lectblTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.facultyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalLecDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lecBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tTMSDBDataSet1 = new TimeTable_management_System.TTMSDBDataSet1();
-            this.lecTableAdapter = new TimeTable_management_System.TTMSDBDataSet1TableAdapters.lecTableAdapter();
+            this.showchartbutton1 = new System.Windows.Forms.Button();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.tTMSDBDataSet2 = new TimeTable_management_System.TTMSDBDataSet2();
-            this.subBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.subTableAdapter = new TimeTable_management_System.TTMSDBDataSet2TableAdapters.subTableAdapter();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.academicYearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalSubDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tTMSDBDataSet2 = new TimeTable_management_System.TTMSDBDataSet2();
+            this.showchartbutton2 = new System.Windows.Forms.Button();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stuBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tTMSDBDataSet5 = new TimeTable_management_System.TTMSDBDataSet5();
+            this.showchartbutton3 = new System.Windows.Forms.Button();
+            this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label4 = new System.Windows.Forms.Label();
+            this.falectblBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tTMSDBDataSet = new TimeTable_management_System.TTMSDBDataSet();
+            this.fa_lectblTableAdapter = new TimeTable_management_System.TTMSDBDataSetTableAdapters.fa_lectblTableAdapter();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lecTableAdapter = new TimeTable_management_System.TTMSDBDataSet1TableAdapters.lecTableAdapter();
+            this.subTableAdapter = new TimeTable_management_System.TTMSDBDataSet2TableAdapters.subTableAdapter();
             this.tTMSDBDataSet3 = new TimeTable_management_System.TTMSDBDataSet3();
             this.subBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.subTableAdapter1 = new TimeTable_management_System.TTMSDBDataSet3TableAdapters.subTableAdapter();
-            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tTMSDBDataSet4 = new TimeTable_management_System.TTMSDBDataSet4();
             this.stuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stuTableAdapter = new TimeTable_management_System.TTMSDBDataSet4TableAdapters.stuTableAdapter();
-            this.tTMSDBDataSet5 = new TimeTable_management_System.TTMSDBDataSet5();
-            this.stuBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.stuTableAdapter1 = new TimeTable_management_System.TTMSDBDataSet5TableAdapters.stuTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.falectblBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tTMSDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lecBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tTMSDBDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tTMSDBDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tTMSDBDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stuBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tTMSDBDataSet5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.falectblBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tTMSDBDataSet)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tTMSDBDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tTMSDBDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stuBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tTMSDBDataSet5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stuBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -127,10 +128,10 @@ namespace TimeTable_management_System.views_UI_
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(56, 85);
+            this.tabControl1.Location = new System.Drawing.Point(60, 119);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(879, 592);
+            this.tabControl1.Size = new System.Drawing.Size(825, 491);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -142,52 +143,10 @@ namespace TimeTable_management_System.views_UI_
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(871, 563);
+            this.tabPage1.Size = new System.Drawing.Size(817, 462);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Lecturers";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // falectblBindingSource
-            // 
-            this.falectblBindingSource.DataMember = "fa_lectbl";
-            this.falectblBindingSource.DataSource = this.tTMSDBDataSet;
-            // 
-            // tTMSDBDataSet
-            // 
-            this.tTMSDBDataSet.DataSetName = "TTMSDBDataSet";
-            this.tTMSDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // showchartbutton1
-            // 
-            this.showchartbutton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.showchartbutton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showchartbutton1.Location = new System.Drawing.Point(732, 473);
-            this.showchartbutton1.Name = "showchartbutton1";
-            this.showchartbutton1.Size = new System.Drawing.Size(108, 40);
-            this.showchartbutton1.TabIndex = 2;
-            this.showchartbutton1.Text = "Show Chart";
-            this.showchartbutton1.UseVisualStyleBackColor = false;
-            this.showchartbutton1.Click += new System.EventHandler(this.showchartbutton1_Click);
-            // 
-            // chart1
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(7, 117);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Total Number of Lecturers";
-            series1.XValueMember = "Faculty";
-            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(858, 313);
-            this.chart1.TabIndex = 1;
-            this.chart1.Text = "Total Number of Lectures ";
-            this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // label2
             // 
@@ -201,6 +160,82 @@ namespace TimeTable_management_System.views_UI_
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.facultyDataGridViewTextBoxColumn,
+            this.totalLecDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.lecBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(335, 44);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(10, 10);
+            this.dataGridView1.TabIndex = 3;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // facultyDataGridViewTextBoxColumn
+            // 
+            this.facultyDataGridViewTextBoxColumn.DataPropertyName = "Faculty";
+            this.facultyDataGridViewTextBoxColumn.HeaderText = "Faculty";
+            this.facultyDataGridViewTextBoxColumn.Name = "facultyDataGridViewTextBoxColumn";
+            // 
+            // totalLecDataGridViewTextBoxColumn
+            // 
+            this.totalLecDataGridViewTextBoxColumn.DataPropertyName = "TotalLec";
+            this.totalLecDataGridViewTextBoxColumn.HeaderText = "TotalLec";
+            this.totalLecDataGridViewTextBoxColumn.Name = "totalLecDataGridViewTextBoxColumn";
+            // 
+            // lecBindingSource
+            // 
+            this.lecBindingSource.DataMember = "lec";
+            this.lecBindingSource.DataSource = this.tTMSDBDataSet1;
+            // 
+            // tTMSDBDataSet1
+            // 
+            this.tTMSDBDataSet1.DataSetName = "TTMSDBDataSet1";
+            this.tTMSDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // showchartbutton1
+            // 
+            this.showchartbutton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.showchartbutton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showchartbutton1.Image = ((System.Drawing.Image)(resources.GetObject("showchartbutton1.Image")));
+            this.showchartbutton1.Location = new System.Drawing.Point(647, 368);
+            this.showchartbutton1.Name = "showchartbutton1";
+            this.showchartbutton1.Size = new System.Drawing.Size(146, 51);
+            this.showchartbutton1.TabIndex = 2;
+            this.showchartbutton1.Text = "Show Chart";
+            this.showchartbutton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.showchartbutton1.UseVisualStyleBackColor = false;
+            this.showchartbutton1.Click += new System.EventHandler(this.showchartbutton1_Click);
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(34, 69);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Total Number of Lecturers";
+            series1.XValueMember = "Faculty";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(708, 293);
+            this.chart1.TabIndex = 1;
+            this.chart1.Text = "Total Number of Lectures ";
+            this.chart1.Click += new System.EventHandler(this.chart1_Click);
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.dataGridView2);
@@ -210,20 +245,64 @@ namespace TimeTable_management_System.views_UI_
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(871, 563);
+            this.tabPage2.Size = new System.Drawing.Size(817, 462);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Subjects";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn1,
+            this.academicYearDataGridViewTextBoxColumn,
+            this.totalSubDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.subBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(257, 36);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(12, 10);
+            this.dataGridView2.TabIndex = 3;
+            // 
+            // idDataGridViewTextBoxColumn1
+            // 
+            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            // 
+            // academicYearDataGridViewTextBoxColumn
+            // 
+            this.academicYearDataGridViewTextBoxColumn.DataPropertyName = "AcademicYear";
+            this.academicYearDataGridViewTextBoxColumn.HeaderText = "AcademicYear";
+            this.academicYearDataGridViewTextBoxColumn.Name = "academicYearDataGridViewTextBoxColumn";
+            // 
+            // totalSubDataGridViewTextBoxColumn
+            // 
+            this.totalSubDataGridViewTextBoxColumn.DataPropertyName = "TotalSub";
+            this.totalSubDataGridViewTextBoxColumn.HeaderText = "TotalSub";
+            this.totalSubDataGridViewTextBoxColumn.Name = "totalSubDataGridViewTextBoxColumn";
+            // 
+            // subBindingSource
+            // 
+            this.subBindingSource.DataMember = "sub";
+            this.subBindingSource.DataSource = this.tTMSDBDataSet2;
+            // 
+            // tTMSDBDataSet2
+            // 
+            this.tTMSDBDataSet2.DataSetName = "TTMSDBDataSet2";
+            this.tTMSDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // showchartbutton2
             // 
             this.showchartbutton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.showchartbutton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showchartbutton2.Location = new System.Drawing.Point(724, 431);
+            this.showchartbutton2.Image = ((System.Drawing.Image)(resources.GetObject("showchartbutton2.Image")));
+            this.showchartbutton2.Location = new System.Drawing.Point(630, 391);
             this.showchartbutton2.Name = "showchartbutton2";
-            this.showchartbutton2.Size = new System.Drawing.Size(114, 40);
+            this.showchartbutton2.Size = new System.Drawing.Size(146, 51);
             this.showchartbutton2.TabIndex = 2;
             this.showchartbutton2.Text = "Show Chart";
+            this.showchartbutton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.showchartbutton2.UseVisualStyleBackColor = false;
             this.showchartbutton2.Click += new System.EventHandler(this.showchartbutton2_Click_1);
             // 
@@ -264,20 +343,51 @@ namespace TimeTable_management_System.views_UI_
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(871, 563);
+            this.tabPage3.Size = new System.Drawing.Size(817, 462);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Students";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn2});
+            this.dataGridView3.DataSource = this.stuBindingSource1;
+            this.dataGridView3.Location = new System.Drawing.Point(310, 41);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(13, 12);
+            this.dataGridView3.TabIndex = 3;
+            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
+            // 
+            // idDataGridViewTextBoxColumn2
+            // 
+            this.idDataGridViewTextBoxColumn2.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn2.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
+            // 
+            // stuBindingSource1
+            // 
+            this.stuBindingSource1.DataMember = "stu";
+            this.stuBindingSource1.DataSource = this.tTMSDBDataSet5;
+            // 
+            // tTMSDBDataSet5
+            // 
+            this.tTMSDBDataSet5.DataSetName = "TTMSDBDataSet5";
+            this.tTMSDBDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // showchartbutton3
             // 
             this.showchartbutton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.showchartbutton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showchartbutton3.Location = new System.Drawing.Point(734, 420);
+            this.showchartbutton3.Image = ((System.Drawing.Image)(resources.GetObject("showchartbutton3.Image")));
+            this.showchartbutton3.Location = new System.Drawing.Point(645, 393);
             this.showchartbutton3.Name = "showchartbutton3";
-            this.showchartbutton3.Size = new System.Drawing.Size(112, 40);
+            this.showchartbutton3.Size = new System.Drawing.Size(146, 51);
             this.showchartbutton3.TabIndex = 2;
             this.showchartbutton3.Text = "Show Chart";
+            this.showchartbutton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.showchartbutton3.UseVisualStyleBackColor = false;
             this.showchartbutton3.Click += new System.EventHandler(this.showchartbutton3_Click);
             // 
@@ -294,7 +404,7 @@ namespace TimeTable_management_System.views_UI_
             series3.Legend = "Legend1";
             series3.Name = "Total Number of Students";
             this.chart3.Series.Add(series3);
-            this.chart3.Size = new System.Drawing.Size(856, 269);
+            this.chart3.Size = new System.Drawing.Size(829, 269);
             this.chart3.TabIndex = 1;
             this.chart3.Text = "Total Number of Students";
             // 
@@ -309,23 +419,19 @@ namespace TimeTable_management_System.views_UI_
             this.label4.Text = "Faculty VS Students";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
+            // falectblBindingSource
+            // 
+            this.falectblBindingSource.DataMember = "fa_lectbl";
+            this.falectblBindingSource.DataSource = this.tTMSDBDataSet;
+            // 
+            // tTMSDBDataSet
+            // 
+            this.tTMSDBDataSet.DataSetName = "TTMSDBDataSet";
+            this.tTMSDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // fa_lectblTableAdapter
             // 
             this.fa_lectblTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.facultyDataGridViewTextBoxColumn,
-            this.totalLecDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.lecBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(335, 44);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(10, 10);
-            this.dataGridView1.TabIndex = 3;
             // 
             // panel1
             // 
@@ -336,96 +442,13 @@ namespace TimeTable_management_System.views_UI_
             this.panel1.Size = new System.Drawing.Size(974, 78);
             this.panel1.TabIndex = 4;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // facultyDataGridViewTextBoxColumn
-            // 
-            this.facultyDataGridViewTextBoxColumn.DataPropertyName = "Faculty";
-            this.facultyDataGridViewTextBoxColumn.HeaderText = "Faculty";
-            this.facultyDataGridViewTextBoxColumn.Name = "facultyDataGridViewTextBoxColumn";
-            // 
-            // totalLecDataGridViewTextBoxColumn
-            // 
-            this.totalLecDataGridViewTextBoxColumn.DataPropertyName = "TotalLec";
-            this.totalLecDataGridViewTextBoxColumn.HeaderText = "TotalLec";
-            this.totalLecDataGridViewTextBoxColumn.Name = "totalLecDataGridViewTextBoxColumn";
-            // 
-            // lecBindingSource
-            // 
-            this.lecBindingSource.DataMember = "lec";
-            this.lecBindingSource.DataSource = this.tTMSDBDataSet1;
-            // 
-            // tTMSDBDataSet1
-            // 
-            this.tTMSDBDataSet1.DataSetName = "TTMSDBDataSet1";
-            this.tTMSDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // lecTableAdapter
             // 
             this.lecTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn1,
-            this.academicYearDataGridViewTextBoxColumn,
-            this.totalSubDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.subBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(257, 36);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(12, 10);
-            this.dataGridView2.TabIndex = 3;
-            // 
-            // tTMSDBDataSet2
-            // 
-            this.tTMSDBDataSet2.DataSetName = "TTMSDBDataSet2";
-            this.tTMSDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // subBindingSource
-            // 
-            this.subBindingSource.DataMember = "sub";
-            this.subBindingSource.DataSource = this.tTMSDBDataSet2;
-            // 
             // subTableAdapter
             // 
             this.subTableAdapter.ClearBeforeFill = true;
-            // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            // 
-            // academicYearDataGridViewTextBoxColumn
-            // 
-            this.academicYearDataGridViewTextBoxColumn.DataPropertyName = "AcademicYear";
-            this.academicYearDataGridViewTextBoxColumn.HeaderText = "AcademicYear";
-            this.academicYearDataGridViewTextBoxColumn.Name = "academicYearDataGridViewTextBoxColumn";
-            // 
-            // totalSubDataGridViewTextBoxColumn
-            // 
-            this.totalSubDataGridViewTextBoxColumn.DataPropertyName = "TotalSub";
-            this.totalSubDataGridViewTextBoxColumn.HeaderText = "TotalSub";
-            this.totalSubDataGridViewTextBoxColumn.Name = "totalSubDataGridViewTextBoxColumn";
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AutoGenerateColumns = false;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn2});
-            this.dataGridView3.DataSource = this.stuBindingSource1;
-            this.dataGridView3.Location = new System.Drawing.Point(310, 41);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(13, 12);
-            this.dataGridView3.TabIndex = 3;
-            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
             // tTMSDBDataSet3
             // 
@@ -441,12 +464,6 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.subTableAdapter1.ClearBeforeFill = true;
             // 
-            // idDataGridViewTextBoxColumn2
-            // 
-            this.idDataGridViewTextBoxColumn2.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn2.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
-            // 
             // tTMSDBDataSet4
             // 
             this.tTMSDBDataSet4.DataSetName = "TTMSDBDataSet4";
@@ -461,16 +478,6 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.stuTableAdapter.ClearBeforeFill = true;
             // 
-            // tTMSDBDataSet5
-            // 
-            this.tTMSDBDataSet5.DataSetName = "TTMSDBDataSet5";
-            this.tTMSDBDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // stuBindingSource1
-            // 
-            this.stuBindingSource1.DataMember = "stu";
-            this.stuBindingSource1.DataSource = this.tTMSDBDataSet5;
-            // 
             // stuTableAdapter1
             // 
             this.stuTableAdapter1.ClearBeforeFill = true;
@@ -480,39 +487,40 @@ namespace TimeTable_management_System.views_UI_
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(971, 726);
+            this.ClientSize = new System.Drawing.Size(971, 686);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.Name = "statistics";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "statistics";
             this.Load += new System.EventHandler(this.statistics_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.falectblBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tTMSDBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lecBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tTMSDBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tTMSDBDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stuBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tTMSDBDataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.falectblBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tTMSDBDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lecBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tTMSDBDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tTMSDBDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.subBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tTMSDBDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.subBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tTMSDBDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stuBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tTMSDBDataSet5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stuBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -30,6 +30,7 @@ namespace TimeTable_management_System.views_UI_
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(managelocations));
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -94,8 +95,9 @@ namespace TimeTable_management_System.views_UI_
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(41, 217);
+            this.tabControl1.Location = new System.Drawing.Point(41, 154);
             this.tabControl1.Name = "tabControl1";
+            this.tabControl1.Padding = new System.Drawing.Point(6, 4);
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(835, 420);
             this.tabControl1.TabIndex = 1;
@@ -103,14 +105,16 @@ namespace TimeTable_management_System.views_UI_
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.ForeColor = System.Drawing.Color.Black;
+            this.tabPage1.Location = new System.Drawing.Point(4, 27);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(827, 391);
+            this.tabPage1.Size = new System.Drawing.Size(827, 389);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Location List";
-            this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // dataGridView1
@@ -123,7 +127,7 @@ namespace TimeTable_management_System.views_UI_
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(451, 328);
+            this.dataGridView1.Size = new System.Drawing.Size(466, 328);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -141,10 +145,10 @@ namespace TimeTable_management_System.views_UI_
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 27);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(827, 391);
+            this.tabPage2.Size = new System.Drawing.Size(827, 389);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Add Locations";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -154,11 +158,13 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.clearbutton1.BackColor = System.Drawing.Color.Gray;
             this.clearbutton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearbutton1.Location = new System.Drawing.Point(643, 296);
+            this.clearbutton1.Image = ((System.Drawing.Image)(resources.GetObject("clearbutton1.Image")));
+            this.clearbutton1.Location = new System.Drawing.Point(643, 286);
             this.clearbutton1.Name = "clearbutton1";
-            this.clearbutton1.Size = new System.Drawing.Size(75, 40);
+            this.clearbutton1.Size = new System.Drawing.Size(121, 48);
             this.clearbutton1.TabIndex = 10;
             this.clearbutton1.Text = "Clear";
+            this.clearbutton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.clearbutton1.UseVisualStyleBackColor = false;
             this.clearbutton1.Click += new System.EventHandler(this.clearbutton1_Click);
             this.clearbutton1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.clearbutton1_MouseMove);
@@ -189,11 +195,13 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.addbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.addbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addbutton.Location = new System.Drawing.Point(643, 159);
+            this.addbutton.Image = ((System.Drawing.Image)(resources.GetObject("addbutton.Image")));
+            this.addbutton.Location = new System.Drawing.Point(643, 149);
             this.addbutton.Name = "addbutton";
-            this.addbutton.Size = new System.Drawing.Size(75, 40);
+            this.addbutton.Size = new System.Drawing.Size(121, 48);
             this.addbutton.TabIndex = 9;
             this.addbutton.Text = "Add";
+            this.addbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.addbutton.UseVisualStyleBackColor = false;
             this.addbutton.Click += new System.EventHandler(this.addbutton_Click);
             this.addbutton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.addbutton_MouseMove);
@@ -297,10 +305,10 @@ namespace TimeTable_management_System.views_UI_
             this.tabPage3.Controls.Add(this.deletebutton);
             this.tabPage3.Controls.Add(this.updatebutton);
             this.tabPage3.Controls.Add(this.searchbutton);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Location = new System.Drawing.Point(4, 27);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(827, 391);
+            this.tabPage3.Size = new System.Drawing.Size(827, 389);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Update and Delete Locations";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -426,7 +434,7 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(216, 35);
+            this.label7.Location = new System.Drawing.Point(259, 26);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(317, 25);
             this.label7.TabIndex = 4;
@@ -437,11 +445,13 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.clearbutton2.BackColor = System.Drawing.Color.Silver;
             this.clearbutton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearbutton2.Location = new System.Drawing.Point(693, 326);
+            this.clearbutton2.Image = ((System.Drawing.Image)(resources.GetObject("clearbutton2.Image")));
+            this.clearbutton2.Location = new System.Drawing.Point(685, 323);
             this.clearbutton2.Name = "clearbutton2";
-            this.clearbutton2.Size = new System.Drawing.Size(75, 40);
+            this.clearbutton2.Size = new System.Drawing.Size(121, 48);
             this.clearbutton2.TabIndex = 3;
             this.clearbutton2.Text = "Clear";
+            this.clearbutton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.clearbutton2.UseVisualStyleBackColor = false;
             this.clearbutton2.Click += new System.EventHandler(this.clearbutton2_Click);
             this.clearbutton2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.clearbutton2_MouseMove);
@@ -450,11 +460,13 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.deletebutton.BackColor = System.Drawing.Color.Red;
             this.deletebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deletebutton.Location = new System.Drawing.Point(693, 246);
+            this.deletebutton.Image = ((System.Drawing.Image)(resources.GetObject("deletebutton.Image")));
+            this.deletebutton.Location = new System.Drawing.Point(685, 237);
             this.deletebutton.Name = "deletebutton";
-            this.deletebutton.Size = new System.Drawing.Size(75, 40);
+            this.deletebutton.Size = new System.Drawing.Size(121, 48);
             this.deletebutton.TabIndex = 2;
             this.deletebutton.Text = "Delete";
+            this.deletebutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.deletebutton.UseVisualStyleBackColor = false;
             this.deletebutton.Click += new System.EventHandler(this.deletebutton_Click);
             this.deletebutton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.deletebutton_MouseMove);
@@ -462,12 +474,14 @@ namespace TimeTable_management_System.views_UI_
             // updatebutton
             // 
             this.updatebutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.updatebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updatebutton.Location = new System.Drawing.Point(693, 161);
+            this.updatebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updatebutton.Image = ((System.Drawing.Image)(resources.GetObject("updatebutton.Image")));
+            this.updatebutton.Location = new System.Drawing.Point(685, 153);
             this.updatebutton.Name = "updatebutton";
-            this.updatebutton.Size = new System.Drawing.Size(75, 40);
+            this.updatebutton.Size = new System.Drawing.Size(121, 48);
             this.updatebutton.TabIndex = 1;
             this.updatebutton.Text = "Update";
+            this.updatebutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.updatebutton.UseVisualStyleBackColor = false;
             this.updatebutton.Click += new System.EventHandler(this.updatebutton_Click);
             this.updatebutton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.updatebutton_MouseMove);
@@ -476,11 +490,13 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.searchbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.searchbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchbutton.Location = new System.Drawing.Point(693, 72);
+            this.searchbutton.Image = ((System.Drawing.Image)(resources.GetObject("searchbutton.Image")));
+            this.searchbutton.Location = new System.Drawing.Point(685, 68);
             this.searchbutton.Name = "searchbutton";
-            this.searchbutton.Size = new System.Drawing.Size(75, 40);
+            this.searchbutton.Size = new System.Drawing.Size(121, 48);
             this.searchbutton.TabIndex = 0;
             this.searchbutton.Text = "Search";
+            this.searchbutton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.searchbutton.UseVisualStyleBackColor = false;
             this.searchbutton.Click += new System.EventHandler(this.searchbutton_Click);
             this.searchbutton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.searchbutton_MouseMove);
@@ -489,9 +505,9 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 50);
+            this.panel1.Location = new System.Drawing.Point(-2, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(901, 88);
+            this.panel1.Size = new System.Drawing.Size(989, 73);
             this.panel1.TabIndex = 2;
             // 
             // toolTip1
@@ -502,11 +518,13 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(838, 176);
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(806, 622);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 35);
+            this.button1.Size = new System.Drawing.Size(137, 57);
             this.button1.TabIndex = 3;
             this.button1.Text = "Statistics";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -515,7 +533,7 @@ namespace TimeTable_management_System.views_UI_
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(987, 765);
+            this.ClientSize = new System.Drawing.Size(987, 725);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
