@@ -289,6 +289,7 @@ namespace TimeTable_management_System.views_UI_
             this.chkbxMonday.TabIndex = 56;
             this.chkbxMonday.Text = "Monday";
             this.chkbxMonday.UseVisualStyleBackColor = true;
+            this.chkbxMonday.CheckedChanged += new System.EventHandler(this.chkbxMonday_CheckedChanged);
             // 
             // label10
             // 

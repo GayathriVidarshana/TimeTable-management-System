@@ -85,7 +85,19 @@ namespace TimeTable_management_System.views_UI_
                 try
                 {
                     cn.Open();
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Subject(subjectCode,subjectName,offeredYear,offeredSem,noOfLecHours,noOfTutorialHours,noOfLabHours,noOfEvaluationHours) VALUES ('" + txbxSubjCode.Text + "','" + txbxSubjName.Text + "','" + cbxOfferdYear.Text + "','" + semester + "','" + nUpDwnNoOfLecturerHours.Text + "','" + nUpDwnNoOfTutorialHours.Text + "','" + nUpDwnNoOfLabHours.Text + "','" + nUpDwnNoOfEvaluationHours.Text + "')", cn);
+
+                    /*
+                    string offSem = "";
+                    if(radioButton1Sem1.Checked=true)
+                    {
+                        offSem = radioButton1Sem1.Text;
+                    }else
+                    {
+                        offSem = radioButton2Sem2.Text;
+                    }*/
+
+
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Subject(subjectCode,subjectName,offeredYear,offeredSem,noOfLecHours,noOfTutorialHours,noOfLabHours,noOfEvaluationHours) VALUES ('" + txbxSubjCode.Text + "','" + txbxSubjName.Text + "','" + cbxOfferdYear.Text + "','" +semester+ "','" + nUpDwnNoOfLecturerHours.Text + "','" + nUpDwnNoOfTutorialHours.Text + "','" + nUpDwnNoOfLabHours.Text + "','" + nUpDwnNoOfEvaluationHours.Text + "')", cn);
                     cmd.ExecuteNonQuery();
                     cn.Close();
                     MessageBox.Show("Successfully");
@@ -145,6 +157,11 @@ namespace TimeTable_management_System.views_UI_
             {
                 return true;
             }
+        }
+
+        private void txbxSubjName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -260,5 +260,10 @@ namespace TimeTable_management_System.views_UI_
         {
 
         }
+
+        private void chkbxMonday_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

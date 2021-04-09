@@ -186,6 +186,7 @@ namespace TimeTable_management_System.views_UI_
             this.txbxSubjName.Name = "txbxSubjName";
             this.txbxSubjName.Size = new System.Drawing.Size(252, 22);
             this.txbxSubjName.TabIndex = 89;
+            this.txbxSubjName.TextChanged += new System.EventHandler(this.txbxSubjName_TextChanged);
             // 
             // radioButton2Sem2
             // 
