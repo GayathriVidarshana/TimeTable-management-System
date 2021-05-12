@@ -18,6 +18,7 @@ namespace TimeTable_management_System.views_UI_
             InitializeComponent();
             autoIncrementSubjectId();
             emptyInsertedValues();
+            btnSave.Enabled = false;
         }
         String semester; // Create globle variable-----------
 
@@ -162,6 +163,22 @@ namespace TimeTable_management_System.views_UI_
         private void txbxSubjName_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txbxSubjName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+            if (txbxSubjName.Text.Length > 30)
+            {
+                // MessageBox.Show("Max characters limit is 23 letters", "Textbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errorProviderSubName.SetError(txbxSubjName, "Max characters limit is 30 letters");
+                btnSave.Enabled = false;
+            }
+            else
+            {
+                errorProviderSubName.SetError(txbxSubjName, "");
+                btnSave.Enabled = true;
+            }
         }
     }
 }

@@ -171,6 +171,10 @@ namespace TimeTable_management_System.views_UI_
             chkbxFriday.Checked = false;
             chkbxSaturday.Checked = false;
             chkbxSunday.Checked = false;
+
+            comboBox6.Text = "";
+            comboBox7ByFaculty.Text = "";
+            comboBox8ByCenter.Text = "";
         }
 
         public void reloadTable()

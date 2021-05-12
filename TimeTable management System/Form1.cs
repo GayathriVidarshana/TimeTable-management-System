@@ -66,5 +66,27 @@ namespace TimeTable_management_System
             intrfrm.Show();
 
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            AddSessionUI intrfrm = new AddSessionUI();
+            intrfrm.TopLevel = false;
+            panel1.Controls.Add(intrfrm);
+            intrfrm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            intrfrm.Dock = DockStyle.Fill;
+            intrfrm.Show();
+        }
+
+        private void btnManageSessions_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            ManageSessionUI intrfrm = new ManageSessionUI();
+            intrfrm.TopLevel = false;
+            panel1.Controls.Add(intrfrm);
+            intrfrm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            intrfrm.Dock = DockStyle.Fill;
+            intrfrm.Show();
+        }
     }
 }

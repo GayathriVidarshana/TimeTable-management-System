@@ -81,6 +81,12 @@
     <Compile Include="views%28UI%29\AddNewLecturerUI.Designer.cs">
       <DependentUpon>AddNewLecturerUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="views%28UI%29\AddSessionUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views%28UI%29\AddSessionUI.Designer.cs">
+      <DependentUpon>AddSessionUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="views%28UI%29\AddSubjectUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,12 @@
     </Compile>
     <Compile Include="views%28UI%29\ManageLecturersUI.Designer.cs">
       <DependentUpon>ManageLecturersUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views%28UI%29\ManageSessionUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views%28UI%29\ManageSessionUI.Designer.cs">
+      <DependentUpon>ManageSessionUI.cs</DependentUpon>
     </Compile>
     <Compile Include="views%28UI%29\ManageSubjectsUI.cs">
       <SubType>Form</SubType>
@@ -120,11 +132,17 @@
     <EmbeddedResource Include="views%28UI%29\AddNewLecturerUI.resx">
       <DependentUpon>AddNewLecturerUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views%28UI%29\AddSessionUI.resx">
+      <DependentUpon>AddSessionUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views%28UI%29\AddSubjectUI.resx">
       <DependentUpon>AddSubjectUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views%28UI%29\ManageLecturersUI.resx">
       <DependentUpon>ManageLecturersUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views%28UI%29\ManageSessionUI.resx">
+      <DependentUpon>ManageSessionUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views%28UI%29\ManageSubjectsUI.resx">
       <DependentUpon>ManageSubjectsUI.cs</DependentUpon>
@@ -176,6 +194,14 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>TTMSDB.mdf</DependentUpon>
     </Content>
+    <Content Include="icons\mem2-clear-formatting-30.png" />
+    <Content Include="icons\mem2-create-30.png" />
+    <Content Include="icons\mem2-delete-30.png" />
+    <Content Include="icons\mem2-erase-30.png" />
+    <Content Include="icons\mem2-refresh-30.png" />
+    <Content Include="icons\mem2-save-30-2.png" />
+    <Content Include="icons\mem2-save-30.png" />
+    <Content Include="icons\mem2-update-30.png" />
     <Content Include="icons\NEXT.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

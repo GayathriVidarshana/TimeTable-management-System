@@ -29,6 +29,8 @@ namespace TimeTable_management_System.views_UI_
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageSubjectsUI));
             this.nUpDwnNoOfEvaluationHours = new System.Windows.Forms.NumericUpDown();
             this.nUpDwnNoOfLabHours = new System.Windows.Forms.NumericUpDown();
             this.nUpDwnNoOfTutorialHours = new System.Windows.Forms.NumericUpDown();
@@ -52,12 +54,14 @@ namespace TimeTable_management_System.views_UI_
             this.dataGridViewManageSubjects = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.errorProvider2SubName = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nUpDwnNoOfEvaluationHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUpDwnNoOfLabHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUpDwnNoOfTutorialHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUpDwnNoOfLecturerHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManageSubjects)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2SubName)).BeginInit();
             this.SuspendLayout();
             // 
             // nUpDwnNoOfEvaluationHours
@@ -146,6 +150,7 @@ namespace TimeTable_management_System.views_UI_
             this.txbxSubjName.Name = "txbxSubjName";
             this.txbxSubjName.Size = new System.Drawing.Size(252, 22);
             this.txbxSubjName.TabIndex = 72;
+            this.txbxSubjName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbxSubjName_KeyPress);
             // 
             // radioButton2Sem2
             // 
@@ -231,33 +236,39 @@ namespace TimeTable_management_System.views_UI_
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(815, 402);
+            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
+            this.btnClear.Location = new System.Drawing.Point(804, 402);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(114, 37);
+            this.btnClear.Size = new System.Drawing.Size(125, 47);
             this.btnClear.TabIndex = 64;
             this.btnClear.Text = "Clear";
+            this.btnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(672, 402);
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.Location = new System.Drawing.Point(641, 402);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(109, 37);
+            this.btnDelete.Size = new System.Drawing.Size(140, 47);
             this.btnDelete.TabIndex = 63;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(526, 402);
+            this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
+            this.btnUpdate.Location = new System.Drawing.Point(477, 402);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(109, 37);
+            this.btnUpdate.Size = new System.Drawing.Size(142, 47);
             this.btnUpdate.TabIndex = 62;
             this.btnUpdate.Text = "Update";
+            this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -294,6 +305,10 @@ namespace TimeTable_management_System.views_UI_
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(980, 80);
             this.panel1.TabIndex = 82;
+            // 
+            // errorProvider2SubName
+            // 
+            this.errorProvider2SubName.ContainerControl = this;
             // 
             // ManageSubjectsUI
             // 
@@ -332,6 +347,7 @@ namespace TimeTable_management_System.views_UI_
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewManageSubjects)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2SubName)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,5 +378,6 @@ namespace TimeTable_management_System.views_UI_
         private System.Windows.Forms.DataGridView dataGridViewManageSubjects;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ErrorProvider errorProvider2SubName;
     }
 }

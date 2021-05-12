@@ -67,27 +67,30 @@ namespace TimeTable_management_System.views_UI_
                 radioButton1Sem1.Checked = false;
                 radioButton2Sem2.Checked = false;
             }
-            
+
 
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
-
-            SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database\TTMSDB.mdf;Integrated Security=True");
-            cn.Open();
-
-            try
+            if (IsValidForm())
             {
-                SqlCommand cmd = new SqlCommand("UPDATE Subject SET subjectName='" + txbxSubjName.Text + "',offeredYear='" + cbxOfferdYear.Text + "',offeredSem='" + semester + "',noOfLecHours='" + nUpDwnNoOfLecturerHours.Text + "',noOfTutorialHours='" + nUpDwnNoOfTutorialHours.Text + "',noOfLabHours='" + nUpDwnNoOfLabHours.Text + "',noOfEvaluationHours='" + nUpDwnNoOfEvaluationHours.Text + "'WHERE subjectCode='" + txbxSubjCode.Text + "'", cn);
-                cmd.ExecuteNonQuery();
-                cn.Close();
-                MessageBox.Show("Successfully updated");
-                loadAllSubjectData();
-                emptyInsertedValues();
-            }
-            catch {
-                MessageBox.Show("Unsuccessfully");
+                SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database\TTMSDB.mdf;Integrated Security=True");
+                cn.Open();
+
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("UPDATE Subject SET subjectName='" + txbxSubjName.Text + "',offeredYear='" + cbxOfferdYear.Text + "',offeredSem='" + semester + "',noOfLecHours='" + nUpDwnNoOfLecturerHours.Text + "',noOfTutorialHours='" + nUpDwnNoOfTutorialHours.Text + "',noOfLabHours='" + nUpDwnNoOfLabHours.Text + "',noOfEvaluationHours='" + nUpDwnNoOfEvaluationHours.Text + "'WHERE subjectCode='" + txbxSubjCode.Text + "'", cn);
+                    cmd.ExecuteNonQuery();
+                    cn.Close();
+                    MessageBox.Show("Successfully updated");
+                    loadAllSubjectData();
+                    emptyInsertedValues();
+                }
+                catch
+                {
+                    MessageBox.Show("Unsuccessfully");
+                }
             }
 
         }
@@ -108,7 +111,7 @@ namespace TimeTable_management_System.views_UI_
 
         private void radioButton1Sem1_CheckedChanged(object sender, EventArgs e)
         {
-           semester = "1";
+            semester = "1";
         }
 
         private void radioButton2Sem2_CheckedChanged(object sender, EventArgs e)
@@ -139,6 +142,65 @@ namespace TimeTable_management_System.views_UI_
             catch
             {
                 MessageBox.Show("Unsuccessfully");
+            }
+        }
+
+        private void txbxSubjName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+            if (txbxSubjName.Text.Length > 30)
+            {
+                // MessageBox.Show("Max characters limit is 23 letters", "Textbox", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errorProvider2SubName.SetError(txbxSubjName, "Max characters limit is 30 letters");
+                btnUpdate.Enabled = false;
+            }
+            else
+            {
+                errorProvider2SubName.SetError(txbxSubjName, "");
+                btnUpdate.Enabled = true;
+            }
+        }
+
+        private bool IsValidForm()
+        {
+            if (cbxOfferdYear.Text == String.Empty)
+            {
+                MessageBox.Show("Select offered year", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if(txbxSubjName.Text == "")
+            {
+                MessageBox.Show("Type subject name", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if ((radioButton1Sem1.Checked = false) && (radioButton2Sem2.Checked = false))
+            {
+                MessageBox.Show("Add semester", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (nUpDwnNoOfLecturerHours.Text == "")
+            {
+                MessageBox.Show("Add number of lecturer hours", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (nUpDwnNoOfTutorialHours.Text == "")
+            {
+                MessageBox.Show("Add number of tutorial hours", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (nUpDwnNoOfLabHours.Text == "")
+            {
+                MessageBox.Show("Add number of lab hours", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (nUpDwnNoOfEvaluationHours.Text == "")
+            {
+                MessageBox.Show("Add number of evaluation hours", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
     }

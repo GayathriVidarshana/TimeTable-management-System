@@ -30,6 +30,7 @@ namespace TimeTable_management_System.views_UI_
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewLecturerUI));
             this.cbEndTime = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -70,6 +71,7 @@ namespace TimeTable_management_System.views_UI_
             this.panel1 = new System.Windows.Forms.Panel();
             this.errorProviderLecName = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderFacultyEmpty = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLecName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderFacultyEmpty)).BeginInit();
             this.SuspendLayout();
@@ -215,6 +217,7 @@ namespace TimeTable_management_System.views_UI_
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
             this.btnClear.Location = new System.Drawing.Point(663, 598);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(122, 45);
@@ -304,6 +307,7 @@ namespace TimeTable_management_System.views_UI_
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.Location = new System.Drawing.Point(819, 598);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(122, 45);
@@ -490,7 +494,7 @@ namespace TimeTable_management_System.views_UI_
             this.label1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(421, 34);
+            this.label1.Location = new System.Drawing.Point(375, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(268, 32);
             this.label1.TabIndex = 34;
@@ -500,7 +504,8 @@ namespace TimeTable_management_System.views_UI_
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel1.Location = new System.Drawing.Point(-9, 11);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(-9, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(987, 80);
             this.panel1.TabIndex = 54;
@@ -549,11 +554,12 @@ namespace TimeTable_management_System.views_UI_
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "AddNewLecturerUI";
             this.Text = "Add New Lecturer UI";
             this.Load += new System.EventHandler(this.AddNewLecturerUI_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLecName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderFacultyEmpty)).EndInit();
             this.ResumeLayout(false);

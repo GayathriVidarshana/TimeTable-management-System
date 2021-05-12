@@ -29,6 +29,8 @@ namespace TimeTable_management_System.views_UI_
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddSubjectUI));
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,32 +52,38 @@ namespace TimeTable_management_System.views_UI_
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.errorProviderSubName = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUpDwnNoOfEvaluationHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUpDwnNoOfLabHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUpDwnNoOfTutorialHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUpDwnNoOfLecturerHours)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderSubName)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.Location = new System.Drawing.Point(784, 418);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(122, 45);
             this.btnSave.TabIndex = 64;
             this.btnSave.Text = "Save";
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
             this.btnClear.Location = new System.Drawing.Point(615, 418);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(122, 45);
             this.btnClear.TabIndex = 63;
             this.btnClear.Text = "Clear";
+            this.btnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -85,7 +93,7 @@ namespace TimeTable_management_System.views_UI_
             this.label1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(398, 30);
+            this.label1.Location = new System.Drawing.Point(398, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(180, 32);
             this.label1.TabIndex = 45;
@@ -187,6 +195,7 @@ namespace TimeTable_management_System.views_UI_
             this.txbxSubjName.Size = new System.Drawing.Size(252, 22);
             this.txbxSubjName.TabIndex = 89;
             this.txbxSubjName.TextChanged += new System.EventHandler(this.txbxSubjName_TextChanged);
+            this.txbxSubjName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbxSubjName_KeyPress);
             // 
             // radioButton2Sem2
             // 
@@ -270,6 +279,10 @@ namespace TimeTable_management_System.views_UI_
             this.label2.TabIndex = 82;
             this.label2.Text = "Offerd Year";
             // 
+            // errorProviderSubName
+            // 
+            this.errorProviderSubName.ContainerControl = this;
+            // 
             // AddSubjectUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -304,6 +317,7 @@ namespace TimeTable_management_System.views_UI_
             ((System.ComponentModel.ISupportInitialize)(this.nUpDwnNoOfLabHours)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUpDwnNoOfTutorialHours)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUpDwnNoOfLecturerHours)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderSubName)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -332,5 +346,6 @@ namespace TimeTable_management_System.views_UI_
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ErrorProvider errorProviderSubName;
     }
 }
