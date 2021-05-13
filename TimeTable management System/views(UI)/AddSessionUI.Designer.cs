@@ -29,6 +29,7 @@ namespace TimeTable_management_System.views_UI_
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddSessionUI));
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
@@ -59,22 +60,26 @@ namespace TimeTable_management_System.views_UI_
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(730, 644);
+            this.btnSubmit.Image = ((System.Drawing.Image)(resources.GetObject("btnSubmit.Image")));
+            this.btnSubmit.Location = new System.Drawing.Point(761, 563);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(150, 37);
+            this.btnSubmit.Size = new System.Drawing.Size(150, 45);
             this.btnSubmit.TabIndex = 89;
             this.btnSubmit.Text = "Submit";
+            this.btnSubmit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(551, 644);
+            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
+            this.btnClear.Location = new System.Drawing.Point(582, 563);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(150, 37);
+            this.btnClear.Size = new System.Drawing.Size(150, 45);
             this.btnClear.TabIndex = 88;
             this.btnClear.Text = "Clear";
+            this.btnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -82,7 +87,7 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(898, 547);
+            this.label12.Location = new System.Drawing.Point(856, 453);
             this.label12.Name = "label12";
             this.label12.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.label12.Size = new System.Drawing.Size(42, 30);
@@ -92,7 +97,7 @@ namespace TimeTable_management_System.views_UI_
             // tbDuration
             // 
             this.tbDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDuration.Location = new System.Drawing.Point(783, 551);
+            this.tbDuration.Location = new System.Drawing.Point(751, 459);
             this.tbDuration.Name = "tbDuration";
             this.tbDuration.Size = new System.Drawing.Size(97, 22);
             this.tbDuration.TabIndex = 86;
@@ -101,7 +106,7 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(573, 543);
+            this.label11.Location = new System.Drawing.Point(578, 451);
             this.label11.Name = "label11";
             this.label11.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.label11.Size = new System.Drawing.Size(85, 30);
@@ -112,7 +117,7 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(573, 488);
+            this.label10.Location = new System.Drawing.Point(578, 396);
             this.label10.Name = "label10";
             this.label10.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.label10.Size = new System.Drawing.Size(142, 30);
@@ -122,7 +127,7 @@ namespace TimeTable_management_System.views_UI_
             // cbSelectSubject
             // 
             this.cbSelectSubject.FormattingEnabled = true;
-            this.cbSelectSubject.Location = new System.Drawing.Point(247, 547);
+            this.cbSelectSubject.Location = new System.Drawing.Point(252, 455);
             this.cbSelectSubject.Name = "cbSelectSubject";
             this.cbSelectSubject.Size = new System.Drawing.Size(209, 24);
             this.cbSelectSubject.TabIndex = 82;
@@ -131,7 +136,7 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(37, 541);
+            this.label8.Location = new System.Drawing.Point(42, 449);
             this.label8.Name = "label8";
             this.label8.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.label8.Size = new System.Drawing.Size(138, 30);
@@ -141,7 +146,7 @@ namespace TimeTable_management_System.views_UI_
             // cbxSelectGroup
             // 
             this.cbxSelectGroup.FormattingEnabled = true;
-            this.cbxSelectGroup.Location = new System.Drawing.Point(247, 494);
+            this.cbxSelectGroup.Location = new System.Drawing.Point(252, 402);
             this.cbxSelectGroup.Name = "cbxSelectGroup";
             this.cbxSelectGroup.Size = new System.Drawing.Size(209, 24);
             this.cbxSelectGroup.TabIndex = 80;
@@ -150,7 +155,7 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(37, 488);
+            this.label9.Location = new System.Drawing.Point(42, 396);
             this.label9.Name = "label9";
             this.label9.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.label9.Size = new System.Drawing.Size(126, 30);
@@ -162,7 +167,7 @@ namespace TimeTable_management_System.views_UI_
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(38, 429);
+            this.label7.Location = new System.Drawing.Point(43, 337);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 20);
             this.label7.TabIndex = 78;
@@ -173,7 +178,7 @@ namespace TimeTable_management_System.views_UI_
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(42, 170);
+            this.label6.Location = new System.Drawing.Point(42, 128);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 20);
             this.label6.TabIndex = 77;
@@ -186,16 +191,16 @@ namespace TimeTable_management_System.views_UI_
             "Lecture",
             "tutorial",
             "practical"});
-            this.cbxTag.Location = new System.Drawing.Point(727, 233);
+            this.cbxTag.Location = new System.Drawing.Point(708, 191);
             this.cbxTag.Name = "cbxTag";
-            this.cbxTag.Size = new System.Drawing.Size(213, 24);
+            this.cbxTag.Size = new System.Drawing.Size(177, 24);
             this.cbxTag.TabIndex = 76;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(573, 229);
+            this.label5.Location = new System.Drawing.Point(577, 187);
             this.label5.Name = "label5";
             this.label5.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.label5.Size = new System.Drawing.Size(99, 30);
@@ -205,8 +210,9 @@ namespace TimeTable_management_System.views_UI_
             // tbSelectedLecturers
             // 
             this.tbSelectedLecturers.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSelectedLecturers.Location = new System.Drawing.Point(251, 344);
+            this.tbSelectedLecturers.Location = new System.Drawing.Point(251, 269);
             this.tbSelectedLecturers.Name = "tbSelectedLecturers";
+            this.tbSelectedLecturers.ReadOnly = true;
             this.tbSelectedLecturers.Size = new System.Drawing.Size(213, 22);
             this.tbSelectedLecturers.TabIndex = 74;
             // 
@@ -214,7 +220,7 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(41, 336);
+            this.label4.Location = new System.Drawing.Point(41, 261);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.label4.Size = new System.Drawing.Size(189, 30);
@@ -224,7 +230,7 @@ namespace TimeTable_management_System.views_UI_
             // cbxLec2
             // 
             this.cbxLec2.FormattingEnabled = true;
-            this.cbxLec2.Location = new System.Drawing.Point(251, 280);
+            this.cbxLec2.Location = new System.Drawing.Point(251, 227);
             this.cbxLec2.Name = "cbxLec2";
             this.cbxLec2.Size = new System.Drawing.Size(213, 24);
             this.cbxLec2.TabIndex = 72;
@@ -233,7 +239,7 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(41, 274);
+            this.label3.Location = new System.Drawing.Point(41, 221);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.label3.Size = new System.Drawing.Size(159, 30);
@@ -243,7 +249,7 @@ namespace TimeTable_management_System.views_UI_
             // cbxLec1
             // 
             this.cbxLec1.FormattingEnabled = true;
-            this.cbxLec1.Location = new System.Drawing.Point(251, 227);
+            this.cbxLec1.Location = new System.Drawing.Point(251, 185);
             this.cbxLec1.Name = "cbxLec1";
             this.cbxLec1.Size = new System.Drawing.Size(213, 24);
             this.cbxLec1.TabIndex = 70;
@@ -252,7 +258,7 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(41, 221);
+            this.label2.Location = new System.Drawing.Point(41, 179);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.label2.Size = new System.Drawing.Size(159, 30);
@@ -283,7 +289,7 @@ namespace TimeTable_management_System.views_UI_
             // 
             // numericUpDownNoOfStudents
             // 
-            this.numericUpDownNoOfStudents.Location = new System.Drawing.Point(783, 496);
+            this.numericUpDownNoOfStudents.Location = new System.Drawing.Point(751, 404);
             this.numericUpDownNoOfStudents.Name = "numericUpDownNoOfStudents";
             this.numericUpDownNoOfStudents.Size = new System.Drawing.Size(97, 22);
             this.numericUpDownNoOfStudents.TabIndex = 90;

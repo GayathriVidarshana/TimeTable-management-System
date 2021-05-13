@@ -105,23 +105,27 @@ namespace TimeTable_management_System.views_UI_
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database\TTMSDB.mdf;Integrated Security=True");
+            if (IsValidForm()) {
+                    SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database\TTMSDB.mdf;Integrated Security=True");
 
 
-            try
-            {
-                cn.Open();
+                        try
+                        {
+                            cn.Open();
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO Session(Id,lecturer1Id,lecturer2Id,tag,group,subjectId,noOfStudents,duration) VALUES (DEFAULT,'" + cbxLec1.Text + "','" + cbxLec2.Text + "','" + cbxTag.Text + "','" + cbxSelectGroup.Text + "','" + cbSelectSubject.Text + "','" + numericUpDownNoOfStudents.Text + "','" + tbDuration.Text + "')", cn);
-                cmd.ExecuteNonQuery();
-                cn.Close();
-                MessageBox.Show("Successfully");
-                emptyInsertedValues();
-                //autoIncrementSubjectId();
-            }
-            catch
-            {
-                MessageBox.Show("Unsuccesfully");
+                            SqlCommand cmd = new SqlCommand("INSERT INTO Session(lecturer1Id,lecturer2Id,tag,group_s,subjectId,noOfStudents,duration) VALUES ('" + cbxLec1.Text + "','" + cbxLec2.Text + "','" + cbxTag.Text + "','" + cbxSelectGroup.Text + "','" + cbSelectSubject.Text + "','" + numericUpDownNoOfStudents.Text + "','" + tbDuration.Text + "')", cn);
+                            cmd.ExecuteNonQuery();
+                            cn.Close();
+                            MessageBox.Show("Successfully");
+                             emptyInsertedValues();
+                             //autoIncrementSubjectId();
+                        }
+                         catch (Exception ex)
+                        {
+
+                           //MessageBox.Show("Unsuccesfully");
+                            MessageBox.Show(ex.Message);
+                        }
             }
         }
         public void emptyInsertedValues() //create method to reset inserted values----------------------
@@ -138,7 +142,40 @@ namespace TimeTable_management_System.views_UI_
 
             numericUpDownNoOfStudents.Text = "";
 
+        } // End of emptyInsertedValues method -----------------------------------------------------------
+        private bool IsValidForm()
+        {
+            if (cbxLec1.Text == String.Empty)
+            {
+                MessageBox.Show("Select lecturer 1", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (cbxLec2.Text == String.Empty)
+            {
+                MessageBox.Show("Select lecturer 2", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (cbxTag.Text == String.Empty)
+            {
+                MessageBox.Show("Select tag", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (cbxSelectGroup.Text == String.Empty)
+            {
+                MessageBox.Show("Select relevent group", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (cbSelectSubject.Text == String.Empty)
+            {
+                MessageBox.Show("Select Subject", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
+
 
         private void btnClear_Click(object sender, EventArgs e)
         {
