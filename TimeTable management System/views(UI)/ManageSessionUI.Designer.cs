@@ -198,10 +198,13 @@ namespace TimeTable_management_System.views_UI_
             this.dataGridView1ManageSession.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1ManageSession.Location = new System.Drawing.Point(12, 168);
             this.dataGridView1ManageSession.Name = "dataGridView1ManageSession";
+            this.dataGridView1ManageSession.ReadOnly = true;
             this.dataGridView1ManageSession.RowHeadersWidth = 51;
             this.dataGridView1ManageSession.RowTemplate.Height = 24;
+            this.dataGridView1ManageSession.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1ManageSession.Size = new System.Drawing.Size(901, 195);
             this.dataGridView1ManageSession.TabIndex = 63;
+            this.dataGridView1ManageSession.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1ManageSession_MouseDoubleClick);
             // 
             // cbxTag
             // 
