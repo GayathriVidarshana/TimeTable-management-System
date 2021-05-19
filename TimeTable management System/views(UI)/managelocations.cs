@@ -21,7 +21,7 @@ namespace TimeTable_management_System.views_UI_
 
         }
         SqlConnection con = new SqlConnection("Data Source=DESKTOP-UT64EL6;Initial Catalog=locations;Integrated Security=True");
-
+        //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Admin\Desktop\TTMS\TimeTable-management-System\TimeTable management System\database\TTMSDB.mdf;Integrated Security=True");
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -124,12 +124,6 @@ namespace TimeTable_management_System.views_UI_
         {
             gridbind();
             BindData();
-            //autoincrement id
-            //SqlDataAdapter sad = new SqlDataAdapter("select isnull (max(cast(ID as int)), 0)+1 from loc1",con);
-            //DataTable dt = new DataTable();
-            //sad.Fill(dt);
-            //textBox2.Text = dt.Rows[0][0].ToString();
-            //focus to building name
             this.ActiveControl = comboBox1;
         }
 
@@ -149,17 +143,7 @@ namespace TimeTable_management_System.views_UI_
 
 
         }
-        /*public void gridview()
-        {
-            con.Open();
-            SqlDataAdapter da = new SqlDataAdapter("select * from loc1", con);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "insert_data");
-            dataGridView1.DataSource = ds;
-            dataGridView1.DataMember = "insert_data";
-            con.Close();
-
-        }*/
+        
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
@@ -174,11 +158,6 @@ namespace TimeTable_management_System.views_UI_
         {
 
             comboBox1.Text = comboBox2.Text = comboBox3.Text = numericUpDown1.Text = "";
-            //SqlDataAdapter sad = new SqlDataAdapter("select isnull (max(cast(ID as int)), 0)+1 from loc1", con);
-            //DataTable dt = new DataTable();
-            //sad.Fill(dt);
-            //textBox2.Text = dt.Rows[0][0].ToString();
-            //focus to building name
             this.ActiveControl = comboBox1;
 
 
@@ -210,41 +189,9 @@ namespace TimeTable_management_System.views_UI_
         {
             if (IsValidMLocation())
             {
-                /*try {
-                    con.Open();
-                    SqlCommand cmd = con.CreateCommand();
-                    cmd.CommandText = "insert into loc3(building_name, room_name, room_type, capacity) VALUES('" + comboBox1.Text + "','" + comboBox2.Text + "','" + comboBox3.Text + "','" + numericUpDown1.Text + "')";
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    MessageBox.Show("Add Successfully");
-                    BindData();
-                }
-                catch
-                {
-                    MessageBox.Show("Unsuccesfull");
-                }*/
-            }
-
-            /*con.Open();
-            SqlCommand cmd = new SqlCommand("select Building_Name, Room_Name, Room_Type, Capacity from loc1 where Building_Name = @Building_Name", con);
-            cmd.Parameters.AddWithValue("@Building_Name", (textBox1.Text));
-            SqlDataReader da = cmd.ExecuteReader();
-            while (da.Read())
-            {
-                comboBox4.Text = da.GetValue(0).ToString();
-                comboBox5.Text = da.GetValue(1).ToString();
-                comboBox6.Text = da.GetValue(2).ToString();
-                numericUpDown2.Text= da.GetValue(3).ToString();
                 
             }
-            con.Close();*/
-
-
-
-
-
         }
-
         private void deletebutton_Click(object sender, EventArgs e)
         {
             if (comboBox4.SelectedItem != null)
@@ -334,34 +281,13 @@ namespace TimeTable_management_System.views_UI_
 
         }
 
-        /*private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //allow only characters
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
-            {
-                e.Handled = true;
-                DialogResult da = MessageBox.Show("Please use only letters");
-            }
-           
-        }*/
-
-
-
-
         private void numericUpDown1_MouseClick(object sender, MouseEventArgs e)
         {
-            toolTip1.Show("Select Room Capacity", numericUpDown1);
-            toolTip1.OwnerDraw = true;
-            toolTip1.ForeColor = Color.Red;
-            toolTip1.BackColor = Color.Yellow;
         }
 
         private void numericUpDown2_MouseClick(object sender, MouseEventArgs e)
         {
-            toolTip1.Show("Update Room Capacity", numericUpDown2);
-            toolTip1.OwnerDraw = true;
-            toolTip1.ForeColor = Color.Red;
-            toolTip1.BackColor = Color.Yellow;
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -426,12 +352,6 @@ namespace TimeTable_management_System.views_UI_
                 MessageBox.Show("Please Enter Room Capacity", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            else if (comboBox7.Text == String.Empty)
-            {
-                MessageBox.Show("Please Enter Building Name", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-
             else
             {
                 return true;
@@ -488,89 +408,56 @@ namespace TimeTable_management_System.views_UI_
 
         private void toolTip1_Draw(object sender, DrawToolTipEventArgs e)
         {
-            e.DrawBackground();
-            e.DrawBorder();
-            e.DrawText();
         }
 
         private void comboBox7_MouseMove(object sender, MouseEventArgs e)
         {
-            toolTip1.Show("Select Building Name", comboBox7);
-            toolTip1.OwnerDraw = true;
-            toolTip1.ForeColor = Color.Red;
-            toolTip1.BackColor = Color.Yellow;
+            
         }
 
         private void comboBox4_MouseMove(object sender, MouseEventArgs e)
         {
-            toolTip1.Show("Update Building Name", comboBox4);
-            toolTip1.OwnerDraw = true;
-            toolTip1.ForeColor = Color.Red;
-            toolTip1.BackColor = Color.Yellow;
+            
         }
 
         private void comboBox5_MouseMove(object sender, MouseEventArgs e)
         {
-            toolTip1.Show("Update Room Name", comboBox5);
-            toolTip1.OwnerDraw = true;
-            toolTip1.ForeColor = Color.Red;
-            toolTip1.BackColor = Color.Yellow;
+            
         }
 
         private void comboBox6_MouseMove(object sender, MouseEventArgs e)
         {
-            toolTip1.Show("Update Room Type", comboBox6);
-            toolTip1.OwnerDraw = true;
-            toolTip1.ForeColor = Color.Red;
-            toolTip1.BackColor = Color.Yellow;
+            
         }
 
         private void comboBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            toolTip1.Show("Select Building Name", comboBox1);
-            toolTip1.OwnerDraw = true;
-            toolTip1.ForeColor = Color.Red;
-            toolTip1.BackColor = Color.Yellow;
+            
         }
 
         private void comboBox3_MouseMove(object sender, MouseEventArgs e)
         {
-            toolTip1.Show("Select Room Type", comboBox3);
-            toolTip1.OwnerDraw = true;
-            toolTip1.ForeColor = Color.Red;
-            toolTip1.BackColor = Color.Yellow;
+            
         }
 
         private void comboBox2_MouseMove(object sender, MouseEventArgs e)
         {
-            toolTip1.Show("Select Room Name", comboBox2);
-            toolTip1.OwnerDraw = true;
-            toolTip1.ForeColor = Color.Red;
-            toolTip1.BackColor = Color.Yellow;
+            
         }
 
         private void addbutton_MouseMove(object sender, MouseEventArgs e)
         {
-            toolTip1.Show("Add details", addbutton);
-            toolTip1.OwnerDraw = true;
-            toolTip1.ForeColor = Color.Red;
-            toolTip1.BackColor = Color.Yellow;
+            
         }
 
         private void clearbutton1_MouseMove(object sender, MouseEventArgs e)
         {
-            toolTip1.Show("Clear selected details", clearbutton1);
-            toolTip1.OwnerDraw = true;
-            toolTip1.ForeColor = Color.Red;
-            toolTip1.BackColor = Color.Yellow;
+           
         }
 
         private void searchbutton_MouseMove(object sender, MouseEventArgs e)
         {
-            toolTip1.Show("Search details from Building Name", searchbutton);
-            toolTip1.OwnerDraw = true;
-            toolTip1.ForeColor = Color.Red;
-            toolTip1.BackColor = Color.Yellow;
+            
         }
 
         private void managelocations_MouseMove(object sender, MouseEventArgs e)
@@ -580,33 +467,34 @@ namespace TimeTable_management_System.views_UI_
 
         private void updatebutton_MouseMove(object sender, MouseEventArgs e)
         {
-            toolTip1.Show("Update selected details", updatebutton);
-            toolTip1.OwnerDraw = true;
-            toolTip1.ForeColor = Color.Red;
-            toolTip1.BackColor = Color.Yellow;
+            
         }
 
         private void deletebutton_MouseMove(object sender, MouseEventArgs e)
         {
-            toolTip1.Show("Delete selected details", deletebutton);
-            toolTip1.OwnerDraw = true;
-            toolTip1.ForeColor = Color.Red;
-            toolTip1.BackColor = Color.Yellow;
+            
         }
 
         private void clearbutton2_MouseMove(object sender, MouseEventArgs e)
         {
-            toolTip1.Show("clear selected details", clearbutton2);
-            toolTip1.OwnerDraw = true;
-            toolTip1.ForeColor = Color.Red;
-            toolTip1.BackColor = Color.Yellow;
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            statistics s = new statistics();
+            Stat s = new Stat();
             s.Show();
             this.Hide();
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 } 

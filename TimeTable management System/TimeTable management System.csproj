@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -48,7 +48,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -69,6 +76,16 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TTMSDB.Designer.cs">
@@ -81,35 +98,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TTMSDBDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="TTMSDBDataSet1.Designer.cs">
+    <Compile Include="TTMSDBDataSet11.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TTMSDBDataSet1.xsd</DependentUpon>
+      <DependentUpon>TTMSDBDataSet11.xsd</DependentUpon>
     </Compile>
     <Compile Include="TTMSDBDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TTMSDBDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="TTMSDBDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TTMSDBDataSet3.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="TTMSDBDataSet4.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TTMSDBDataSet4.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="TTMSDBDataSet5.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TTMSDBDataSet5.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="TTMSDBDataSet6.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TTMSDBDataSet6.xsd</DependentUpon>
     </Compile>
     <Compile Include="views%28UI%29\Dashboard.cs">
       <SubType>Form</SubType>
@@ -123,11 +120,17 @@
     <Compile Include="views%28UI%29\managelocations.Designer.cs">
       <DependentUpon>managelocations.cs</DependentUpon>
     </Compile>
-    <Compile Include="views%28UI%29\statistics.cs">
+    <Compile Include="views%28UI%29\rooms.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views%28UI%29\statistics.Designer.cs">
-      <DependentUpon>statistics.cs</DependentUpon>
+    <Compile Include="views%28UI%29\rooms.Designer.cs">
+      <DependentUpon>rooms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views%28UI%29\Stat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views%28UI%29\Stat.Designer.cs">
+      <DependentUpon>Stat.cs</DependentUpon>
     </Compile>
     <Compile Include="views%28UI%29\tabControl1.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -138,13 +141,18 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="views%28UI%29\managelocations.resx">
       <DependentUpon>managelocations.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views%28UI%29\statistics.resx">
-      <DependentUpon>statistics.cs</DependentUpon>
+    <EmbeddedResource Include="views%28UI%29\rooms.resx">
+      <DependentUpon>rooms.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views%28UI%29\Stat.resx">
+      <DependentUpon>Stat.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -176,16 +184,16 @@
     <None Include="TTMSDBDataSet.xss">
       <DependentUpon>TTMSDBDataSet.xsd</DependentUpon>
     </None>
-    <None Include="TTMSDBDataSet1.xsc">
-      <DependentUpon>TTMSDBDataSet1.xsd</DependentUpon>
+    <None Include="TTMSDBDataSet11.xsc">
+      <DependentUpon>TTMSDBDataSet11.xsd</DependentUpon>
     </None>
-    <None Include="TTMSDBDataSet1.xsd">
+    <None Include="TTMSDBDataSet11.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TTMSDBDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>TTMSDBDataSet11.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="TTMSDBDataSet1.xss">
-      <DependentUpon>TTMSDBDataSet1.xsd</DependentUpon>
+    <None Include="TTMSDBDataSet11.xss">
+      <DependentUpon>TTMSDBDataSet11.xsd</DependentUpon>
     </None>
     <None Include="TTMSDBDataSet2.xsc">
       <DependentUpon>TTMSDBDataSet2.xsd</DependentUpon>
@@ -197,50 +205,6 @@
     </None>
     <None Include="TTMSDBDataSet2.xss">
       <DependentUpon>TTMSDBDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="TTMSDBDataSet3.xsc">
-      <DependentUpon>TTMSDBDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="TTMSDBDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TTMSDBDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="TTMSDBDataSet3.xss">
-      <DependentUpon>TTMSDBDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="TTMSDBDataSet4.xsc">
-      <DependentUpon>TTMSDBDataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="TTMSDBDataSet4.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TTMSDBDataSet4.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="TTMSDBDataSet4.xss">
-      <DependentUpon>TTMSDBDataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="TTMSDBDataSet5.xsc">
-      <DependentUpon>TTMSDBDataSet5.xsd</DependentUpon>
-    </None>
-    <None Include="TTMSDBDataSet5.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TTMSDBDataSet5.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="TTMSDBDataSet5.xss">
-      <DependentUpon>TTMSDBDataSet5.xsd</DependentUpon>
-    </None>
-    <None Include="TTMSDBDataSet6.xsc">
-      <DependentUpon>TTMSDBDataSet6.xsd</DependentUpon>
-    </None>
-    <None Include="TTMSDBDataSet6.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>TTMSDBDataSet6.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="TTMSDBDataSet6.xss">
-      <DependentUpon>TTMSDBDataSet6.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -275,8 +239,17 @@
     <Content Include="icons\mem4_clear icon.png" />
     <Content Include="icons\mem4_delete icon.png" />
     <Content Include="icons\mem4_search icon.png" />
+    <Content Include="icons\mem4_tick.png" />
     <Content Include="icons\mem4_update icon.png" />
     <Content Include="icons\NEXT.png" />
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

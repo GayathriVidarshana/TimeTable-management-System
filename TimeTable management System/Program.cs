@@ -17,7 +17,7 @@ namespace TimeTable_management_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new managelocations());
+            Application.Run(new rooms());
         }
     }
 }

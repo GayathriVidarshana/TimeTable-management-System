@@ -24,7 +24,7 @@ namespace TimeTable_management_System {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class TTMSDB : global::System.Data.DataSet {
         
-        private fa_lectblDataTable tablefa_lectbl;
+        private lecDataTable tablelec;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace TimeTable_management_System {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["fa_lectbl"] != null)) {
-                    base.Tables.Add(new fa_lectblDataTable(ds.Tables["fa_lectbl"]));
+                if ((ds.Tables["lec"] != null)) {
+                    base.Tables.Add(new lecDataTable(ds.Tables["lec"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace TimeTable_management_System {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public fa_lectblDataTable fa_lectbl {
+        public lecDataTable lec {
             get {
-                return this.tablefa_lectbl;
+                return this.tablelec;
             }
         }
         
@@ -152,8 +152,8 @@ namespace TimeTable_management_System {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["fa_lectbl"] != null)) {
-                    base.Tables.Add(new fa_lectblDataTable(ds.Tables["fa_lectbl"]));
+                if ((ds.Tables["lec"] != null)) {
+                    base.Tables.Add(new lecDataTable(ds.Tables["lec"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace TimeTable_management_System {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablefa_lectbl = ((fa_lectblDataTable)(base.Tables["fa_lectbl"]));
+            this.tablelec = ((lecDataTable)(base.Tables["lec"]));
             if ((initTable == true)) {
-                if ((this.tablefa_lectbl != null)) {
-                    this.tablefa_lectbl.InitVars();
+                if ((this.tablelec != null)) {
+                    this.tablelec.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace TimeTable_management_System {
             this.Namespace = "http://tempuri.org/TTMSDB.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablefa_lectbl = new fa_lectblDataTable();
-            base.Tables.Add(this.tablefa_lectbl);
+            this.tablelec = new lecDataTable();
+            base.Tables.Add(this.tablelec);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializefa_lectbl() {
+        private bool ShouldSerializelec() {
             return false;
         }
         
@@ -270,25 +270,25 @@ namespace TimeTable_management_System {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void fa_lectblRowChangeEventHandler(object sender, fa_lectblRowChangeEvent e);
+        public delegate void lecRowChangeEventHandler(object sender, lecRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class fa_lectblDataTable : global::System.Data.TypedTableBase<fa_lectblRow> {
+        public partial class lecDataTable : global::System.Data.TypedTableBase<lecRow> {
             
             private global::System.Data.DataColumn columnId;
             
             private global::System.Data.DataColumn columnFaculty;
             
-            private global::System.Data.DataColumn columnTotal_Lecturers;
+            private global::System.Data.DataColumn columnTotalLec;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public fa_lectblDataTable() {
-                this.TableName = "fa_lectbl";
+            public lecDataTable() {
+                this.TableName = "lec";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -296,7 +296,7 @@ namespace TimeTable_management_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal fa_lectblDataTable(global::System.Data.DataTable table) {
+            internal lecDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -313,7 +313,7 @@ namespace TimeTable_management_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected fa_lectblDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected lecDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -336,9 +336,9 @@ namespace TimeTable_management_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Total_LecturersColumn {
+            public global::System.Data.DataColumn TotalLecColumn {
                 get {
-                    return this.columnTotal_Lecturers;
+                    return this.columnTotalLec;
                 }
             }
             
@@ -353,54 +353,54 @@ namespace TimeTable_management_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public fa_lectblRow this[int index] {
+            public lecRow this[int index] {
                 get {
-                    return ((fa_lectblRow)(this.Rows[index]));
+                    return ((lecRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event fa_lectblRowChangeEventHandler fa_lectblRowChanging;
+            public event lecRowChangeEventHandler lecRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event fa_lectblRowChangeEventHandler fa_lectblRowChanged;
+            public event lecRowChangeEventHandler lecRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event fa_lectblRowChangeEventHandler fa_lectblRowDeleting;
+            public event lecRowChangeEventHandler lecRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event fa_lectblRowChangeEventHandler fa_lectblRowDeleted;
+            public event lecRowChangeEventHandler lecRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Addfa_lectblRow(fa_lectblRow row) {
+            public void AddlecRow(lecRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public fa_lectblRow Addfa_lectblRow(int Id, string Faculty, int Total_Lecturers) {
-                fa_lectblRow rowfa_lectblRow = ((fa_lectblRow)(this.NewRow()));
+            public lecRow AddlecRow(int Id, string Faculty, int TotalLec) {
+                lecRow rowlecRow = ((lecRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id,
                         Faculty,
-                        Total_Lecturers};
-                rowfa_lectblRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowfa_lectblRow);
-                return rowfa_lectblRow;
+                        TotalLec};
+                rowlecRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowlecRow);
+                return rowlecRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public fa_lectblRow FindById(int Id) {
-                return ((fa_lectblRow)(this.Rows.Find(new object[] {
+            public lecRow FindById(int Id) {
+                return ((lecRow)(this.Rows.Find(new object[] {
                             Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                fa_lectblDataTable cln = ((fa_lectblDataTable)(base.Clone()));
+                lecDataTable cln = ((lecDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -408,7 +408,7 @@ namespace TimeTable_management_System {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new fa_lectblDataTable();
+                return new lecDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -416,7 +416,7 @@ namespace TimeTable_management_System {
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
                 this.columnFaculty = base.Columns["Faculty"];
-                this.columnTotal_Lecturers = base.Columns["Total_Lecturers"];
+                this.columnTotalLec = base.Columns["TotalLec"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -426,41 +426,41 @@ namespace TimeTable_management_System {
                 base.Columns.Add(this.columnId);
                 this.columnFaculty = new global::System.Data.DataColumn("Faculty", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFaculty);
-                this.columnTotal_Lecturers = new global::System.Data.DataColumn("Total_Lecturers", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotal_Lecturers);
+                this.columnTotalLec = new global::System.Data.DataColumn("TotalLec", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalLec);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AllowDBNull = false;
                 this.columnId.Unique = true;
                 this.columnFaculty.AllowDBNull = false;
                 this.columnFaculty.MaxLength = 50;
-                this.columnTotal_Lecturers.AllowDBNull = false;
+                this.columnTotalLec.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public fa_lectblRow Newfa_lectblRow() {
-                return ((fa_lectblRow)(this.NewRow()));
+            public lecRow NewlecRow() {
+                return ((lecRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new fa_lectblRow(builder);
+                return new lecRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(fa_lectblRow);
+                return typeof(lecRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.fa_lectblRowChanged != null)) {
-                    this.fa_lectblRowChanged(this, new fa_lectblRowChangeEvent(((fa_lectblRow)(e.Row)), e.Action));
+                if ((this.lecRowChanged != null)) {
+                    this.lecRowChanged(this, new lecRowChangeEvent(((lecRow)(e.Row)), e.Action));
                 }
             }
             
@@ -468,8 +468,8 @@ namespace TimeTable_management_System {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.fa_lectblRowChanging != null)) {
-                    this.fa_lectblRowChanging(this, new fa_lectblRowChangeEvent(((fa_lectblRow)(e.Row)), e.Action));
+                if ((this.lecRowChanging != null)) {
+                    this.lecRowChanging(this, new lecRowChangeEvent(((lecRow)(e.Row)), e.Action));
                 }
             }
             
@@ -477,8 +477,8 @@ namespace TimeTable_management_System {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.fa_lectblRowDeleted != null)) {
-                    this.fa_lectblRowDeleted(this, new fa_lectblRowChangeEvent(((fa_lectblRow)(e.Row)), e.Action));
+                if ((this.lecRowDeleted != null)) {
+                    this.lecRowDeleted(this, new lecRowChangeEvent(((lecRow)(e.Row)), e.Action));
                 }
             }
             
@@ -486,14 +486,14 @@ namespace TimeTable_management_System {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.fa_lectblRowDeleting != null)) {
-                    this.fa_lectblRowDeleting(this, new fa_lectblRowChangeEvent(((fa_lectblRow)(e.Row)), e.Action));
+                if ((this.lecRowDeleting != null)) {
+                    this.lecRowDeleting(this, new lecRowChangeEvent(((lecRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Removefa_lectblRow(fa_lectblRow row) {
+            public void RemovelecRow(lecRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -520,7 +520,7 @@ namespace TimeTable_management_System {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "fa_lectblDataTable";
+                attribute2.FixedValue = "lecDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -564,25 +564,25 @@ namespace TimeTable_management_System {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class fa_lectblRow : global::System.Data.DataRow {
+        public partial class lecRow : global::System.Data.DataRow {
             
-            private fa_lectblDataTable tablefa_lectbl;
+            private lecDataTable tablelec;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal fa_lectblRow(global::System.Data.DataRowBuilder rb) : 
+            internal lecRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablefa_lectbl = ((fa_lectblDataTable)(this.Table));
+                this.tablelec = ((lecDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int Id {
                 get {
-                    return ((int)(this[this.tablefa_lectbl.IdColumn]));
+                    return ((int)(this[this.tablelec.IdColumn]));
                 }
                 set {
-                    this[this.tablefa_lectbl.IdColumn] = value;
+                    this[this.tablelec.IdColumn] = value;
                 }
             }
             
@@ -590,21 +590,21 @@ namespace TimeTable_management_System {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Faculty {
                 get {
-                    return ((string)(this[this.tablefa_lectbl.FacultyColumn]));
+                    return ((string)(this[this.tablelec.FacultyColumn]));
                 }
                 set {
-                    this[this.tablefa_lectbl.FacultyColumn] = value;
+                    this[this.tablelec.FacultyColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Total_Lecturers {
+            public int TotalLec {
                 get {
-                    return ((int)(this[this.tablefa_lectbl.Total_LecturersColumn]));
+                    return ((int)(this[this.tablelec.TotalLecColumn]));
                 }
                 set {
-                    this[this.tablefa_lectbl.Total_LecturersColumn] = value;
+                    this[this.tablelec.TotalLecColumn] = value;
                 }
             }
         }
@@ -613,22 +613,22 @@ namespace TimeTable_management_System {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class fa_lectblRowChangeEvent : global::System.EventArgs {
+        public class lecRowChangeEvent : global::System.EventArgs {
             
-            private fa_lectblRow eventRow;
+            private lecRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public fa_lectblRowChangeEvent(fa_lectblRow row, global::System.Data.DataRowAction action) {
+            public lecRowChangeEvent(lecRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public fa_lectblRow Row {
+            public lecRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -656,7 +656,7 @@ namespace TimeTable_management_System.TTMSDBTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class fa_lectblTableAdapter : global::System.ComponentModel.Component {
+    public partial class lecTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -670,7 +670,7 @@ namespace TimeTable_management_System.TTMSDBTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public fa_lectblTableAdapter() {
+        public lecTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -767,39 +767,39 @@ namespace TimeTable_management_System.TTMSDBTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "fa_lectbl";
+            tableMapping.DataSetTable = "lec";
             tableMapping.ColumnMappings.Add("Id", "Id");
             tableMapping.ColumnMappings.Add("Faculty", "Faculty");
-            tableMapping.ColumnMappings.Add("Total_Lecturers", "Total_Lecturers");
+            tableMapping.ColumnMappings.Add("TotalLec", "TotalLec");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[fa_lectbl] WHERE (([Id] = @Original_Id) AND ([Faculty] = @Orig" +
-                "inal_Faculty) AND ([Total_Lecturers] = @Original_Total_Lecturers))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[lec] WHERE (([Id] = @Original_Id) AND ([Faculty] = @Original_F" +
+                "aculty) AND ([TotalLec] = @Original_TotalLec))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Faculty", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Faculty", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Total_Lecturers", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total_Lecturers", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Faculty", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Faculty", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalLec", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalLec", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[fa_lectbl] ([Id], [Faculty], [Total_Lecturers]) VALUES (@Id, @" +
-                "Faculty, @Total_Lecturers);\r\nSELECT Id, Faculty, Total_Lecturers FROM fa_lectbl " +
-                "WHERE (Id = @Id)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[lec] ([Id], [Faculty], [TotalLec]) VALUES (@Id, @Faculty, @Tot" +
+                "alLec);\r\nSELECT Id, Faculty, TotalLec FROM lec WHERE (Id = @Id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Faculty", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Faculty", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Total_Lecturers", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total_Lecturers", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Faculty", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Faculty", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalLec", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalLec", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[fa_lectbl] SET [Id] = @Id, [Faculty] = @Faculty, [Total_Lecturers] = @Total_Lecturers WHERE (([Id] = @Original_Id) AND ([Faculty] = @Original_Faculty) AND ([Total_Lecturers] = @Original_Total_Lecturers));
-SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[lec] SET [Id] = @Id, [Faculty] = @Faculty, [TotalLec] = @TotalLec W" +
+                "HERE (([Id] = @Original_Id) AND ([Faculty] = @Original_Faculty) AND ([TotalLec] " +
+                "= @Original_TotalLec));\r\nSELECT Id, Faculty, TotalLec FROM lec WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Faculty", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Faculty", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Total_Lecturers", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total_Lecturers", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Faculty", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Faculty", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalLec", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalLec", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Faculty", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Faculty", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Total_Lecturers", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Total_Lecturers", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Faculty", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Faculty", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalLec", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalLec", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -815,7 +815,7 @@ SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Faculty, Total_Lecturers FROM dbo.fa_lectbl";
+            this._commandCollection[0].CommandText = "SELECT Id, Faculty, TotalLec FROM dbo.lec";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -823,7 +823,7 @@ SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(TTMSDB.fa_lectblDataTable dataTable) {
+        public virtual int Fill(TTMSDB.lecDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -836,9 +836,9 @@ SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual TTMSDB.fa_lectblDataTable GetData() {
+        public virtual TTMSDB.lecDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            TTMSDB.fa_lectblDataTable dataTable = new TTMSDB.fa_lectblDataTable();
+            TTMSDB.lecDataTable dataTable = new TTMSDB.lecDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -846,7 +846,7 @@ SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TTMSDB.fa_lectblDataTable dataTable) {
+        public virtual int Update(TTMSDB.lecDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -854,7 +854,7 @@ SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(TTMSDB dataSet) {
-            return this.Adapter.Update(dataSet, "fa_lectbl");
+            return this.Adapter.Update(dataSet, "lec");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -876,7 +876,7 @@ SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_Faculty, int Original_Total_Lecturers) {
+        public virtual int Delete(int Original_Id, string Original_Faculty, int Original_TotalLec) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_Faculty == null)) {
                 throw new global::System.ArgumentNullException("Original_Faculty");
@@ -884,7 +884,7 @@ SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Faculty));
             }
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Total_Lecturers));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_TotalLec));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -905,7 +905,7 @@ SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Id, string Faculty, int Total_Lecturers) {
+        public virtual int Insert(int Id, string Faculty, int TotalLec) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Id));
             if ((Faculty == null)) {
                 throw new global::System.ArgumentNullException("Faculty");
@@ -913,7 +913,7 @@ SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Faculty));
             }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Total_Lecturers));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(TotalLec));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -934,7 +934,7 @@ SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Id, string Faculty, int Total_Lecturers, int Original_Id, string Original_Faculty, int Original_Total_Lecturers) {
+        public virtual int Update(int Id, string Faculty, int TotalLec, int Original_Id, string Original_Faculty, int Original_TotalLec) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Id));
             if ((Faculty == null)) {
                 throw new global::System.ArgumentNullException("Faculty");
@@ -942,7 +942,7 @@ SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Faculty));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Total_Lecturers));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(TotalLec));
             this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Id));
             if ((Original_Faculty == null)) {
                 throw new global::System.ArgumentNullException("Original_Faculty");
@@ -950,7 +950,7 @@ SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Faculty));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Total_Lecturers));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_TotalLec));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -971,8 +971,8 @@ SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Faculty, int Total_Lecturers, int Original_Id, string Original_Faculty, int Original_Total_Lecturers) {
-            return this.Update(Original_Id, Faculty, Total_Lecturers, Original_Id, Original_Faculty, Original_Total_Lecturers);
+        public virtual int Update(string Faculty, int TotalLec, int Original_Id, string Original_Faculty, int Original_TotalLec) {
+            return this.Update(Original_Id, Faculty, TotalLec, Original_Id, Original_Faculty, Original_TotalLec);
         }
     }
     
@@ -988,7 +988,7 @@ SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
         
         private UpdateOrderOption _updateOrder;
         
-        private fa_lectblTableAdapter _fa_lectblTableAdapter;
+        private lecTableAdapter _lecTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1010,12 +1010,12 @@ SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public fa_lectblTableAdapter fa_lectblTableAdapter {
+        public lecTableAdapter lecTableAdapter {
             get {
-                return this._fa_lectblTableAdapter;
+                return this._lecTableAdapter;
             }
             set {
-                this._fa_lectblTableAdapter = value;
+                this._lecTableAdapter = value;
             }
         }
         
@@ -1038,9 +1038,9 @@ SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._fa_lectblTableAdapter != null) 
-                            && (this._fa_lectblTableAdapter.Connection != null))) {
-                    return this._fa_lectblTableAdapter.Connection;
+                if (((this._lecTableAdapter != null) 
+                            && (this._lecTableAdapter.Connection != null))) {
+                    return this._lecTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1055,7 +1055,7 @@ SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._fa_lectblTableAdapter != null)) {
+                if ((this._lecTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1069,12 +1069,12 @@ SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(TTMSDB dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._fa_lectblTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.fa_lectbl.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._lecTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.lec.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._fa_lectblTableAdapter.Update(updatedRows));
+                    result = (result + this._lecTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1088,11 +1088,11 @@ SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(TTMSDB dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._fa_lectblTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.fa_lectbl.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._lecTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.lec.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._fa_lectblTableAdapter.Update(addedRows));
+                    result = (result + this._lecTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1106,11 +1106,11 @@ SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(TTMSDB dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._fa_lectblTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.fa_lectbl.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._lecTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.lec.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._fa_lectblTableAdapter.Update(deletedRows));
+                    result = (result + this._lecTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1153,8 +1153,8 @@ SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._fa_lectblTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._fa_lectblTableAdapter.Connection) == false))) {
+            if (((this._lecTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._lecTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1190,13 +1190,13 @@ SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._fa_lectblTableAdapter != null)) {
-                    revertConnections.Add(this._fa_lectblTableAdapter, this._fa_lectblTableAdapter.Connection);
-                    this._fa_lectblTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._fa_lectblTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._fa_lectblTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._fa_lectblTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._fa_lectblTableAdapter.Adapter);
+                if ((this._lecTableAdapter != null)) {
+                    revertConnections.Add(this._lecTableAdapter, this._lecTableAdapter.Connection);
+                    this._lecTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._lecTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._lecTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._lecTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._lecTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1257,9 +1257,9 @@ SELECT Id, Faculty, Total_Lecturers FROM fa_lectbl WHERE (Id = @Id)";
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._fa_lectblTableAdapter != null)) {
-                    this._fa_lectblTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._fa_lectblTableAdapter]));
-                    this._fa_lectblTableAdapter.Transaction = null;
+                if ((this._lecTableAdapter != null)) {
+                    this._lecTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._lecTableAdapter]));
+                    this._lecTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

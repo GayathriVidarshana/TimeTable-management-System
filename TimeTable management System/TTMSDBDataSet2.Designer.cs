@@ -24,7 +24,7 @@ namespace TimeTable_management_System {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class TTMSDBDataSet2 : global::System.Data.DataSet {
         
-        private subDataTable tablesub;
+        private stuDataTable tablestu;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace TimeTable_management_System {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["sub"] != null)) {
-                    base.Tables.Add(new subDataTable(ds.Tables["sub"]));
+                if ((ds.Tables["stu"] != null)) {
+                    base.Tables.Add(new stuDataTable(ds.Tables["stu"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace TimeTable_management_System {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public subDataTable sub {
+        public stuDataTable stu {
             get {
-                return this.tablesub;
+                return this.tablestu;
             }
         }
         
@@ -152,8 +152,8 @@ namespace TimeTable_management_System {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["sub"] != null)) {
-                    base.Tables.Add(new subDataTable(ds.Tables["sub"]));
+                if ((ds.Tables["stu"] != null)) {
+                    base.Tables.Add(new stuDataTable(ds.Tables["stu"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace TimeTable_management_System {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablesub = ((subDataTable)(base.Tables["sub"]));
+            this.tablestu = ((stuDataTable)(base.Tables["stu"]));
             if ((initTable == true)) {
-                if ((this.tablesub != null)) {
-                    this.tablesub.InitVars();
+                if ((this.tablestu != null)) {
+                    this.tablestu.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace TimeTable_management_System {
             this.Namespace = "http://tempuri.org/TTMSDBDataSet2.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablesub = new subDataTable();
-            base.Tables.Add(this.tablesub);
+            this.tablestu = new stuDataTable();
+            base.Tables.Add(this.tablestu);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializesub() {
+        private bool ShouldSerializestu() {
             return false;
         }
         
@@ -270,25 +270,25 @@ namespace TimeTable_management_System {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void subRowChangeEventHandler(object sender, subRowChangeEvent e);
+        public delegate void stuRowChangeEventHandler(object sender, stuRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class subDataTable : global::System.Data.TypedTableBase<subRow> {
+        public partial class stuDataTable : global::System.Data.TypedTableBase<stuRow> {
             
             private global::System.Data.DataColumn columnId;
             
-            private global::System.Data.DataColumn columnAcademicYear;
+            private global::System.Data.DataColumn columnFaculty;
             
-            private global::System.Data.DataColumn columnTotalSub;
+            private global::System.Data.DataColumn columnTotalStu;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public subDataTable() {
-                this.TableName = "sub";
+            public stuDataTable() {
+                this.TableName = "stu";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -296,7 +296,7 @@ namespace TimeTable_management_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal subDataTable(global::System.Data.DataTable table) {
+            internal stuDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -313,7 +313,7 @@ namespace TimeTable_management_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected subDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected stuDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -328,17 +328,17 @@ namespace TimeTable_management_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn AcademicYearColumn {
+            public global::System.Data.DataColumn FacultyColumn {
                 get {
-                    return this.columnAcademicYear;
+                    return this.columnFaculty;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TotalSubColumn {
+            public global::System.Data.DataColumn TotalStuColumn {
                 get {
-                    return this.columnTotalSub;
+                    return this.columnTotalStu;
                 }
             }
             
@@ -353,54 +353,54 @@ namespace TimeTable_management_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public subRow this[int index] {
+            public stuRow this[int index] {
                 get {
-                    return ((subRow)(this.Rows[index]));
+                    return ((stuRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event subRowChangeEventHandler subRowChanging;
+            public event stuRowChangeEventHandler stuRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event subRowChangeEventHandler subRowChanged;
+            public event stuRowChangeEventHandler stuRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event subRowChangeEventHandler subRowDeleting;
+            public event stuRowChangeEventHandler stuRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event subRowChangeEventHandler subRowDeleted;
+            public event stuRowChangeEventHandler stuRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddsubRow(subRow row) {
+            public void AddstuRow(stuRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public subRow AddsubRow(int Id, string AcademicYear, int TotalSub) {
-                subRow rowsubRow = ((subRow)(this.NewRow()));
+            public stuRow AddstuRow(string Faculty, int TotalStu) {
+                stuRow rowstuRow = ((stuRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
-                        AcademicYear,
-                        TotalSub};
-                rowsubRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowsubRow);
-                return rowsubRow;
+                        null,
+                        Faculty,
+                        TotalStu};
+                rowstuRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowstuRow);
+                return rowstuRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public subRow FindById(int Id) {
-                return ((subRow)(this.Rows.Find(new object[] {
+            public stuRow FindById(int Id) {
+                return ((stuRow)(this.Rows.Find(new object[] {
                             Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                subDataTable cln = ((subDataTable)(base.Clone()));
+                stuDataTable cln = ((stuDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -408,15 +408,15 @@ namespace TimeTable_management_System {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new subDataTable();
+                return new stuDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnId = base.Columns["Id"];
-                this.columnAcademicYear = base.Columns["AcademicYear"];
-                this.columnTotalSub = base.Columns["TotalSub"];
+                this.columnFaculty = base.Columns["Faculty"];
+                this.columnTotalStu = base.Columns["TotalStu"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -424,43 +424,47 @@ namespace TimeTable_management_System {
             private void InitClass() {
                 this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnId);
-                this.columnAcademicYear = new global::System.Data.DataColumn("AcademicYear", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAcademicYear);
-                this.columnTotalSub = new global::System.Data.DataColumn("TotalSub", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotalSub);
+                this.columnFaculty = new global::System.Data.DataColumn("Faculty", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFaculty);
+                this.columnTotalStu = new global::System.Data.DataColumn("TotalStu", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalStu);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = -1;
+                this.columnId.AutoIncrementStep = -1;
                 this.columnId.AllowDBNull = false;
+                this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
-                this.columnAcademicYear.AllowDBNull = false;
-                this.columnAcademicYear.MaxLength = 50;
-                this.columnTotalSub.AllowDBNull = false;
+                this.columnFaculty.AllowDBNull = false;
+                this.columnFaculty.MaxLength = 50;
+                this.columnTotalStu.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public subRow NewsubRow() {
-                return ((subRow)(this.NewRow()));
+            public stuRow NewstuRow() {
+                return ((stuRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new subRow(builder);
+                return new stuRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(subRow);
+                return typeof(stuRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.subRowChanged != null)) {
-                    this.subRowChanged(this, new subRowChangeEvent(((subRow)(e.Row)), e.Action));
+                if ((this.stuRowChanged != null)) {
+                    this.stuRowChanged(this, new stuRowChangeEvent(((stuRow)(e.Row)), e.Action));
                 }
             }
             
@@ -468,8 +472,8 @@ namespace TimeTable_management_System {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.subRowChanging != null)) {
-                    this.subRowChanging(this, new subRowChangeEvent(((subRow)(e.Row)), e.Action));
+                if ((this.stuRowChanging != null)) {
+                    this.stuRowChanging(this, new stuRowChangeEvent(((stuRow)(e.Row)), e.Action));
                 }
             }
             
@@ -477,8 +481,8 @@ namespace TimeTable_management_System {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.subRowDeleted != null)) {
-                    this.subRowDeleted(this, new subRowChangeEvent(((subRow)(e.Row)), e.Action));
+                if ((this.stuRowDeleted != null)) {
+                    this.stuRowDeleted(this, new stuRowChangeEvent(((stuRow)(e.Row)), e.Action));
                 }
             }
             
@@ -486,14 +490,14 @@ namespace TimeTable_management_System {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.subRowDeleting != null)) {
-                    this.subRowDeleting(this, new subRowChangeEvent(((subRow)(e.Row)), e.Action));
+                if ((this.stuRowDeleting != null)) {
+                    this.stuRowDeleting(this, new stuRowChangeEvent(((stuRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemovesubRow(subRow row) {
+            public void RemovestuRow(stuRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -520,7 +524,7 @@ namespace TimeTable_management_System {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "subDataTable";
+                attribute2.FixedValue = "stuDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -564,47 +568,47 @@ namespace TimeTable_management_System {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class subRow : global::System.Data.DataRow {
+        public partial class stuRow : global::System.Data.DataRow {
             
-            private subDataTable tablesub;
+            private stuDataTable tablestu;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal subRow(global::System.Data.DataRowBuilder rb) : 
+            internal stuRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablesub = ((subDataTable)(this.Table));
+                this.tablestu = ((stuDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int Id {
                 get {
-                    return ((int)(this[this.tablesub.IdColumn]));
+                    return ((int)(this[this.tablestu.IdColumn]));
                 }
                 set {
-                    this[this.tablesub.IdColumn] = value;
+                    this[this.tablestu.IdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string AcademicYear {
+            public string Faculty {
                 get {
-                    return ((string)(this[this.tablesub.AcademicYearColumn]));
+                    return ((string)(this[this.tablestu.FacultyColumn]));
                 }
                 set {
-                    this[this.tablesub.AcademicYearColumn] = value;
+                    this[this.tablestu.FacultyColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int TotalSub {
+            public int TotalStu {
                 get {
-                    return ((int)(this[this.tablesub.TotalSubColumn]));
+                    return ((int)(this[this.tablestu.TotalStuColumn]));
                 }
                 set {
-                    this[this.tablesub.TotalSubColumn] = value;
+                    this[this.tablestu.TotalStuColumn] = value;
                 }
             }
         }
@@ -613,22 +617,22 @@ namespace TimeTable_management_System {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class subRowChangeEvent : global::System.EventArgs {
+        public class stuRowChangeEvent : global::System.EventArgs {
             
-            private subRow eventRow;
+            private stuRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public subRowChangeEvent(subRow row, global::System.Data.DataRowAction action) {
+            public stuRowChangeEvent(stuRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public subRow Row {
+            public stuRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -656,7 +660,7 @@ namespace TimeTable_management_System.TTMSDBDataSet2TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class subTableAdapter : global::System.ComponentModel.Component {
+    public partial class stuTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -670,7 +674,7 @@ namespace TimeTable_management_System.TTMSDBDataSet2TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public subTableAdapter() {
+        public stuTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -767,38 +771,38 @@ namespace TimeTable_management_System.TTMSDBDataSet2TableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "sub";
+            tableMapping.DataSetTable = "stu";
             tableMapping.ColumnMappings.Add("Id", "Id");
-            tableMapping.ColumnMappings.Add("AcademicYear", "AcademicYear");
-            tableMapping.ColumnMappings.Add("TotalSub", "TotalSub");
+            tableMapping.ColumnMappings.Add("Faculty", "Faculty");
+            tableMapping.ColumnMappings.Add("TotalStu", "TotalStu");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[sub] WHERE (([Id] = @Original_Id) AND ([AcademicYear] = @Origi" +
-                "nal_AcademicYear) AND ([TotalSub] = @Original_TotalSub))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[stu] WHERE (([Id] = @Original_Id) AND ([Faculty] = @Original_F" +
+                "aculty) AND ([TotalStu] = @Original_TotalStu))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AcademicYear", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AcademicYear", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalSub", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalSub", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Faculty", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Faculty", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalStu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalStu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[sub] ([Id], [AcademicYear], [TotalSub]) VALUES (@Id, @Academic" +
-                "Year, @TotalSub);\r\nSELECT Id, AcademicYear, TotalSub FROM sub WHERE (Id = @Id)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[stu] ([Faculty], [TotalStu]) VALUES (@Faculty, @TotalStu);\r\nSE" +
+                "LECT Id, Faculty, TotalStu FROM stu WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AcademicYear", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AcademicYear", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalSub", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalSub", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Faculty", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Faculty", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalStu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalStu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[sub] SET [Id] = @Id, [AcademicYear] = @AcademicYear, [TotalSub] = @TotalSub WHERE (([Id] = @Original_Id) AND ([AcademicYear] = @Original_AcademicYear) AND ([TotalSub] = @Original_TotalSub));
-SELECT Id, AcademicYear, TotalSub FROM sub WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[stu] SET [Faculty] = @Faculty, [TotalStu] = @TotalStu WHERE (([Id] " +
+                "= @Original_Id) AND ([Faculty] = @Original_Faculty) AND ([TotalStu] = @Original_" +
+                "TotalStu));\r\nSELECT Id, Faculty, TotalStu FROM stu WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AcademicYear", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AcademicYear", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalSub", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalSub", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Faculty", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Faculty", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalStu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalStu", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AcademicYear", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AcademicYear", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalSub", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalSub", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Faculty", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Faculty", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalStu", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalStu", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -814,7 +818,7 @@ SELECT Id, AcademicYear, TotalSub FROM sub WHERE (Id = @Id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, AcademicYear, TotalSub FROM dbo.sub";
+            this._commandCollection[0].CommandText = "SELECT Id, Faculty, TotalStu FROM dbo.stu";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -822,7 +826,7 @@ SELECT Id, AcademicYear, TotalSub FROM sub WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(TTMSDBDataSet2.subDataTable dataTable) {
+        public virtual int Fill(TTMSDBDataSet2.stuDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -835,9 +839,9 @@ SELECT Id, AcademicYear, TotalSub FROM sub WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual TTMSDBDataSet2.subDataTable GetData() {
+        public virtual TTMSDBDataSet2.stuDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            TTMSDBDataSet2.subDataTable dataTable = new TTMSDBDataSet2.subDataTable();
+            TTMSDBDataSet2.stuDataTable dataTable = new TTMSDBDataSet2.stuDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -845,7 +849,7 @@ SELECT Id, AcademicYear, TotalSub FROM sub WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TTMSDBDataSet2.subDataTable dataTable) {
+        public virtual int Update(TTMSDBDataSet2.stuDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -853,7 +857,7 @@ SELECT Id, AcademicYear, TotalSub FROM sub WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(TTMSDBDataSet2 dataSet) {
-            return this.Adapter.Update(dataSet, "sub");
+            return this.Adapter.Update(dataSet, "stu");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -875,15 +879,15 @@ SELECT Id, AcademicYear, TotalSub FROM sub WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_AcademicYear, int Original_TotalSub) {
+        public virtual int Delete(int Original_Id, string Original_Faculty, int Original_TotalStu) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
-            if ((Original_AcademicYear == null)) {
-                throw new global::System.ArgumentNullException("Original_AcademicYear");
+            if ((Original_Faculty == null)) {
+                throw new global::System.ArgumentNullException("Original_Faculty");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_AcademicYear));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Faculty));
             }
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_TotalSub));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_TotalStu));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -904,15 +908,14 @@ SELECT Id, AcademicYear, TotalSub FROM sub WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Id, string AcademicYear, int TotalSub) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Id));
-            if ((AcademicYear == null)) {
-                throw new global::System.ArgumentNullException("AcademicYear");
+        public virtual int Insert(string Faculty, int TotalStu) {
+            if ((Faculty == null)) {
+                throw new global::System.ArgumentNullException("Faculty");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(AcademicYear));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Faculty));
             }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(TotalSub));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(TotalStu));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -933,23 +936,23 @@ SELECT Id, AcademicYear, TotalSub FROM sub WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Id, string AcademicYear, int TotalSub, int Original_Id, string Original_AcademicYear, int Original_TotalSub) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Id));
-            if ((AcademicYear == null)) {
-                throw new global::System.ArgumentNullException("AcademicYear");
+        public virtual int Update(string Faculty, int TotalStu, int Original_Id, string Original_Faculty, int Original_TotalStu, int Id) {
+            if ((Faculty == null)) {
+                throw new global::System.ArgumentNullException("Faculty");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(AcademicYear));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Faculty));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(TotalSub));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Id));
-            if ((Original_AcademicYear == null)) {
-                throw new global::System.ArgumentNullException("Original_AcademicYear");
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(TotalStu));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_Id));
+            if ((Original_Faculty == null)) {
+                throw new global::System.ArgumentNullException("Original_Faculty");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_AcademicYear));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Faculty));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_TotalSub));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_TotalStu));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -970,8 +973,8 @@ SELECT Id, AcademicYear, TotalSub FROM sub WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string AcademicYear, int TotalSub, int Original_Id, string Original_AcademicYear, int Original_TotalSub) {
-            return this.Update(Original_Id, AcademicYear, TotalSub, Original_Id, Original_AcademicYear, Original_TotalSub);
+        public virtual int Update(string Faculty, int TotalStu, int Original_Id, string Original_Faculty, int Original_TotalStu) {
+            return this.Update(Faculty, TotalStu, Original_Id, Original_Faculty, Original_TotalStu, Original_Id);
         }
     }
     
@@ -987,7 +990,7 @@ SELECT Id, AcademicYear, TotalSub FROM sub WHERE (Id = @Id)";
         
         private UpdateOrderOption _updateOrder;
         
-        private subTableAdapter _subTableAdapter;
+        private stuTableAdapter _stuTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1009,12 +1012,12 @@ SELECT Id, AcademicYear, TotalSub FROM sub WHERE (Id = @Id)";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public subTableAdapter subTableAdapter {
+        public stuTableAdapter stuTableAdapter {
             get {
-                return this._subTableAdapter;
+                return this._stuTableAdapter;
             }
             set {
-                this._subTableAdapter = value;
+                this._stuTableAdapter = value;
             }
         }
         
@@ -1037,9 +1040,9 @@ SELECT Id, AcademicYear, TotalSub FROM sub WHERE (Id = @Id)";
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._subTableAdapter != null) 
-                            && (this._subTableAdapter.Connection != null))) {
-                    return this._subTableAdapter.Connection;
+                if (((this._stuTableAdapter != null) 
+                            && (this._stuTableAdapter.Connection != null))) {
+                    return this._stuTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1054,7 +1057,7 @@ SELECT Id, AcademicYear, TotalSub FROM sub WHERE (Id = @Id)";
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._subTableAdapter != null)) {
+                if ((this._stuTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1068,12 +1071,12 @@ SELECT Id, AcademicYear, TotalSub FROM sub WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(TTMSDBDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._subTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.sub.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._stuTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.stu.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._subTableAdapter.Update(updatedRows));
+                    result = (result + this._stuTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1087,11 +1090,11 @@ SELECT Id, AcademicYear, TotalSub FROM sub WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(TTMSDBDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._subTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.sub.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._stuTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.stu.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._subTableAdapter.Update(addedRows));
+                    result = (result + this._stuTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1105,11 +1108,11 @@ SELECT Id, AcademicYear, TotalSub FROM sub WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(TTMSDBDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._subTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.sub.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._stuTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.stu.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._subTableAdapter.Update(deletedRows));
+                    result = (result + this._stuTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1152,8 +1155,8 @@ SELECT Id, AcademicYear, TotalSub FROM sub WHERE (Id = @Id)";
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._subTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._subTableAdapter.Connection) == false))) {
+            if (((this._stuTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._stuTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1189,13 +1192,13 @@ SELECT Id, AcademicYear, TotalSub FROM sub WHERE (Id = @Id)";
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._subTableAdapter != null)) {
-                    revertConnections.Add(this._subTableAdapter, this._subTableAdapter.Connection);
-                    this._subTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._subTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._subTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._subTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._subTableAdapter.Adapter);
+                if ((this._stuTableAdapter != null)) {
+                    revertConnections.Add(this._stuTableAdapter, this._stuTableAdapter.Connection);
+                    this._stuTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._stuTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._stuTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._stuTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._stuTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1256,9 +1259,9 @@ SELECT Id, AcademicYear, TotalSub FROM sub WHERE (Id = @Id)";
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._subTableAdapter != null)) {
-                    this._subTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._subTableAdapter]));
-                    this._subTableAdapter.Transaction = null;
+                if ((this._stuTableAdapter != null)) {
+                    this._stuTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._stuTableAdapter]));
+                    this._stuTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
