@@ -20,6 +20,15 @@ namespace TimeTable_management_System.views_UI_
             loadLecturerDetails();
             loadStudentGroup();
             loadSubjectNames();
+
+            dataGridView1ManageSession.Columns[0].HeaderCell.Value = "ID";
+            dataGridView1ManageSession.Columns[1].HeaderCell.Value = "Lecturer 1";
+            dataGridView1ManageSession.Columns[2].HeaderCell.Value = "Lecturer 2";
+            dataGridView1ManageSession.Columns[3].HeaderCell.Value = "Tag name";
+            dataGridView1ManageSession.Columns[4].HeaderCell.Value = "Group";
+            dataGridView1ManageSession.Columns[5].HeaderCell.Value = "Subject ";
+            dataGridView1ManageSession.Columns[6].HeaderCell.Value = "No of students";
+            dataGridView1ManageSession.Columns[7].HeaderCell.Value = "Duration";
         }
 
         private void ManageSessionUI_Load(object sender, EventArgs e)
@@ -201,6 +210,16 @@ namespace TimeTable_management_System.views_UI_
                 MessageBox.Show("Select Subject", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+            else if (numericUpDownNoOfStudents.Text == String.Empty)
+            {
+                MessageBox.Show("add number ow students", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (tbDuration.Text == String.Empty)
+            {
+                MessageBox.Show("add duration", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             else
             {
                 return true;
@@ -217,6 +236,12 @@ namespace TimeTable_management_System.views_UI_
             cbSelectSubject.Text = dataGridView1ManageSession.SelectedRows[0].Cells[5].Value.ToString();
             numericUpDownNoOfStudents.Text = dataGridView1ManageSession.SelectedRows[0].Cells[6].Value.ToString();
             tbDuration.Text = dataGridView1ManageSession.SelectedRows[0].Cells[7].Value.ToString();
+
+            String a = cbxLec1.Text;
+            String b = cbxLec2.Text;
+            String c = " , ";
+            String d = a + c + b;
+            tbSelectedLecturers.Text = d;
         }
         public void loadAllSessionDataMthd()
         {
@@ -228,6 +253,57 @@ namespace TimeTable_management_System.views_UI_
             da.Fill(dt);
             dataGridView1ManageSession.DataSource = dt;
             cn.Close();
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database\TTMSDB.mdf;Integrated Security=True");
+            cn.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Session WHERE tag='" + comboBox1.Text + "'", cn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1ManageSession.DataSource = dt;
+            cn.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database\TTMSDB.mdf;Integrated Security=True");
+            cn.Open();
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("DELETE FROM Session WHERE id='" + dataGridView1ManageSession.SelectedRows[0].Cells[0].Value.ToString() + "'", cn);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Successfully Deleted");
+                cn.Close();
+                loadAllSessionDataMthd();
+                emptyInsertedValues();
+            }
+            catch
+            {
+                MessageBox.Show("Unsuccessfully");
+            }
+        }
+
+        private void dataGridView1ManageSession_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cbxLec1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String a = cbxLec1.Text;
+            String b = cbxLec2.Text;
+            String c = " , ";
+            String d = a + c + b;
+            tbSelectedLecturers.Text = d;
+        }
+
+        private void cbSelectSubject_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -131,6 +131,7 @@ namespace TimeTable_management_System.views_UI_
             this.cbSelectSubject.Name = "cbSelectSubject";
             this.cbSelectSubject.Size = new System.Drawing.Size(209, 24);
             this.cbSelectSubject.TabIndex = 82;
+            this.cbSelectSubject.SelectedIndexChanged += new System.EventHandler(this.cbSelectSubject_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -234,6 +235,7 @@ namespace TimeTable_management_System.views_UI_
             this.cbxLec2.Name = "cbxLec2";
             this.cbxLec2.Size = new System.Drawing.Size(213, 24);
             this.cbxLec2.TabIndex = 72;
+            this.cbxLec2.SelectedIndexChanged += new System.EventHandler(this.cbxLec2_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -253,6 +255,7 @@ namespace TimeTable_management_System.views_UI_
             this.cbxLec1.Name = "cbxLec1";
             this.cbxLec1.Size = new System.Drawing.Size(213, 24);
             this.cbxLec1.TabIndex = 70;
+            this.cbxLec1.SelectedIndexChanged += new System.EventHandler(this.cbxLec1_SelectedIndexChanged);
             // 
             // label2
             // 

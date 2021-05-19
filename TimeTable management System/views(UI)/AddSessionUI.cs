@@ -170,6 +170,16 @@ namespace TimeTable_management_System.views_UI_
                 MessageBox.Show("Select Subject", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+            else if (numericUpDownNoOfStudents.Text == String.Empty)
+            {
+                MessageBox.Show("add number ow students", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (tbDuration.Text == String.Empty)
+            {
+                MessageBox.Show("add duration", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             else
             {
                 return true;
@@ -180,6 +190,31 @@ namespace TimeTable_management_System.views_UI_
         private void btnClear_Click(object sender, EventArgs e)
         {
             emptyInsertedValues();
+        }
+
+        private void cbxLec1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //tbSelectedLecturers.
+
+            String a = cbxLec1.Text;
+            String b = cbxLec2.Text;
+            String c = " , ";
+            String d = a + c + b;
+            tbSelectedLecturers.Text = d;
+        }
+
+        private void cbxLec2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String a = cbxLec1.Text;
+            String b = cbxLec2.Text;
+            String c = " , ";
+            String d = a + c + b;
+            tbSelectedLecturers.Text = d;
+        }
+
+        private void cbSelectSubject_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
