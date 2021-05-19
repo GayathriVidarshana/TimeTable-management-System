@@ -16,11 +16,12 @@ namespace TimeTable_management_System.views_UI_
     {
 
         //Creating microsoft sql connection
-        SqlConnection sqlcon = new SqlConnection("Data Source = .\\SQLEXPRESS; Initial Catalog = TTMS; Integrated Security = True");
+        SqlConnection sqlconn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\Anjaani 1st take\Notes 3rd year 1st semester\ITPM\itpm 3rdy\TimeTable-management-System\TimeTable management System\database\TTMSDB.mdf;Integrated Security=True");
         
-        int lecId;
+        int lecId, sessiondt_id;
         int batchId;
         string days = "";
+        
 
         SqlCommand scmd;
 
@@ -31,6 +32,7 @@ namespace TimeTable_management_System.views_UI_
         public sprint1()
         {
             InitializeComponent();
+            
         }
 
 
@@ -168,95 +170,63 @@ namespace TimeTable_management_System.views_UI_
            if (IsValidLecWD())
             {
 
-           
-            
-            string s = "";
-            foreach (Control cc in this.Controls)
-            {
-                if (cc is CheckBox)
+                /*if (IsValidLecWD())
                 {
-                    CheckBox b = (CheckBox)cc;
-                    if (b.Checked)
+                    try
                     {
-                        s = b.Text + " , " + s;
+                        //Add data to database
+                        sqlconn.Open();
+                        //SqlCommand cmd = sqlcon.CreateCommand();
+                        //cmd.CommandText = "insert into Lec_WorkingD(faculty, lecturerName, noOfDays, workingdays, workinghours, workingminutes) values ('" + comboBox1.Text + "', '" + comboBox2.Text + "', '" + numericUpDown1.Text + "', '" + s + "', '" + numericUpDown2.Text + "', '" + numericUpDown3.Text + "')";
+                        SqlCommand cmd = new SqlCommand("insert into Lec_WorkingD(faculty, lecturerName, noOfDays, workingdays, workinghours, workingminutes) values ('" + comboBox1.Text + "', '" + comboBox2.Text + "', '" + numericUpDown1.Text + "', '" + s + "', '" + numericUpDown2.Text + "', '" + numericUpDown3.Text + "')", sqlcon);
+                        cmd.ExecuteNonQuery();
+                        sqlconn.Close();
+
+                        MessageBox.Show("Saved Successfully");
+                        ClearLecWD();
+                        GridFill();
                     }
-                }
+                    catch
+                    {
+                        MessageBox.Show("Unsuccessfull");
+                    }
+                }*/
+
+                //Add data to database
+                sqlconn.Open();
+                //SqlCommand cmd = sqlcon.CreateCommand();
+                //cmd.CommandText = "insert into Lec_WorkingD(faculty, lecturerName, noOfDays, workingdays, workinghours, workingminutes) values ('" + comboBox1.Text + "', '" + comboBox2.Text + "', '" + numericUpDown1.Text + "', '" + s + "', '" + numericUpDown2.Text + "', '" + numericUpDown3.Text + "')";
+                SqlCommand cmd = new SqlCommand("insert into Lec_WorkingD(faculty, lecturerName, noOfDays, workingdays, workinghours, workingminutes) values ('" + comboBox1.Text + "', '" + comboBox2.Text + "', '" + numericUpDown1.Text + "', '" + getLecWD() + "', '" + numericUpDown2.Text + "', '" + numericUpDown3.Text + "')", sqlconn);
+                cmd.ExecuteNonQuery();
+                sqlconn.Close();
+
+                MessageBox.Show("Saved Successfully");
+                ClearLecWD();
+                GridFill();
             }
 
+        }
 
-            /* if (this.checkBox1.Checked)
-             {
-                 days += "Monday";
-                 days += " ";
-             }
-             if (this.checkBox2.Checked)
-             {
-                 days += "Tuesday";
-                 days += " ";
-             }
-             if (this.checkBox3.Checked)
-             {
-                 days += "Wednesday";
-                 days += " ";
-             }
-             if (this.checkBox4.Checked)
-             {
-                 days += "Thursday";
-                 days += " ";
-             }
-             if (this.checkBox5.Checked)
-             {
-                 days += "Friday";
-                 days += " ";
-             }
-             if (this.checkBox6.Checked)
-             {
-                 days += "Saturday";
-                 days += " ";
-             }
-             if (this.checkBox7.Checked)
-             {
-                 days += "Sunday";
-                 days += " ";
-             }
 
-             */
-
-            /*if (IsValidLecWD())
-            {
-                try
-                {
-                    //Add data to database
-                    sqlcon.Open();
-                    //SqlCommand cmd = sqlcon.CreateCommand();
-                    //cmd.CommandText = "insert into Lec_WorkingD(faculty, lecturerName, noOfDays, workingdays, workinghours, workingminutes) values ('" + comboBox1.Text + "', '" + comboBox2.Text + "', '" + numericUpDown1.Text + "', '" + s + "', '" + numericUpDown2.Text + "', '" + numericUpDown3.Text + "')";
-                    SqlCommand cmd = new SqlCommand("insert into Lec_WorkingD(faculty, lecturerName, noOfDays, workingdays, workinghours, workingminutes) values ('" + comboBox1.Text + "', '" + comboBox2.Text + "', '" + numericUpDown1.Text + "', '" + s + "', '" + numericUpDown2.Text + "', '" + numericUpDown3.Text + "')", sqlcon);
-                    cmd.ExecuteNonQuery();
-                    sqlcon.Close();
-
-                    MessageBox.Show("Saved Successfully");
-                    ClearLecWD();
-                    GridFill();
-                }
-                catch
-                {
-                    MessageBox.Show("Unsuccessfull");
-                }
-            }*/ 
-
-            //Add data to database
-            sqlcon.Open();
-            //SqlCommand cmd = sqlcon.CreateCommand();
-            //cmd.CommandText = "insert into Lec_WorkingD(faculty, lecturerName, noOfDays, workingdays, workinghours, workingminutes) values ('" + comboBox1.Text + "', '" + comboBox2.Text + "', '" + numericUpDown1.Text + "', '" + s + "', '" + numericUpDown2.Text + "', '" + numericUpDown3.Text + "')";
-            SqlCommand cmd = new SqlCommand("insert into Lec_WorkingD(faculty, lecturerName, noOfDays, workingdays, workinghours, workingminutes) values ('" + comboBox1.Text + "', '" + comboBox2.Text + "', '" + numericUpDown1.Text + "', '" + s + "', '" + numericUpDown2.Text + "', '" + numericUpDown3.Text + "')", sqlcon);
-            cmd.ExecuteNonQuery();
-            sqlcon.Close();
-
-            MessageBox.Show("Saved Successfully");
-            ClearLecWD();
-            GridFill();
-            }
-
+        private string getLecWD()
+        {
+            StringBuilder result = new StringBuilder();
+            if (checkBox1.Checked)
+                result.AppendFormat("{0},", checkBox1.Text);
+            if (checkBox2.Checked)
+                result.AppendFormat("{0},", checkBox2.Text);
+            if (checkBox3.Checked)
+                result.AppendFormat("{0},", checkBox3.Text);
+            if (checkBox4.Checked)
+                result.AppendFormat("{0},", checkBox4.Text);
+            if (checkBox5.Checked)
+                result.AppendFormat("{0},", checkBox5.Text);
+            if (checkBox6.Checked)
+                result.AppendFormat("{0},", checkBox6.Text);
+            if (checkBox7.Checked)
+                result.AppendFormat("{0},", checkBox7.Text);
+            if (result.Length > 0) result.Length--;
+            return result.ToString();
         }
 
         
@@ -294,14 +264,14 @@ namespace TimeTable_management_System.views_UI_
 
         void GridFill()
         {
-            sqlcon.Open();
-            SqlDataAdapter sdp = new SqlDataAdapter("LecViewAll", sqlcon);
+            sqlconn.Open();
+            SqlDataAdapter sdp = new SqlDataAdapter("LecViewAll", sqlconn);
             sdp.SelectCommand.CommandType = CommandType.StoredProcedure;
             DataTable dtb = new DataTable();
             sdp.Fill(dtb);
             dataGridView1.DataSource = dtb;
             dataGridView1.Columns[0].Visible = false;
-            sqlcon.Close();
+            sqlconn.Close();
 
         }
 
@@ -347,17 +317,17 @@ namespace TimeTable_management_System.views_UI_
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            //int num1 = Convert.ToInt32(this.numericUpDown1.Value);
+            
         }
 
         private void numericUpDown2_ValueChanged(object sender, EventArgs e)
         {
-            //int num2 = Convert.ToInt32(this.numericUpDown2.Value);
+            
         }
 
         private void numericUpDown3_ValueChanged(object sender, EventArgs e)
         {
-            //int num3 = Convert.ToInt32(this.numericUpDown3.Value);
+            
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
@@ -408,17 +378,17 @@ namespace TimeTable_management_System.views_UI_
             }
 
 
-           
-           
 
 
-            /*sqlcon.Open();
+
+
+            /*sqlconn.Open();
             SqlCommand cmd3 = new SqlCommand("select * from Lec_workingD where faculty = '" + comboBox3 + "' ", sqlcon);
             SqlDataAdapter sd1 = new SqlDataAdapter(cmd3);
             DataTable dt = new DataTable();
             sd1.Fill(dt);
             dataGridView1.DataSource = dt;
-            sqlcon.Close(); */
+            sqlconn.Close(); */
 
 
 
@@ -427,112 +397,148 @@ namespace TimeTable_management_System.views_UI_
         private void button9_Click(object sender, EventArgs e)
         {
 
-            string r = "";
-            foreach (Control cn in this.Controls)
+            if (IsValidBatchWD())
             {
-                if (cn is CheckBox)
-                {
-                    CheckBox cb = (CheckBox)cn;
-                    if (cb.Checked)
-                    {
-                        r = cb.Text + " " + r;
-                    }
-                }
+
+
+                //Add batch data to database
+                sqlconn.Open();
+                SqlCommand cmd1 = sqlconn.CreateCommand();
+                cmd1.CommandText = "insert into batchWorkingD(batch, workingDays, workingHours, workingMinutes, timeSlot) values ('" + comboBox7.Text + "', '" + getBatchWD() + "', '" + numericUpDown7.Text + "', '" + numericUpDown8.Text + "', '" + comboBox8.Text + "')";
+                cmd1.ExecuteNonQuery();
+                sqlconn.Close();
+
+                MessageBox.Show("Saved Successfully");
+
+                //Clear all data in spaces after saving the data
+                comboBox7.Text = comboBox8.Text = numericUpDown7.Text = numericUpDown8.Text = "";
+                batchId = 0;
+
+                //Clear all checked check boxes
+                if (this.checkBox15.Checked)
+                    this.checkBox15.Checked = false;
+                if (this.checkBox16.Checked)
+                    this.checkBox16.Checked = false;
+                if (this.checkBox17.Checked)
+                    this.checkBox17.Checked = false;
+                if (this.checkBox18.Checked)
+                    this.checkBox18.Checked = false;
+                if (this.checkBox19.Checked)
+                    this.checkBox19.Checked = false;
+                if (this.checkBox20.Checked)
+                    this.checkBox20.Checked = false;
+                if (this.checkBox21.Checked)
+                    this.checkBox21.Checked = false;
+
+                batchGridFill();
             }
 
-            //Add batch data to database
-            sqlcon.Open();
-            SqlCommand cmd1 = sqlcon.CreateCommand();
-            cmd1.CommandText = "insert into batchWorkingD(batch, workingDays, workingHours, workingMinutes, timeSlot) values ('" + comboBox7.Text + "', '" + r + "', '" +numericUpDown7.Text+ "', '" +numericUpDown8.Text+ "', '" + comboBox8.Text + "')";
-            cmd1.ExecuteNonQuery();
-            sqlcon.Close();
+        }
 
-            MessageBox.Show("Saved Successfully");
 
-            //Clear all data in spaces after saving the data
-            comboBox7.Text = comboBox8.Text = numericUpDown7.Text = numericUpDown8.Text = "";
-            batchId = 0;
+        private string getBatchWD()
+        {
+            StringBuilder batchresult = new StringBuilder();
+            if (checkBox15.Checked)
+                batchresult.AppendFormat("{0},", checkBox15.Text);
+            if (checkBox16.Checked)
+                batchresult.AppendFormat("{0},", checkBox16.Text);
+            if (checkBox17.Checked)
+                batchresult.AppendFormat("{0},", checkBox17.Text);
+            if (checkBox18.Checked)
+                batchresult.AppendFormat("{0},", checkBox18.Text);
+            if (checkBox19.Checked)
+                batchresult.AppendFormat("{0},", checkBox19.Text);
+            if (checkBox20.Checked)
+                batchresult.AppendFormat("{0},", checkBox20.Text);
+            if (checkBox21.Checked)
+                batchresult.AppendFormat("{0},", checkBox21.Text);
+            if (batchresult.Length > 0) batchresult.Length--;
+            return batchresult.ToString();
+        }
 
-            //Clear all checked check boxes
-            if (this.checkBox15.Checked)
-                this.checkBox15.Checked = false;
-            if (this.checkBox16.Checked)
-                this.checkBox16.Checked = false;
-            if (this.checkBox17.Checked)
-                this.checkBox17.Checked = false;
-            if (this.checkBox18.Checked)
-                this.checkBox18.Checked = false;
-            if (this.checkBox19.Checked)
-                this.checkBox19.Checked = false;
-            if (this.checkBox20.Checked)
-                this.checkBox20.Checked = false;
-            if (this.checkBox21.Checked)
-                this.checkBox21.Checked = false;
 
-            batchGridFill();
-
+        private bool IsValidBatchWD()
+        {
+            if (comboBox7.Text == String.Empty)
+            {
+                MessageBox.Show("Please Enter Batch", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (comboBox8.Text == String.Empty)
+            {
+                MessageBox.Show("Please Enter time slot", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (numericUpDown7.Text == String.Empty)
+            {
+                MessageBox.Show("Please Enter working hours", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
 
         void batchGridFill()
         {
-            sqlcon.Open();
-            SqlDataAdapter sdp = new SqlDataAdapter("BatchViewAll", sqlcon);
+            sqlconn.Open();
+            SqlDataAdapter sdp = new SqlDataAdapter("BatchViewAll", sqlconn);
             sdp.SelectCommand.CommandType = CommandType.StoredProcedure;
             DataTable dtb = new DataTable();
             sdp.Fill(dtb);
             dataGridView2.DataSource = dtb;
             dataGridView2.Columns[0].Visible = false;
-            sqlcon.Close();
+            sqlconn.Close();
 
         }
 
 
-        string batchWorkingDays;
-
         private void checkBox15_CheckedChanged(object sender, EventArgs e)
         {
-            batchWorkingDays = "Monday";
+            
         }
 
         private void checkBox16_CheckedChanged(object sender, EventArgs e)
         {
-            batchWorkingDays = "Tuesday";
+            
         }
 
         private void checkBox17_CheckedChanged(object sender, EventArgs e)
         {
-            batchWorkingDays = "Wednesday";
+            
         }
 
         private void checkBox18_CheckedChanged(object sender, EventArgs e)
         {
-            batchWorkingDays = "Thursday";
+            
         }
 
         private void checkBox19_CheckedChanged(object sender, EventArgs e)
         {
-            batchWorkingDays = "Friday";
+            
         }
 
         private void checkBox20_CheckedChanged(object sender, EventArgs e)
         {
-            batchWorkingDays = "Saturday";
+            
         }
 
         private void checkBox21_CheckedChanged(object sender, EventArgs e)
         {
-            batchWorkingDays = "Sunday";
+            
         }
 
         private void numericUpDown7_ValueChanged(object sender, EventArgs e)
         {
-            //int no1 = Convert.ToInt32(this.numericUpDown7.Value);
+            
         }
 
         private void numericUpDown8_ValueChanged(object sender, EventArgs e)
         {
-            //int no2 = Convert.ToInt32(this.numericUpDown8.Value);
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -545,8 +551,14 @@ namespace TimeTable_management_System.views_UI_
             //Clear data inserted to the spaces
             ClearLecWD();
 
-            //Disable delete button when there is no record to delete
+            //Disable delete button(faculty) when there is no record to delete
             button8.Enabled = false;
+
+            //Disable delete button(manage session) when there is no record to delete
+            button17.Enabled = false;
+
+            //Disable delete button(batch) when there is no record to delete
+            button11.Enabled = false;
 
             //Clear data inserted to the spaces in update page
             comboBox5.Text = comboBox6.Text = numericUpDown4.Text = numericUpDown5.Text = numericUpDown6.Text = "";
@@ -560,17 +572,20 @@ namespace TimeTable_management_System.views_UI_
 
             GridFill();
             batchGridFill();
+            GridFillSessionDT();
+
+            
 
 
-            //      sqlcon.Open();
-            //    sdp = new SqlDataAdapter("select * from Lec_workingD", sqlcon);
+            //      sqlconn.Open();
+            //    sdp = new SqlDataAdapter("select * from Lec_workingD", sqlconn);
             //  dtb = new DataTable();
             //sdp.Fill(dtb);
             //dataGridView1.DataSource = dtb;
-            //sqlcon.Close();
+            //sqlconn.Close();
 
 
-            
+
 
         }
 
@@ -602,41 +617,57 @@ namespace TimeTable_management_System.views_UI_
         }
 
 
-        
+
 
         private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             if (dataGridView1.CurrentRow.Index != -1)
             {
-                comboBox5.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-                comboBox6.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                numericUpDown4.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                numericUpDown5.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-                numericUpDown6.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                lecId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                
+                
+                    comboBox5.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+                    comboBox6.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                    numericUpDown4.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                    numericUpDown5.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                    numericUpDown6.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                    diplaychechValue();
+                
+                    lecId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
 
-                //Enable delete button when there are records to delete
-                button8.Enabled = Enabled;
-            }
+                   /* SqlDataReader sqlDataReader;
+                    SqlCommand sqlCommand = new SqlCommand("Select workingdays from Lec_workingD", sqlconn);
+                    sqlconn.Open();
+                    sqlDataReader = sqlCommand.ExecuteReader();
+                    while (sqlDataReader.Read())
+                    {
+                        String workingd = sqlDataReader.GetString(7);
+
+
+                    }*/
+
+                    //Enable delete button when there are records to delete
+                    button8.Enabled = Enabled;
+                }
+            
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            
-            
 
-                sqlcon.Open();
-                SqlCommand sqlCommand = new SqlCommand("UpdateLecWD", sqlcon);
+
+
+                sqlconn.Open();
+                SqlCommand sqlCommand = new SqlCommand("UpdateLecWD", sqlconn);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
                 sqlCommand.Parameters.AddWithValue("@lid", lecId);
-                sqlCommand.Parameters.AddWithValue("@lFaculty", comboBox5.Text.Trim());
-                sqlCommand.Parameters.AddWithValue("@lecName", comboBox6.Text.Trim());
-                sqlCommand.Parameters.AddWithValue("@noofD", numericUpDown4.Text.Trim());
-                sqlCommand.Parameters.AddWithValue("@lworkingD", checkBox8.Text.Trim());
-                sqlCommand.Parameters.AddWithValue("@lworkingH", numericUpDown5.Text.Trim());
-                sqlCommand.Parameters.AddWithValue("@lworkingM", numericUpDown6.Text.Trim());
+                sqlCommand.Parameters.AddWithValue("@lfaculty", comboBox5.Text.Trim());
+                sqlCommand.Parameters.AddWithValue("@lLecname", comboBox6.Text.Trim());
+                sqlCommand.Parameters.AddWithValue("@noDay", numericUpDown4.Text.Trim());
+                sqlCommand.Parameters.AddWithValue("@workingd", updLecWD());
+                sqlCommand.Parameters.AddWithValue("@workingh", numericUpDown5.Text.Trim());
+                sqlCommand.Parameters.AddWithValue("@workingm", numericUpDown6.Text.Trim());
                 sqlCommand.ExecuteNonQuery();
-                sqlcon.Close();
+                sqlconn.Close();
 
                 MessageBox.Show("Data Updated Successfully.");
 
@@ -662,31 +693,54 @@ namespace TimeTable_management_System.views_UI_
 
                 GridFill();
 
-           
-
-
         }
+
+
+
+        private string updLecWD()
+        {
+            StringBuilder resultchk = new StringBuilder();
+            if (checkBox8.Checked)
+                resultchk.AppendFormat("{0},", checkBox8.Text);
+            if (checkBox9.Checked)
+                resultchk.AppendFormat("{0},", checkBox9.Text);
+            if (checkBox10.Checked)
+                resultchk.AppendFormat("{0},", checkBox10.Text);
+            if (checkBox11.Checked)
+                resultchk.AppendFormat("{0},", checkBox11.Text);
+            if (checkBox12.Checked)
+                resultchk.AppendFormat("{0},", checkBox12.Text);
+            if (checkBox13.Checked)
+                resultchk.AppendFormat("{0},", checkBox13.Text);
+            if (checkBox14.Checked)
+                resultchk.AppendFormat("{0},", checkBox14.Text);
+            if (resultchk.Length > 0) resultchk.Length--;
+            return resultchk.ToString();
+        }
+
 
         private void button8_Click(object sender, EventArgs e)
         {
 
-            
 
-                sqlcon.Open();
-                SqlCommand sqlCommand = new SqlCommand("DeleteLecWD", sqlcon);
+
+                sqlconn.Open();
+                SqlCommand sqlCommand = new SqlCommand("DeleteLecWD", sqlconn);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
                 sqlCommand.Parameters.AddWithValue("@lid", lecId);
                 sqlCommand.ExecuteNonQuery();
-                sqlcon.Close();
+                sqlconn.Close();
 
                 MessageBox.Show("Data Deleted Successfully.");
 
                 //Clear enetered data of all the combo boxes and numericUpDown
                 comboBox5.Text = comboBox6.Text = numericUpDown4.Text = numericUpDown5.Text = numericUpDown6.Text = "";
                 lecId = 0;
+                //Disable delete button when there is no record to delete
+                button8.Enabled = false;
 
-                //Clear all checked check boxes
-                if (this.checkBox8.Checked)
+            //Clear all checked check boxes
+            if (this.checkBox8.Checked)
                     this.checkBox8.Checked = false;
                 if (this.checkBox9.Checked)
                     this.checkBox9.Checked = false;
@@ -792,17 +846,17 @@ namespace TimeTable_management_System.views_UI_
             if(comboBox7.SelectedItem != null && comboBox8.SelectedItem != null)
             {
 
-                sqlcon.Open();
-                SqlCommand sqlCommand = new SqlCommand("UpdateBatchWD", sqlcon);
+                sqlconn.Open();
+                SqlCommand sqlCommand = new SqlCommand("UpdateBatchWD", sqlconn);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Parameters.AddWithValue("@BId", batchId);
-                sqlCommand.Parameters.AddWithValue("@Bbatch", comboBox7.Text.Trim());
-                sqlCommand.Parameters.AddWithValue("@bworkingD", checkBox15.Text.Trim());
-                sqlCommand.Parameters.AddWithValue("@bworkingH", numericUpDown7.Text.Trim());
-                sqlCommand.Parameters.AddWithValue("@bworkingM", numericUpDown8.Text.Trim());
-                sqlCommand.Parameters.AddWithValue("@btimeSlot", comboBox8.Text.Trim());
+                sqlCommand.Parameters.AddWithValue("@b_id", batchId);
+                sqlCommand.Parameters.AddWithValue("@bbatch", comboBox7.Text.Trim());
+                sqlCommand.Parameters.AddWithValue("@bworkingd", updBatchWD());
+                sqlCommand.Parameters.AddWithValue("@bworkingh", numericUpDown7.Text.Trim());
+                sqlCommand.Parameters.AddWithValue("@bworkingm", numericUpDown8.Text.Trim());
+                sqlCommand.Parameters.AddWithValue("@timesl", comboBox8.Text.Trim());
                 sqlCommand.ExecuteNonQuery();
-                sqlcon.Close();
+                sqlconn.Close();
 
                 MessageBox.Show("Data Updated Successfully.");
 
@@ -838,6 +892,30 @@ namespace TimeTable_management_System.views_UI_
 
         }
 
+
+
+        private string updBatchWD()
+        {
+            StringBuilder batchresultupd = new StringBuilder();
+            if (checkBox15.Checked)
+                batchresultupd.AppendFormat("{0},", checkBox15.Text);
+            if (checkBox16.Checked)
+                batchresultupd.AppendFormat("{0},", checkBox16.Text);
+            if (checkBox17.Checked)
+                batchresultupd.AppendFormat("{0},", checkBox17.Text);
+            if (checkBox18.Checked)
+                batchresultupd.AppendFormat("{0},", checkBox18.Text);
+            if (checkBox19.Checked)
+                batchresultupd.AppendFormat("{0},", checkBox19.Text);
+            if (checkBox20.Checked)
+                batchresultupd.AppendFormat("{0},", checkBox20.Text);
+            if (checkBox21.Checked)
+                batchresultupd.AppendFormat("{0},", checkBox21.Text);
+            if (batchresultupd.Length > 0) batchresultupd.Length--;
+            return batchresultupd.ToString();
+        }
+
+
         private void dataGridView2_DoubleClick(object sender, EventArgs e)
         {
             if (dataGridView2.CurrentRow.Index != -1)
@@ -859,18 +937,21 @@ namespace TimeTable_management_System.views_UI_
             if(comboBox7.SelectedItem != null && comboBox8.SelectedItem != null)
             {
 
-                sqlcon.Open();
-                SqlCommand sqlCommand = new SqlCommand("DeleteBatchWD", sqlcon);
+                sqlconn.Open();
+                SqlCommand sqlCommand = new SqlCommand("DeleteBatchWD", sqlconn);
                 sqlCommand.CommandType = CommandType.StoredProcedure;
-                sqlCommand.Parameters.AddWithValue("@bchid", batchId);
+                sqlCommand.Parameters.AddWithValue("@b_id", batchId);
                 sqlCommand.ExecuteNonQuery();
-                sqlcon.Close();
+                sqlconn.Close();
 
                 MessageBox.Show("Data Deleted Successfully.");
 
                 //Clear all data in spaces after saving the data
                 comboBox7.Text = comboBox8.Text = numericUpDown7.Text = numericUpDown8.Text = "";
                 batchId = 0;
+
+                //Disable delete button when there is no record to delete
+                button11.Enabled = false;
 
                 //Clear all checked check boxes
                 if (this.checkBox15.Checked)
@@ -907,31 +988,31 @@ namespace TimeTable_management_System.views_UI_
 
         private void comboBox3_TextChanged(object sender, EventArgs e)
         {
-            sqlcon.Open();
-            SqlCommand cmd3 = new SqlCommand("select * from Lec_workingD where faculty = '" + comboBox3.Text + "' ", sqlcon);
+            sqlconn.Open();
+            SqlCommand cmd3 = new SqlCommand("select * from Lec_workingD where faculty = '" + comboBox3.Text + "' ", sqlconn);
             SqlDataAdapter sd1 = new SqlDataAdapter(cmd3);
             DataTable dt = new DataTable();
             sd1.Fill(dt);
             dataGridView1.DataSource = dt;
-            sqlcon.Close(); 
+            sqlconn.Close(); 
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView1.CurrentRow.Selected = true;
-            comboBox3.Text = dataGridView1.Rows[e.RowIndex].Cells["faculty"].Value.ToString();
-            comboBox4.Text = dataGridView1.Rows[e.RowIndex].Cells["lecturerName"].Value.ToString();
+            /*comboBox3.Text = dataGridView1.Rows[e.RowIndex].Cells["faculty"].Value.ToString();
+            comboBox4.Text = dataGridView1.Rows[e.RowIndex].Cells["lecturerName"].Value.ToString();*/
         }
 
         private void comboBox4_TextChanged(object sender, EventArgs e)
         {
-            sqlcon.Open();
-            SqlCommand cmd4 = new SqlCommand("select * from Lec_workingD where lecturerName = '" + comboBox4.Text + "' ", sqlcon);
+            sqlconn.Open();
+            SqlCommand cmd4 = new SqlCommand("select * from Lec_workingD where lecturerName = '" + comboBox4.Text + "' ", sqlconn);
             SqlDataAdapter sd2 = new SqlDataAdapter(cmd4);
             DataTable dt123 = new DataTable();
             sd2.Fill(dt123);
             dataGridView1.DataSource = dt123;
-            sqlcon.Close();
+            sqlconn.Close();
         }
 
         private void comboBox1_MouseHover(object sender, EventArgs e)
@@ -998,5 +1079,242 @@ namespace TimeTable_management_System.views_UI_
         {
 
         }
+
+        private void comboBox13_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            new Form2().Show();
+            this.Hide();
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+
+            //Disable delete button when there is no record to delete
+            button17.Enabled = false;
+
+            //Clear all data in spaces
+            comboBox9.Text = comboBox10.Text = comboBox11.Text = comboBox12.Text = "";
+
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+
+            if (IsValidSessionDT())
+            {
+
+
+                //Add data to database
+                sqlconn.Open();
+                //SqlCommand cmd = sqlcon.CreateCommand();
+                //cmd.CommandText = "insert into Lec_WorkingD(faculty, lecturerName, noOfDays, workingdays, workinghours, workingminutes) values ('" + comboBox1.Text + "', '" + comboBox2.Text + "', '" + numericUpDown1.Text + "', '" + s + "', '" + numericUpDown2.Text + "', '" + numericUpDown3.Text + "')";
+                SqlCommand cmds = new SqlCommand("insert into ManageSessionDT(dtSession, dtDay, dtTimeFrom, dtTimeTo) values ('" + comboBox9.Text + "', '" + comboBox10.Text + "', '" + comboBox11.Text + "', '" + comboBox12.Text + "')", sqlconn);
+                cmds.ExecuteNonQuery();
+                sqlconn.Close();
+
+                MessageBox.Show("Saved Successfully");
+
+                GridFillSessionDT();
+
+            }
+
+        }
+
+
+
+        private bool IsValidSessionDT()
+        {
+            if (comboBox9.Text == String.Empty)
+            {
+                MessageBox.Show("Please Enter Session", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (comboBox10.Text == String.Empty)
+            {
+                MessageBox.Show("Please Enter Day", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (comboBox11.Text == String.Empty)
+            {
+                MessageBox.Show("Please Enter Time From", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (comboBox12.Text == String.Empty)
+            {
+                MessageBox.Show("Please Enter Time To", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+
+        void GridFillSessionDT()
+        {
+            sqlconn.Open();
+            SqlDataAdapter sdpadapter = new SqlDataAdapter("ViewSessionDT", sqlconn);
+            sdpadapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            DataTable datatablesession = new DataTable();
+            sdpadapter.Fill(datatablesession);
+            dataGridView3.DataSource = datatablesession;
+            dataGridView3.Columns[0].Visible = false;
+            sqlconn.Close();
+
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+
+            sqlconn.Open();
+            SqlCommand sqlCommand1 = new SqlCommand("UpdateSessionDT", sqlconn);
+            sqlCommand1.CommandType = CommandType.StoredProcedure;
+            sqlCommand1.Parameters.AddWithValue("@dtId", sessiondt_id);
+            sqlCommand1.Parameters.AddWithValue("@dt_session", comboBox9.Text.Trim());
+            sqlCommand1.Parameters.AddWithValue("@dt_day", comboBox10.Text.Trim());
+            sqlCommand1.Parameters.AddWithValue("@dt_timeFrom", comboBox11.Text.Trim());
+            sqlCommand1.Parameters.AddWithValue("@dt_timeTo", comboBox12.Text.Trim());
+            sqlCommand1.ExecuteNonQuery();
+            sqlconn.Close();
+
+            MessageBox.Show("Data Updated Successfully.");
+
+            GridFillSessionDT();
+
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+
+            sqlconn.Open();
+            SqlCommand sqlCommand2 = new SqlCommand("DeleteSessionDT", sqlconn);
+            sqlCommand2.CommandType = CommandType.StoredProcedure;
+            sqlCommand2.Parameters.AddWithValue("@dtId", sessiondt_id);
+            sqlCommand2.ExecuteNonQuery();
+            sqlconn.Close();
+
+            MessageBox.Show("Data Deleted Successfully.");
+
+            GridFillSessionDT();
+
+        }
+
+        private void comboBox13_TextChanged(object sender, EventArgs e)
+        {
+
+            sqlconn.Open();
+            SqlCommand cmdmsdt = new SqlCommand("select * from ManageSessionDT where dtSession = '" + comboBox13.Text + "' ", sqlconn);
+            SqlDataAdapter sdmsdt = new SqlDataAdapter(cmdmsdt);
+            DataTable dtmsdt = new DataTable();
+            sdmsdt.Fill(dtmsdt);
+            dataGridView3.DataSource = dtmsdt;
+            sqlconn.Close();
+
+        }
+
+        private void comboBox9_MouseHover(object sender, EventArgs e)
+        {
+            toolTip11.Show("Select Session", comboBox9);
+        }
+
+        private void comboBox10_MouseHover(object sender, EventArgs e)
+        {
+            toolTip12.Show("Select Day", comboBox10);
+        }
+
+        private void comboBox11_MouseHover(object sender, EventArgs e)
+        {
+            toolTip13.Show("Select Time From", comboBox11);
+        }
+
+        private void comboBox12_MouseHover(object sender, EventArgs e)
+        {
+            toolTip14.Show("Select Time To", comboBox12);
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView2.CurrentRow.Selected = true;
+        }
+
+        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView3.CurrentRow.Selected = true;
+        }
+
+        private void dataGridView3_DoubleClick_1(object sender, EventArgs e)
+        {
+
+            if (dataGridView3.CurrentRow.Index != -1)
+            {
+                comboBox9.Text = dataGridView3.CurrentRow.Cells[1].Value.ToString();
+                comboBox10.Text = dataGridView3.CurrentRow.Cells[2].Value.ToString();
+                comboBox11.Text = dataGridView3.CurrentRow.Cells[3].Value.ToString();
+                comboBox12.Text = dataGridView3.CurrentRow.Cells[4].Value.ToString();
+                sessiondt_id = Convert.ToInt32(dataGridView3.CurrentRow.Cells[0].Value.ToString());
+
+                button17.Enabled = Enabled;
+
+            }
+
+            
+
+        }
+
+
+        //========================================== check box disply ==============================================
+
+        public bool diplaychechValue() {
+
+
+            sqlconn.Open();
+            SqlCommand cmdmsdt = new SqlCommand("select workingdays from Lec_workingD", sqlconn);
+            if ( " [dbo].[Lec_workingD].[workingdays] " == "Monday" )  {
+
+                return checkBox8.Checked;
+            }
+            if (" [dbo].[Lec_workingD].[workingdays] " == "Tuseday")
+            {
+
+                return checkBox9.Checked;
+            }
+            if (" [dbo].[Lec_workingD].[workingdays] " == "Wednesday")
+            {
+
+                return checkBox10.Checked;
+            }
+            if (" [dbo].[Lec_workingD].[workingdays] " == "Thursday")
+            {
+
+                return checkBox11.Checked;
+            }
+            if (" [dbo].[Lec_workingD].[workingdays] " == "Friday")
+            {
+
+                return checkBox12.Checked;
+            }
+            if (" [dbo].[Lec_workingD].[workingdays] " == "Saturday")
+            {
+
+                return checkBox13.Checked;
+            }
+            if (" [dbo].[Lec_workingD].[workingdays] " == "Sunday")
+            {
+
+                return checkBox14.Checked;
+            }
+
+            sqlconn.Close();
+
+            return false;
+        }
+        
+
     }
 }
