@@ -37,6 +37,7 @@ namespace TimeTable_management_System.views_UI_
             nUpDwnNoOfLabHours.Text = "";
             nUpDwnNoOfLecturerHours.Text = "";
             nUpDwnNoOfTutorialHours.Text = "";
+            tbSubjectCodeNew.Text = "";
 
         }
 
@@ -98,7 +99,7 @@ namespace TimeTable_management_System.views_UI_
                     }*/
 
 
-                    SqlCommand cmd = new SqlCommand("INSERT INTO Subject(subjectCode,subjectName,offeredYear,offeredSem,noOfLecHours,noOfTutorialHours,noOfLabHours,noOfEvaluationHours) VALUES ('" + txbxSubjCode.Text + "','" + txbxSubjName.Text + "','" + cbxOfferdYear.Text + "','" +semester+ "','" + nUpDwnNoOfLecturerHours.Text + "','" + nUpDwnNoOfTutorialHours.Text + "','" + nUpDwnNoOfLabHours.Text + "','" + nUpDwnNoOfEvaluationHours.Text + "')", cn);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Subject(subjectCode,subjectName,offeredYear,offeredSem,noOfLecHours,noOfTutorialHours,noOfLabHours,noOfEvaluationHours,subjectCodeNew) VALUES ('" + txbxSubjCode.Text + "','" + txbxSubjName.Text + "','" + cbxOfferdYear.Text + "','" +semester+ "','" + nUpDwnNoOfLecturerHours.Text + "','" + nUpDwnNoOfTutorialHours.Text + "','" + nUpDwnNoOfLabHours.Text + "','" + nUpDwnNoOfEvaluationHours.Text + "','" + tbSubjectCodeNew.Text + "')", cn);
                     cmd.ExecuteNonQuery();
                     cn.Close();
                     MessageBox.Show("Successfully");

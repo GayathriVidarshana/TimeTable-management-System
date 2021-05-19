@@ -29,6 +29,7 @@ namespace TimeTable_management_System.views_UI_
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddSessionUI));
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -53,6 +54,8 @@ namespace TimeTable_management_System.views_UI_
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDownNoOfStudents = new System.Windows.Forms.NumericUpDown();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNoOfStudents)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +70,7 @@ namespace TimeTable_management_System.views_UI_
             this.btnSubmit.TabIndex = 89;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnSubmit, "click here to add this data to system");
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
@@ -80,6 +84,7 @@ namespace TimeTable_management_System.views_UI_
             this.btnClear.TabIndex = 88;
             this.btnClear.Text = "Clear";
             this.btnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnClear, "clear above data");
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -101,6 +106,7 @@ namespace TimeTable_management_System.views_UI_
             this.tbDuration.Name = "tbDuration";
             this.tbDuration.Size = new System.Drawing.Size(97, 22);
             this.tbDuration.TabIndex = 86;
+            this.toolTip1.SetToolTip(this.tbDuration, "Add number of duration hours");
             // 
             // label11
             // 
@@ -131,6 +137,7 @@ namespace TimeTable_management_System.views_UI_
             this.cbSelectSubject.Name = "cbSelectSubject";
             this.cbSelectSubject.Size = new System.Drawing.Size(209, 24);
             this.cbSelectSubject.TabIndex = 82;
+            this.toolTip1.SetToolTip(this.cbSelectSubject, "select subject");
             this.cbSelectSubject.SelectedIndexChanged += new System.EventHandler(this.cbSelectSubject_SelectedIndexChanged);
             // 
             // label8
@@ -151,6 +158,7 @@ namespace TimeTable_management_System.views_UI_
             this.cbxSelectGroup.Name = "cbxSelectGroup";
             this.cbxSelectGroup.Size = new System.Drawing.Size(209, 24);
             this.cbxSelectGroup.TabIndex = 80;
+            this.toolTip1.SetToolTip(this.cbxSelectGroup, "select relavent group for the session");
             // 
             // label9
             // 
@@ -196,6 +204,7 @@ namespace TimeTable_management_System.views_UI_
             this.cbxTag.Name = "cbxTag";
             this.cbxTag.Size = new System.Drawing.Size(177, 24);
             this.cbxTag.TabIndex = 76;
+            this.toolTip1.SetToolTip(this.cbxTag, "select session type");
             // 
             // label5
             // 
@@ -216,6 +225,7 @@ namespace TimeTable_management_System.views_UI_
             this.tbSelectedLecturers.ReadOnly = true;
             this.tbSelectedLecturers.Size = new System.Drawing.Size(213, 22);
             this.tbSelectedLecturers.TabIndex = 74;
+            this.toolTip1.SetToolTip(this.tbSelectedLecturers, "you can\'t edit this");
             // 
             // label4
             // 
@@ -235,6 +245,7 @@ namespace TimeTable_management_System.views_UI_
             this.cbxLec2.Name = "cbxLec2";
             this.cbxLec2.Size = new System.Drawing.Size(213, 24);
             this.cbxLec2.TabIndex = 72;
+            this.toolTip1.SetToolTip(this.cbxLec2, "Select lecturer 2\'s name (not compulsory)");
             this.cbxLec2.SelectedIndexChanged += new System.EventHandler(this.cbxLec2_SelectedIndexChanged);
             // 
             // label3
@@ -255,6 +266,7 @@ namespace TimeTable_management_System.views_UI_
             this.cbxLec1.Name = "cbxLec1";
             this.cbxLec1.Size = new System.Drawing.Size(213, 24);
             this.cbxLec1.TabIndex = 70;
+            this.toolTip1.SetToolTip(this.cbxLec1, "Select lecturer 1\'s name");
             this.cbxLec1.SelectedIndexChanged += new System.EventHandler(this.cbxLec1_SelectedIndexChanged);
             // 
             // label2
@@ -270,7 +282,7 @@ namespace TimeTable_management_System.views_UI_
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -297,11 +309,22 @@ namespace TimeTable_management_System.views_UI_
             this.numericUpDownNoOfStudents.Size = new System.Drawing.Size(97, 22);
             this.numericUpDownNoOfStudents.TabIndex = 90;
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 80);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(969, 25);
+            this.toolStrip1.TabIndex = 91;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
             // AddSessionUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(969, 718);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.numericUpDownNoOfStudents);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnClear);
@@ -360,5 +383,7 @@ namespace TimeTable_management_System.views_UI_
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericUpDownNoOfStudents;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
     }
 }

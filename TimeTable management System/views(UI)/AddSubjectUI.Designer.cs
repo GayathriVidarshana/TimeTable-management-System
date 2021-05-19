@@ -53,6 +53,10 @@ namespace TimeTable_management_System.views_UI_
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.errorProviderSubName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tbSubjectCodeNew = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nUpDwnNoOfEvaluationHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUpDwnNoOfLabHours)).BeginInit();
@@ -71,6 +75,7 @@ namespace TimeTable_management_System.views_UI_
             this.btnSave.TabIndex = 64;
             this.btnSave.Text = "Save";
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnSave, "save data to system");
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -84,13 +89,14 @@ namespace TimeTable_management_System.views_UI_
             this.btnClear.TabIndex = 63;
             this.btnClear.Text = "Clear";
             this.btnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnClear, "Clear filled details");
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label1.BackColor = System.Drawing.Color.DodgerBlue;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(398, 24);
@@ -101,7 +107,7 @@ namespace TimeTable_management_System.views_UI_
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
@@ -187,6 +193,7 @@ namespace TimeTable_management_System.views_UI_
             this.txbxSubjCode.ReadOnly = true;
             this.txbxSubjCode.Size = new System.Drawing.Size(252, 22);
             this.txbxSubjCode.TabIndex = 90;
+            this.toolTip1.SetToolTip(this.txbxSubjCode, "You can\'t edit this");
             // 
             // txbxSubjName
             // 
@@ -194,6 +201,7 @@ namespace TimeTable_management_System.views_UI_
             this.txbxSubjName.Name = "txbxSubjName";
             this.txbxSubjName.Size = new System.Drawing.Size(252, 22);
             this.txbxSubjName.TabIndex = 89;
+            this.toolTip1.SetToolTip(this.txbxSubjName, "Enter subject name");
             this.txbxSubjName.TextChanged += new System.EventHandler(this.txbxSubjName_TextChanged);
             this.txbxSubjName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbxSubjName_KeyPress);
             // 
@@ -234,6 +242,7 @@ namespace TimeTable_management_System.views_UI_
             this.cbxOfferdYear.Name = "cbxOfferdYear";
             this.cbxOfferdYear.Size = new System.Drawing.Size(252, 24);
             this.cbxOfferdYear.TabIndex = 86;
+            this.toolTip1.SetToolTip(this.cbxOfferdYear, "Add offered year of the subject");
             // 
             // label9
             // 
@@ -261,12 +270,12 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(30, 131);
+            this.label7.Location = new System.Drawing.Point(37, 135);
             this.label7.Name = "label7";
             this.label7.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.label7.Size = new System.Drawing.Size(131, 30);
+            this.label7.Size = new System.Drawing.Size(102, 30);
             this.label7.TabIndex = 83;
-            this.label7.Text = "Subject Code";
+            this.label7.Text = "Subject ID";
             // 
             // label2
             // 
@@ -283,11 +292,33 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.errorProviderSubName.ContainerControl = this;
             // 
+            // tbSubjectCodeNew
+            // 
+            this.tbSubjectCodeNew.Location = new System.Drawing.Point(209, 351);
+            this.tbSubjectCodeNew.Name = "tbSubjectCodeNew";
+            this.tbSubjectCodeNew.Size = new System.Drawing.Size(252, 22);
+            this.tbSubjectCodeNew.TabIndex = 100;
+            this.toolTip1.SetToolTip(this.tbSubjectCodeNew, "Add subject/module code . eg: IT2030 .");
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(30, 344);
+            this.label10.Name = "label10";
+            this.label10.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label10.Size = new System.Drawing.Size(131, 30);
+            this.label10.TabIndex = 99;
+            this.label10.Text = "Subject Code";
+            // 
             // AddSubjectUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(969, 718);
+            this.Controls.Add(this.tbSubjectCodeNew);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.nUpDwnNoOfEvaluationHours);
             this.Controls.Add(this.nUpDwnNoOfLabHours);
             this.Controls.Add(this.nUpDwnNoOfTutorialHours);
@@ -347,5 +378,9 @@ namespace TimeTable_management_System.views_UI_
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider errorProviderSubName;
+        private System.Windows.Forms.TextBox tbSubjectCodeNew;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.IO.Ports.SerialPort serialPort1;
     }
 }

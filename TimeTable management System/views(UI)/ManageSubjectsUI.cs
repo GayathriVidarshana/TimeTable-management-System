@@ -17,6 +17,7 @@ namespace TimeTable_management_System.views_UI_
         {
             InitializeComponent();
             loadAllSubjectData();
+            changeColumnNames();
         }
         String semester; // Create globle variable-----------
         String sem;
@@ -53,6 +54,8 @@ namespace TimeTable_management_System.views_UI_
             nUpDwnNoOfTutorialHours.Text = dataGridViewManageSubjects.SelectedRows[0].Cells[5].Value.ToString();
             nUpDwnNoOfLabHours.Text = dataGridViewManageSubjects.SelectedRows[0].Cells[6].Value.ToString();
             nUpDwnNoOfEvaluationHours.Text = dataGridViewManageSubjects.SelectedRows[0].Cells[7].Value.ToString();
+            tbSubjectCodeNew.Text = dataGridViewManageSubjects.SelectedRows[0].Cells[8].Value.ToString();
+
 
             // To retrive sem data to radio btns------------------
             string offeredSem = dataGridViewManageSubjects.SelectedRows[0].Cells[3].Value.ToString();
@@ -80,7 +83,7 @@ namespace TimeTable_management_System.views_UI_
 
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("UPDATE Subject SET subjectName='" + txbxSubjName.Text + "',offeredYear='" + cbxOfferdYear.Text + "',offeredSem='" + semester + "',noOfLecHours='" + nUpDwnNoOfLecturerHours.Text + "',noOfTutorialHours='" + nUpDwnNoOfTutorialHours.Text + "',noOfLabHours='" + nUpDwnNoOfLabHours.Text + "',noOfEvaluationHours='" + nUpDwnNoOfEvaluationHours.Text + "'WHERE subjectCode='" + txbxSubjCode.Text + "'", cn);
+                    SqlCommand cmd = new SqlCommand("UPDATE Subject SET subjectName='" + txbxSubjName.Text + "',offeredYear='" + cbxOfferdYear.Text + "',offeredSem='" + semester + "',noOfLecHours='" + nUpDwnNoOfLecturerHours.Text + "',noOfTutorialHours='" + nUpDwnNoOfTutorialHours.Text + "',noOfLabHours='" + nUpDwnNoOfLabHours.Text + "',noOfEvaluationHours='" + nUpDwnNoOfEvaluationHours.Text + "',subjectCodeNew='" +tbSubjectCodeNew.Text+ "'WHERE subjectCode='" + txbxSubjCode.Text + "'", cn);
                     cmd.ExecuteNonQuery();
                     cn.Close();
                     MessageBox.Show("Successfully updated");
@@ -106,7 +109,20 @@ namespace TimeTable_management_System.views_UI_
             nUpDwnNoOfLecturerHours.Text = "";
             nUpDwnNoOfTutorialHours.Text = "";
             cbxOfferdYear.Text = "";
+            tbSubjectCodeNew.Text = "";
 
+        }
+        public void changeColumnNames()
+        {
+            dataGridViewManageSubjects.Columns[0].HeaderCell.Value = "ID";
+            dataGridViewManageSubjects.Columns[1].HeaderCell.Value = "Subject name";
+            dataGridViewManageSubjects.Columns[2].HeaderCell.Value = "offered year";
+            dataGridViewManageSubjects.Columns[3].HeaderCell.Value = "offered sem";
+            dataGridViewManageSubjects.Columns[4].HeaderCell.Value = "No of lecture hours";
+            dataGridViewManageSubjects.Columns[5].HeaderCell.Value = "No of tutoril hours ";
+            dataGridViewManageSubjects.Columns[6].HeaderCell.Value = "No of lab hours";
+            dataGridViewManageSubjects.Columns[7].HeaderCell.Value = "No of evaluation hours";
+            dataGridViewManageSubjects.Columns[8].HeaderCell.Value = "Subject code";
         }
 
         private void radioButton1Sem1_CheckedChanged(object sender, EventArgs e)

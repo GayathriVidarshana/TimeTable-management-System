@@ -106,6 +106,7 @@ namespace TimeTable_management_System.views_UI_
             this.cbEndTime.Name = "cbEndTime";
             this.cbEndTime.Size = new System.Drawing.Size(133, 28);
             this.cbEndTime.TabIndex = 66;
+            this.toolTip1.SetToolTip(this.cbEndTime, "Select end time");
             // 
             // label12
             // 
@@ -159,6 +160,7 @@ namespace TimeTable_management_System.views_UI_
             this.cbStartTime.Name = "cbStartTime";
             this.cbStartTime.Size = new System.Drawing.Size(133, 28);
             this.cbStartTime.TabIndex = 65;
+            this.toolTip1.SetToolTip(this.cbStartTime, "Select start time");
             // 
             // label11
             // 
@@ -230,6 +232,7 @@ namespace TimeTable_management_System.views_UI_
             // 
             // cbLevel
             // 
+            this.cbLevel.BackColor = System.Drawing.Color.White;
             this.cbLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLevel.FormattingEnabled = true;
@@ -314,6 +317,7 @@ namespace TimeTable_management_System.views_UI_
             this.btnSave.TabIndex = 52;
             this.btnSave.Text = "Save";
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnSave, "save inserted details");
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -327,11 +331,13 @@ namespace TimeTable_management_System.views_UI_
             this.btnGenerateRank.TabIndex = 51;
             this.btnGenerateRank.Text = "Generate Rank";
             this.btnGenerateRank.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnGenerateRank, "Cleck here to generate rank");
             this.btnGenerateRank.UseVisualStyleBackColor = true;
             this.btnGenerateRank.Click += new System.EventHandler(this.btnGenerateRank_Click);
             // 
             // cbBuilding
             // 
+            this.cbBuilding.BackColor = System.Drawing.Color.White;
             this.cbBuilding.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBuilding.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBuilding.FormattingEnabled = true;
@@ -342,10 +348,12 @@ namespace TimeTable_management_System.views_UI_
             this.cbBuilding.Name = "cbBuilding";
             this.cbBuilding.Size = new System.Drawing.Size(286, 28);
             this.cbBuilding.TabIndex = 49;
+            this.toolTip1.SetToolTip(this.cbBuilding, "select building");
             this.cbBuilding.SelectedIndexChanged += new System.EventHandler(this.cbBuilding_SelectedIndexChanged);
             // 
             // cbCenter
             // 
+            this.cbCenter.BackColor = System.Drawing.Color.White;
             this.cbCenter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCenter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCenter.FormattingEnabled = true;
@@ -360,10 +368,12 @@ namespace TimeTable_management_System.views_UI_
             this.cbCenter.Name = "cbCenter";
             this.cbCenter.Size = new System.Drawing.Size(286, 28);
             this.cbCenter.TabIndex = 48;
+            this.toolTip1.SetToolTip(this.cbCenter, "select center");
             this.cbCenter.SelectedIndexChanged += new System.EventHandler(this.cbCenter_SelectedIndexChanged);
             // 
             // cbDept
             // 
+            this.cbDept.BackColor = System.Drawing.Color.White;
             this.cbDept.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDept.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDept.FormattingEnabled = true;
@@ -375,10 +385,12 @@ namespace TimeTable_management_System.views_UI_
             this.cbDept.Name = "cbDept";
             this.cbDept.Size = new System.Drawing.Size(286, 28);
             this.cbDept.TabIndex = 47;
+            this.toolTip1.SetToolTip(this.cbDept, "Select department");
             this.cbDept.SelectedIndexChanged += new System.EventHandler(this.cbDept_SelectedIndexChanged);
             // 
             // cbFaculty
             // 
+            this.cbFaculty.BackColor = System.Drawing.Color.White;
             this.cbFaculty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFaculty.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFaculty.FormattingEnabled = true;
@@ -391,11 +403,13 @@ namespace TimeTable_management_System.views_UI_
             this.cbFaculty.Name = "cbFaculty";
             this.cbFaculty.Size = new System.Drawing.Size(286, 28);
             this.cbFaculty.TabIndex = 46;
+            this.toolTip1.SetToolTip(this.cbFaculty, "Select relavent  faculty");
             this.cbFaculty.SelectedIndexChanged += new System.EventHandler(this.cbFaculty_SelectedIndexChanged);
             this.cbFaculty.Validating += new System.ComponentModel.CancelEventHandler(this.cbFaculty_Validating);
             // 
             // tbRank
             // 
+            this.tbRank.BackColor = System.Drawing.Color.White;
             this.tbRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbRank.Location = new System.Drawing.Point(663, 317);
             this.tbRank.Name = "tbRank";
@@ -406,12 +420,14 @@ namespace TimeTable_management_System.views_UI_
             // 
             // tbEmpID
             // 
+            this.tbEmpID.BackColor = System.Drawing.Color.White;
             this.tbEmpID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEmpID.Location = new System.Drawing.Point(189, 146);
             this.tbEmpID.Name = "tbEmpID";
             this.tbEmpID.ReadOnly = true;
             this.tbEmpID.Size = new System.Drawing.Size(286, 27);
             this.tbEmpID.TabIndex = 44;
+            this.toolTip1.SetToolTip(this.tbEmpID, "you can\'t change this");
             this.tbEmpID.TextChanged += new System.EventHandler(this.tbEmpID_TextChanged);
             // 
             // tbLecName
@@ -491,7 +507,7 @@ namespace TimeTable_management_System.views_UI_
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label1.BackColor = System.Drawing.Color.DodgerBlue;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(375, 22);
@@ -503,7 +519,7 @@ namespace TimeTable_management_System.views_UI_
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(-9, 2);
             this.panel1.Name = "panel1";
@@ -522,6 +538,7 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(969, 718);
             this.Controls.Add(this.cbEndTime);
             this.Controls.Add(this.label12);

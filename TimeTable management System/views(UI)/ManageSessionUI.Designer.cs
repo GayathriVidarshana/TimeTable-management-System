@@ -29,11 +29,11 @@ namespace TimeTable_management_System.views_UI_
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageSessionUI));
             this.panel1BlueBackground = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -57,6 +57,7 @@ namespace TimeTable_management_System.views_UI_
             this.label6 = new System.Windows.Forms.Label();
             this.cbxSelectGroup = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1BlueBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1ManageSession)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNoOfStudents)).BeginInit();
@@ -64,7 +65,7 @@ namespace TimeTable_management_System.views_UI_
             // 
             // panel1BlueBackground
             // 
-            this.panel1BlueBackground.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel1BlueBackground.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel1BlueBackground.Controls.Add(this.label1);
             this.panel1BlueBackground.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1BlueBackground.Location = new System.Drawing.Point(0, 0);
@@ -75,7 +76,7 @@ namespace TimeTable_management_System.views_UI_
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label1.BackColor = System.Drawing.Color.DodgerBlue;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(369, 21);
@@ -94,18 +95,6 @@ namespace TimeTable_management_System.views_UI_
             this.label2.TabIndex = 72;
             this.label2.Text = "By tag";
             // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(729, 381);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(184, 57);
-            this.button6.TabIndex = 69;
-            this.button6.Text = "Add a new session";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -115,6 +104,7 @@ namespace TimeTable_management_System.views_UI_
             this.button5.Size = new System.Drawing.Size(150, 37);
             this.button5.TabIndex = 68;
             this.button5.Text = "Refresh";
+            this.toolTip1.SetToolTip(this.button5, "reload data");
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -131,6 +121,7 @@ namespace TimeTable_management_System.views_UI_
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(184, 28);
             this.comboBox1.TabIndex = 67;
+            this.toolTip1.SetToolTip(this.comboBox1, "Sort added details by tag of the session");
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button2
@@ -141,6 +132,7 @@ namespace TimeTable_management_System.views_UI_
             this.button2.Size = new System.Drawing.Size(150, 45);
             this.button2.TabIndex = 65;
             this.button2.Text = "Delete";
+            this.toolTip1.SetToolTip(this.button2, "click here to delete selected row");
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -169,6 +161,7 @@ namespace TimeTable_management_System.views_UI_
             this.cbxTag.Name = "cbxTag";
             this.cbxTag.Size = new System.Drawing.Size(177, 24);
             this.cbxTag.TabIndex = 85;
+            this.toolTip1.SetToolTip(this.cbxTag, "click here to change the tag of the session");
             // 
             // label5
             // 
@@ -189,6 +182,7 @@ namespace TimeTable_management_System.views_UI_
             this.tbSelectedLecturers.ReadOnly = true;
             this.tbSelectedLecturers.Size = new System.Drawing.Size(213, 22);
             this.tbSelectedLecturers.TabIndex = 83;
+            this.toolTip1.SetToolTip(this.tbSelectedLecturers, "you can\'t edit this");
             // 
             // label7
             // 
@@ -208,6 +202,7 @@ namespace TimeTable_management_System.views_UI_
             this.cbxLec2.Name = "cbxLec2";
             this.cbxLec2.Size = new System.Drawing.Size(213, 24);
             this.cbxLec2.TabIndex = 81;
+            this.toolTip1.SetToolTip(this.cbxLec2, "click here to change the lecturer 2");
             // 
             // label8
             // 
@@ -227,6 +222,7 @@ namespace TimeTable_management_System.views_UI_
             this.cbxLec1.Name = "cbxLec1";
             this.cbxLec1.Size = new System.Drawing.Size(213, 24);
             this.cbxLec1.TabIndex = 79;
+            this.toolTip1.SetToolTip(this.cbxLec1, "click here to change the lecturer 1");
             this.cbxLec1.SelectedIndexChanged += new System.EventHandler(this.cbxLec1_SelectedIndexChanged);
             // 
             // label9
@@ -246,6 +242,7 @@ namespace TimeTable_management_System.views_UI_
             this.numericUpDownNoOfStudents.Name = "numericUpDownNoOfStudents";
             this.numericUpDownNoOfStudents.Size = new System.Drawing.Size(97, 22);
             this.numericUpDownNoOfStudents.TabIndex = 101;
+            this.toolTip1.SetToolTip(this.numericUpDownNoOfStudents, "click here to change the number of students");
             // 
             // btnUpdate
             // 
@@ -257,6 +254,7 @@ namespace TimeTable_management_System.views_UI_
             this.btnUpdate.TabIndex = 100;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnUpdate, "click here to update added details");
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
@@ -270,6 +268,7 @@ namespace TimeTable_management_System.views_UI_
             this.btnClear.TabIndex = 99;
             this.btnClear.Text = "Clear";
             this.btnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip1.SetToolTip(this.btnClear, "clear above data");
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -291,6 +290,7 @@ namespace TimeTable_management_System.views_UI_
             this.tbDuration.Name = "tbDuration";
             this.tbDuration.Size = new System.Drawing.Size(97, 22);
             this.tbDuration.TabIndex = 97;
+            this.toolTip1.SetToolTip(this.tbDuration, "click here to change the session duration");
             // 
             // label11
             // 
@@ -321,6 +321,7 @@ namespace TimeTable_management_System.views_UI_
             this.cbSelectSubject.Name = "cbSelectSubject";
             this.cbSelectSubject.Size = new System.Drawing.Size(213, 24);
             this.cbSelectSubject.TabIndex = 94;
+            this.toolTip1.SetToolTip(this.cbSelectSubject, "click here to change the subject");
             this.cbSelectSubject.SelectedIndexChanged += new System.EventHandler(this.cbSelectSubject_SelectedIndexChanged);
             // 
             // label6
@@ -341,6 +342,7 @@ namespace TimeTable_management_System.views_UI_
             this.cbxSelectGroup.Name = "cbxSelectGroup";
             this.cbxSelectGroup.Size = new System.Drawing.Size(213, 24);
             this.cbxSelectGroup.TabIndex = 92;
+            this.toolTip1.SetToolTip(this.cbxSelectGroup, "click here to change the student group");
             // 
             // label13
             // 
@@ -357,6 +359,7 @@ namespace TimeTable_management_System.views_UI_
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(969, 718);
             this.Controls.Add(this.numericUpDownNoOfStudents);
             this.Controls.Add(this.btnUpdate);
@@ -379,7 +382,6 @@ namespace TimeTable_management_System.views_UI_
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel1BlueBackground);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button2);
@@ -401,7 +403,6 @@ namespace TimeTable_management_System.views_UI_
         private System.Windows.Forms.Panel panel1BlueBackground;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button2;
@@ -425,5 +426,6 @@ namespace TimeTable_management_System.views_UI_
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbxSelectGroup;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
